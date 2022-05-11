@@ -124,6 +124,18 @@ data_6$CERQ_ADA <- data_6$CERQ_ACC + data_6$CERQ_REA + data_6$CERQ_REC + data_6$
 
 ```{r AI, include=FALSE}
 # Alimentation intuitive ; carbonneau 2016
+# 7 items inversé : 1,2,4,5,9,10,11
+
+data_6$Q7___Alim_intuitive_1 <- recode(data_6$Q7___Alim_intuitive_1, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q7___Alim_intuitive_2 <- recode(data_6$Q7___Alim_intuitive_2, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q7___Alim_intuitive_4 <- recode(data_6$Q7___Alim_intuitive_4, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q7___Alim_intuitive_5 <- recode(data_6$Q7___Alim_intuitive_5, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q7___Alim_intuitive_9 <- recode(data_6$Q7___Alim_intuitive_9, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q7___Alim_intuitive_10 <- recode(data_6$Q7___Alim_intuitive_10, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q7___Alim_intuitive_11 <- recode(data_6$Q7___Alim_intuitive_11, "1=5; 2=4; 3=3;4=2; 5=1")
+
+# faire moyenne de l'échelle et sous-échelles pour obtenir score
+
 #str(data_6)
 # unconditional permission to eat
 data_6$AI_UPE <- data_6$Q7___Alim_intuitive_1 + data_6$Q7___Alim_intuitive_3 + data_6$Q7___Alim_intuitive_4 + data_6$Q7___Alim_intuitive_9 + data_6$Q7___Alim_intuitive_16 + data_6$Q7___Alim_intuitive_17
@@ -136,7 +148,6 @@ data_6$AI_RHSC <- data_6$Q7___Alim_intuitive_6 + data_6$Q7___Alim_intuitive_7 + 
 
 #body food choice
 data_6$AI_BFC <- data_6$Q7___Alim_intuitive_18 + data_6$Q7___Alim_intuitive_19 + data_6$Q7___Alim_intuitive_20 
-
 
 ```
 
@@ -228,9 +239,11 @@ data_6$QSREIC_évitement <- data_6$Q14___QSREIC_27 + data_6$Q14___QSREIC_20 +  d
 
 ```
 
+## Alpha
+
 ### alpha QSREIC
 
-```{r, echo=FALSE}
+```{r, include=FALSE}
 QSREIC_alpha <- subset(data_6, select = c(81:107))
 
 #calculate Cronbach's Alpha
@@ -380,7 +393,7 @@ alpha(Interna)
 
 
 ```{r, include=FALSE}
-#v/rifier item inv de AI, BE
+
 #voir pour valider échelle - AF pour QSREIC
 #voir Boateng (2018) et akena (2018)
 
