@@ -1,0 +1,343 @@
+---
+title: "Analyse"
+author: "alexandre.williot.1@ulaval.ca"
+date: "05/2022"
+output: 
+  html_document:
+    toc: TRUE
+    theme: united
+---
+
+#### LEGENDE :
+
+```{r chargement fichier, include=FALSE}
+
+rm(list=ls())
+T<-TRUE
+F<-FALSE
+# select_incident<-T
+# select_P_inter<- T
+# select_P_intra<- T
+
+library(readxl)
+library(haven)
+library(tidyverse) 
+
+filename_SPSS_1 <- 
+  "C:/Users/utilisateur/Dropbox/2020-2022/1 - Postdoc UQTR/données/projet_Alex_Williot.sav"
+data_SPSS_1 <- read_sav(filename_SPSS_1)
+
+filename_SPSS_2 <- 
+  "C:/Users/utilisateur/Dropbox/2020-2022/1 - Postdoc UQTR/données/projet_Alex_Williot_suite.sav"
+data_SPSS_2 <- read_sav(filename_SPSS_2)
+
+# which(colnames(data_SPSS_1)=="Q12___Estime_corpore_13") #99
+# which(colnames(data_SPSS_2)=="Q12___Estime_corpore_13") #99
+# which(colnames(data_SPSS_1)=="Q10___Alim__motionne") #85
+# which(colnames(data_SPSS_2)=="Q10___Alim__motionne") #85
+
+data_1 <- rbind(data_SPSS_1, data_SPSS_2)
+
+```
+
+```{r library, include=FALSE}
+#install.packages("lubridate")
+library(lubridate)
+library(tidyverse)
+library(car)
+library(ltm)#alpha
+library(psych)#omega
+```
+
+
+```{r filtre_1, include=FALSE}
+# filtrage sur les dates, expérience commence à partir du 8 décembre
+data_2<-data_1
+
+#data_2$StartDate
+#class(data_2$StartDate) # "POSIXct" "POSIXt" 
+data_2$StartDate <- as.Date(data_2$StartDate)
+#class(data_2$StartDate) # "Date"
+#min(data_2$StartDate) # "2021-11-24"
+#max(data_2$StartDate) # "2022-03-06"
+data_2 <- subset(data_2, StartDate>"2021-12-7")
+
+
+# filtre sur colonne données complétes
+#which(colnames(data_2)=="Finished") #7
+#sum(data_2$Finished) # 689
+
+data_3 <- subset (data_2, Finished > 0 ) # n=689
+
+
+# filtre sur temps pour faire exp # n=686 pour 300 sec
+which(colnames(data_SPSS_1)=="Duration__in_seconds_") #6
+data_4 <- subset (data_3, Duration__in_seconds_ > 300 ) #n=686
+#data_5 <- subset (data_4, Duration__in_seconds_ > 500 )
+
+#subset (data_5, Duration__in_seconds_ == 501 )
+#data_5[ , 43:147]
+
+```
+
+```{r , include=FALSE}
+# filtre sur colonne (pour épurer)
+
+data_5 <- data_4[ , 6:145]
+data_5<-data_5[,-c(5:37)] # supression d'une colonne
+
+data_6 <- na.omit(data_5) # Supprime toutes les lignes avec des NA #n=578
+
+```
+
+
+```{r CERQ, include=FALSE}
+#score aux questionnaires
+#CERQ
+
+data_6$CERQ_ACC <- data_6$Q6___R_gulation_cogn_1 + data_6$Q6___R_gulation_cogn_5
+data_6$CERQ_RUM <- data_6$Q6___R_gulation_cogn_2 + data_6$Q6___R_gulation_cogn_6
+data_6$CERQ_REA <- data_6$Q6___R_gulation_cogn_3 + data_6$Q6___R_gulation_cogn_8
+data_6$CERQ_CUL <- data_6$Q6___R_gulation_cogn_4 + data_6$Q6___R_gulation_cogn_14
+data_6$CERQ_REC <- data_6$Q6___R_gulation_cogn_7 + data_6$Q6___R_gulation_cogn_11
+data_6$CERQ_DRA <- data_6$Q6___R_gulation_cogn_9 + data_6$Q6___R_gulation_cogn_17
+data_6$CERQ_BLA <- data_6$Q6___R_gulation_cogn_10 + data_6$Q6___R_gulation_cogn_18
+data_6$CERQ_PLA <- data_6$Q6___R_gulation_cogn_12 + data_6$Q6___R_gulation_cogn_15
+data_6$CERQ_PERS <- data_6$Q6___R_gulation_cogn_13 + data_6$Q6___R_gulation_cogn_16
+
+data_6$CERQ_MAL <- data_6$CERQ_CUL + data_6$CERQ_BLA + data_6$CERQ_RUM + data_6$CERQ_DRA 
+
+data_6$CERQ_ADA <- data_6$CERQ_ACC + data_6$CERQ_REA + data_6$CERQ_REC + data_6$CERQ_PLA + data_6$CERQ_PERS
+
+```
+
+
+```{r AI, include=FALSE}
+# Alimentation intuitive ; carbonneau 2016
+#str(data_6)
+# unconditional permission to eat
+data_6$AI_UPE <- data_6$Q7___Alim_intuitive_1 + data_6$Q7___Alim_intuitive_3 + data_6$Q7___Alim_intuitive_4 + data_6$Q7___Alim_intuitive_9 + data_6$Q7___Alim_intuitive_16 + data_6$Q7___Alim_intuitive_17
+
+#eating for physical reason than emotional
+data_6$AI_EPPR <- data_6$Q7___Alim_intuitive_2 + data_6$Q7___Alim_intuitive_5 + data_6$Q7___Alim_intuitive_10 + data_6$Q7___Alim_intuitive_11 + data_6$Q7___Alim_intuitive_12 + data_6$Q7___Alim_intuitive_13 + data_6$Q7___Alim_intuitive_14 + data_6$Q7___Alim_intuitive_15
+
+#Reliance on hunger and satiety cues
+data_6$AI_RHSC <- data_6$Q7___Alim_intuitive_6 + data_6$Q7___Alim_intuitive_7 + data_6$Q7___Alim_intuitive_8 + data_6$Q7___Alim_intuitive_21 + data_6$Q7___Alim_intuitive_22 + data_6$Q7___Alim_intuitive_23
+
+#body food choice
+data_6$AI_BFC <- data_6$Q7___Alim_intuitive_18 + data_6$Q7___Alim_intuitive_19 + data_6$Q7___Alim_intuitive_20 
+
+
+```
+
+```{r BE, include=FALSE}
+# body esteem - valls 2011
+
+#inversion des scores des items 4, 7, 9, 11, 13, 17, 18, 19 et 21 
+
+data_6$Q12___Estime_corpore_4 <- recode(data_6$Q12___Estime_corpore_4, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q12___Estime_corpore_7 <- recode(data_6$Q12___Estime_corpore_7, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q12___Estime_corpore_9 <- recode(data_6$Q12___Estime_corpore_9, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q12___Estime_corpore_11 <- recode(data_6$Q12___Estime_corpore_11, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q12___Estime_corpore_13 <- recode(data_6$Q12___Estime_corpore_13, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q12___Estime_corpore_17 <- recode(data_6$Q12___Estime_corpore_17, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q12___Estime_corpore_18 <- recode(data_6$Q12___Estime_corpore_18, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q12___Estime_corpore_19 <- recode(data_6$Q12___Estime_corpore_19, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q12___Estime_corpore_21 <- recode(data_6$Q12___Estime_corpore_21, "1=5; 2=4; 3=3;4=2; 5=1")
+
+
+# « Apparence » fait référence aux sentiments généraux envers l’apparence corporelle et comprend dix items (1-6-7-9-11- 13-15-17-21-23)
+data_6$BE_APP <- data_6$Q12___Estime_corpore_1 + data_6$Q12___Estime_corpore_6 + data_6$Q12___Estime_corpore_7 + data_6$Q12___Estime_corpore_9 + data_6$Q12___Estime_corpore_11 + data_6$Q12___Estime_corpore_13 + data_6$Q12___Estime_corpore_15 + data_6$Q12___Estime_corpore_17 + data_6$Q12___Estime_corpore_21 + data_6$Q12___Estime_corpore_23
+
+# « L’Attribution », composée de cinq items (2-5-12-14-20), correspond aux croyances concernant la fac¸on dont leur apparence corporelle est perc¸ue par les autres.
+data_6$BE_ATT <- data_6$Q12___Estime_corpore_2 + data_6$Q12___Estime_corpore_5 + data_6$Q12___Estime_corpore_12 + data_6$Q12___Estime_corpore_14 + data_6$Q12___Estime_corpore_20
+
+#« Poids » évalue la satisfaction ou l’insatisfaction envers le poids et comprend huit items (3- 4-8-10-16-18-19-22).
+data_6$BE_Poids <- data_6$Q12___Estime_corpore_3 + data_6$Q12___Estime_corpore_4 + data_6$Q12___Estime_corpore_8 + data_6$Q12___Estime_corpore_10 + data_6$Q12___Estime_corpore_16 + data_6$Q12___Estime_corpore_18 + data_6$Q12___Estime_corpore_19 + data_6$Q12___Estime_corpore_22
+
+```
+
+```{r EE, include=FALSE}
+#emotional eating
+
+which(colnames(data_6)=="Q9___Alim__motionnel")
+
+names(data_6)[names(data_6) == "Q9___Alim__motionnel"] <- "Q9_Alim_emotionnel"
+names(data_6)[names(data_6) == "Q10___Alim__motionne"] <- "Q10_Alim_emotionnel"
+names(data_6)[names(data_6) == "Q11___Alim__motionne"] <- "Q11_Alim_emotionnel"
+
+data_6$EE <- data_6$Q9_Alim_emotionnel + data_6$Q10_Alim_emotionnel + data_6$Q11_Alim_emotionnel
+
+```
+
+```{r interna, include=FALSE}
+#Internalisation des normes sociales d’apparence 
+#Rousseau et al (2010) ; Validation of the French version of the Sociocultural Attitudes Towards Appearance Scale-3 (SATAQ-3) ; items : 3, 4, 7, 8, 11, 12, 15, 16, 27 de l'échelle originale
+
+# internalisation générale
+
+data_6$Interna <- data_6$Q13___Internalisatio_1 + data_6$Q13___Internalisatio_2 + data_6$Q13___Internalisatio_3 + data_6$Q13___Internalisatio_4 + data_6$Q13___Internalisatio_5 + data_6$Q13___Internalisatio_6 + data_6$Q13___Internalisatio_7 + data_6$Q13___Internalisatio_8 + data_6$Q13___Internalisatio_9
+```
+
+
+
+
+```{r QSREIC, include=FALSE}
+# calcul sous-dim du QSREIC
+
+#dramatisation : 4 items
+data_6$QSREIC_dramatisation <- data_6$Q14___QSREIC_1 + data_6$Q14___QSREIC_9 + data_6$Q14___QSREIC_14 + data_6$Q14___QSREIC_17
+
+#planification : 4 items
+data_6$QSREIC_planif <- data_6$Q14___QSREIC_2 + data_6$Q14___QSREIC_11 + data_6$Q14___QSREIC_12 + data_6$Q14___QSREIC_25
+
+#recentrage : 3 items
+data_6$QSREIC_recentrage <- data_6$Q14___QSREIC_3 + data_6$Q14___QSREIC_7 + data_6$Q14___QSREIC_18 
+
+#social : 4 items
+#reverse items 8
+
+data_6$Q14___QSREIC_8 <- recode(data_6$Q14___QSREIC_8, "1=5; 2=4; 3=3;4=2; 5=1")
+
+data_6$QSREIC_social <- data_6$Q14___QSREIC_5 + data_6$Q14___QSREIC_8 + data_6$Q14___QSREIC_19 + data_6$Q14___QSREIC_26
+
+#culpa : 2 items
+data_6$QSREIC_culpa <- data_6$Q14___QSREIC_6 + data_6$Q14___QSREIC_13
+
+#refus : 4 items
+data_6$QSREIC_refus <- data_6$Q14___QSREIC_10 + data_6$Q14___QSREIC_16 + data_6$Q14___QSREIC_21 + data_6$Q14___QSREIC_24
+
+#rumination: 
+data_6$QSREIC_rumination <- data_6$Q14___QSREIC_22 
+
+#physique: 2 items
+data_6$QSREIC_physique<- data_6$Q14___QSREIC_23 + data_6$Q14___QSREIC_4
+
+#évitement: 3 items
+data_6$QSREIC_évitement <- data_6$Q14___QSREIC_27 + data_6$Q14___QSREIC_20 +  data_6$Q14___QSREIC_15
+
+```
+
+### alpha QSREIC
+
+```{r, echo=FALSE}
+QSREIC_alpha <- subset(data_6, select = c(81:107))
+
+#calculate Cronbach's Alpha
+cronbach.alpha(QSREIC_alpha , CI=TRUE, standardized=TRUE)
+omega(QSREIC_alpha, 2)
+
+alpha(QSREIC_alpha)
+
+
+#continuer calcul alpha pour sous-/chelles : https://mattchoward.com/calculating-cronbachs-alpha-in-r/
+# puis pour autre échelles 
+```
+
+
+
+```{r , echo=FALSE}
+#alpha des sous-échelles de QSREIC
+
+
+QSREIC_dram <-subset(data_6, select = c( Q14___QSREIC_1 ,  Q14___QSREIC_9 ,  Q14___QSREIC_14 , Q14___QSREIC_17))
+alpha(QSREIC_dram)
+
+QSREIC_planif <-subset(data_6, select = c( Q14___QSREIC_2 ,  Q14___QSREIC_11 ,  Q14___QSREIC_12 , Q14___QSREIC_25))
+alpha(QSREIC_planif)
+
+QSREIC_recentrage <-subset(data_6, select = c( Q14___QSREIC_3 ,  Q14___QSREIC_7 ,  Q14___QSREIC_18))
+alpha(QSREIC_recentrage)
+
+QSREIC_social  <-subset(data_6, select = c( Q14___QSREIC_5 ,  Q14___QSREIC_8 ,  Q14___QSREIC_19, Q14___QSREIC_26))
+alpha(QSREIC_social)
+
+QSREIC_culpa <-subset(data_6, select = c( Q14___QSREIC_6 ,  Q14___QSREIC_13 ))
+alpha(QSREIC_culpa)
+
+QSREIC_refus  <-subset(data_6, select = c( Q14___QSREIC_10 ,  Q14___QSREIC_16 ,  Q14___QSREIC_21, Q14___QSREIC_24))
+alpha(QSREIC_refus)
+
+#QSREIC_rumination  <-subset(data_6, select = c( Q14___QSREIC_22))
+#alpha(QSREIC_rumination)
+
+QSREIC_physique  <-subset(data_6, select = c( Q14___QSREIC_23 ,  Q14___QSREIC_4))
+alpha(QSREIC_physique)
+
+QSREIC_évitement  <-subset(data_6, select = c( Q14___QSREIC_27 ,  Q14___QSREIC_20, Q14___QSREIC_15))
+alpha(QSREIC_évitement)
+
+```
+### alpha CERQ
+
+```{r , echo=FALSE}
+# alpha CERQ
+
+CERQ_ACC <- subset (data_6, select = c( Q6___R_gulation_cogn_1 , Q6___R_gulation_cogn_5))
+CERQ_RUM <- subset(data_6, select = c(Q6___R_gulation_cogn_2 , Q6___R_gulation_cogn_6))
+CERQ_REA <- subset(data_6, select = c(Q6___R_gulation_cogn_3 , Q6___R_gulation_cogn_8))
+CERQ_CUL <- subset(data_6, select = c(Q6___R_gulation_cogn_4 , Q6___R_gulation_cogn_14))
+CERQ_REC <- subset(data_6, select = c(Q6___R_gulation_cogn_7 , Q6___R_gulation_cogn_11))
+CERQ_DRA <- subset(data_6, select = c(Q6___R_gulation_cogn_9 , Q6___R_gulation_cogn_17))
+CERQ_BLA <- subset(data_6, select = c(Q6___R_gulation_cogn_10 , Q6___R_gulation_cogn_18))
+CERQ_PLA <- subset(data_6, select = c(Q6___R_gulation_cogn_12 , Q6___R_gulation_cogn_15))
+CERQ_PERS <- subset(data_6, select = c(Q6___R_gulation_cogn_13 , Q6___R_gulation_cogn_16))
+
+
+CERQ_MAL <- subset (data_6, select = c( Q6___R_gulation_cogn_4 , Q6___R_gulation_cogn_14, Q6___R_gulation_cogn_10 , Q6___R_gulation_cogn_18, Q6___R_gulation_cogn_2 , Q6___R_gulation_cogn_6, Q6___R_gulation_cogn_9 , Q6___R_gulation_cogn_17 ))
+
+CERQ_ADA <- subset (data_6, select = c( Q6___R_gulation_cogn_1 , Q6___R_gulation_cogn_5,Q6___R_gulation_cogn_3 , Q6___R_gulation_cogn_8, Q6___R_gulation_cogn_7 , Q6___R_gulation_cogn_11, Q6___R_gulation_cogn_12 , Q6___R_gulation_cogn_15, Q6___R_gulation_cogn_13 , Q6___R_gulation_cogn_16 ))
+
+
+alpha(CERQ_ACC)
+alpha(CERQ_RUM)
+alpha(CERQ_REA)
+alpha(CERQ_CUL)
+alpha(CERQ_REC)
+alpha(CERQ_DRA)
+alpha(CERQ_BLA)
+alpha(CERQ_PLA)
+alpha(CERQ_PERS)
+
+alpha(CERQ_MAL)
+alpha(CERQ_ADA)
+
+```
+
+### alpha AI
+
+```{r, echo=FALSE}
+# alpha AI
+
+# unconditional permission to eat
+AI_UPE <- subset (data_6, select = c( Q7___Alim_intuitive_1 , Q7___Alim_intuitive_3 , Q7___Alim_intuitive_4 , Q7___Alim_intuitive_9 , Q7___Alim_intuitive_16 , Q7___Alim_intuitive_17))
+alpha(AI_UPE )
+
+
+
+#eating for physical reason than emotional
+data_6$AI_EPPR <- data_6$Q7___Alim_intuitive_2 + data_6$Q7___Alim_intuitive_5 + data_6$Q7___Alim_intuitive_10 + data_6$Q7___Alim_intuitive_11 + data_6$Q7___Alim_intuitive_12 + data_6$Q7___Alim_intuitive_13 + data_6$Q7___Alim_intuitive_14 + data_6$Q7___Alim_intuitive_15
+
+#Reliance on hunger and satiety cues
+data_6$AI_RHSC <- data_6$Q7___Alim_intuitive_6 + data_6$Q7___Alim_intuitive_7 + data_6$Q7___Alim_intuitive_8 + data_6$Q7___Alim_intuitive_21 + data_6$Q7___Alim_intuitive_22 + data_6$Q7___Alim_intuitive_23
+
+#body food choice
+data_6$AI_BFC <- data_6$Q7___Alim_intuitive_18 + data_6$Q7___Alim_intuitive_19 + data_6$Q7___Alim_intuitive_20 
+
+
+
+
+```
+
+
+
+
+```{r, include=FALSE}
+#voir pour valider échelle - AF pour QSREIC
+#voir Boateng (2018) et akena (2018)
+
+#http://rstudio-pubs-static.s3.amazonaws.com/11011_caa8639a12cb488aba3df58c696626bb.html
+
+```
+
+
