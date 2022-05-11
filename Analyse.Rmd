@@ -23,13 +23,23 @@ library(readxl)
 library(haven)
 library(tidyverse) 
 
+# filename_SPSS_1 <- 
+#   "C:/Users/utilisateur/Dropbox/2020-2022/1 - Postdoc UQTR/données/projet_Alex_Williot.sav"
+# data_SPSS_1 <- read_sav(filename_SPSS_1)
+
 filename_SPSS_1 <- 
-  "C:/Users/utilisateur/Dropbox/2020-2022/1 - Postdoc UQTR/données/projet_Alex_Williot.sav"
+  "https://github.com/alexandrewilliot/R-home/blob/60e5b231728957f234e3a22b9390db3b5b3f02ae/projet_Alex_Williot.sav"
 data_SPSS_1 <- read_sav(filename_SPSS_1)
 
+
+# filename_SPSS_2 <- 
+#   "C:/Users/utilisateur/Dropbox/2020-2022/1 - Postdoc UQTR/données/projet_Alex_Williot_suite.sav"
+# data_SPSS_2 <- read_sav(filename_SPSS_2)
+
 filename_SPSS_2 <- 
-  "C:/Users/utilisateur/Dropbox/2020-2022/1 - Postdoc UQTR/données/projet_Alex_Williot_suite.sav"
+  "https://github.com/alexandrewilliot/R-home/blob/60e5b231728957f234e3a22b9390db3b5b3f02ae/projet_Alex_Williot_suite.sav"
 data_SPSS_2 <- read_sav(filename_SPSS_2)
+
 
 # which(colnames(data_SPSS_1)=="Q12___Estime_corpore_13") #99
 # which(colnames(data_SPSS_2)=="Q12___Estime_corpore_13") #99
