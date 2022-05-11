@@ -235,7 +235,7 @@ QSREIC_alpha <- subset(data_6, select = c(81:107))
 
 #calculate Cronbach's Alpha
 cronbach.alpha(QSREIC_alpha , CI=TRUE, standardized=TRUE)
-omega(QSREIC_alpha, 2)
+#omega(QSREIC_alpha, 2)
 
 alpha(QSREIC_alpha)
 
@@ -321,21 +321,58 @@ alpha(CERQ_ADA)
 
 # unconditional permission to eat
 AI_UPE <- subset (data_6, select = c( Q7___Alim_intuitive_1 , Q7___Alim_intuitive_3 , Q7___Alim_intuitive_4 , Q7___Alim_intuitive_9 , Q7___Alim_intuitive_16 , Q7___Alim_intuitive_17))
-alpha(AI_UPE )
-
-
+alpha(AI_UPE)
 
 #eating for physical reason than emotional
-data_6$AI_EPPR <- data_6$Q7___Alim_intuitive_2 + data_6$Q7___Alim_intuitive_5 + data_6$Q7___Alim_intuitive_10 + data_6$Q7___Alim_intuitive_11 + data_6$Q7___Alim_intuitive_12 + data_6$Q7___Alim_intuitive_13 + data_6$Q7___Alim_intuitive_14 + data_6$Q7___Alim_intuitive_15
+AI_EPPR <- subset (data_6, select = c( Q7___Alim_intuitive_2 , Q7___Alim_intuitive_5 , Q7___Alim_intuitive_10 , Q7___Alim_intuitive_11 , Q7___Alim_intuitive_12 , Q7___Alim_intuitive_13 , Q7___Alim_intuitive_14 , Q7___Alim_intuitive_15 ))
+alpha(AI_EPPR)
 
 #Reliance on hunger and satiety cues
-data_6$AI_RHSC <- data_6$Q7___Alim_intuitive_6 + data_6$Q7___Alim_intuitive_7 + data_6$Q7___Alim_intuitive_8 + data_6$Q7___Alim_intuitive_21 + data_6$Q7___Alim_intuitive_22 + data_6$Q7___Alim_intuitive_23
+AI_RHSC <- subset (data_6, select = c( Q7___Alim_intuitive_6 , Q7___Alim_intuitive_7 , Q7___Alim_intuitive_8 , Q7___Alim_intuitive_21 , Q7___Alim_intuitive_22 , Q7___Alim_intuitive_23))
+alpha(AI_RHSC)
 
 #body food choice
-data_6$AI_BFC <- data_6$Q7___Alim_intuitive_18 + data_6$Q7___Alim_intuitive_19 + data_6$Q7___Alim_intuitive_20 
+AI_BFC <- subset (data_6, select = c( Q7___Alim_intuitive_18 , Q7___Alim_intuitive_19 , Q7___Alim_intuitive_20 ))
+alpha(AI_BFC)
+
+```
+
+### alpha BE
+
+```{r , echo=FALSE}
+
+# « Apparence » fait référence aux sentiments généraux envers l’apparence corporelle et comprend dix items (1-6-7-9-11- 13-15-17-21-23)
+BE_APP <- subset (data_6, select = c( Q12___Estime_corpore_1 , Q12___Estime_corpore_6 , Q12___Estime_corpore_7 , Q12___Estime_corpore_9, Q12___Estime_corpore_11 , Q12___Estime_corpore_13 , Q12___Estime_corpore_15 , Q12___Estime_corpore_17 , Q12___Estime_corpore_21 , Q12___Estime_corpore_23))
+alpha(BE_APP)
+
+# « L’Attribution », composée de cinq items (2-5-12-14-20), correspond aux croyances concernant la fac¸on dont leur apparence corporelle est perc¸ue par les autres.
+BE_ATT <- subset (data_6, select = c( Q12___Estime_corpore_2 , Q12___Estime_corpore_5 , Q12___Estime_corpore_12 , Q12___Estime_corpore_14, Q12___Estime_corpore_20 ))
+alpha(BE_ATT)
+
+#« Poids » évalue la satisfaction ou l’insatisfaction envers le poids et comprend huit items (3- 4-8-10-16-18-19-22).
+BE_Poids  <- subset (data_6, select = c( Q12___Estime_corpore_3 , Q12___Estime_corpore_4 , Q12___Estime_corpore_8 , Q12___Estime_corpore_10, Q12___Estime_corpore_16 , Q12___Estime_corpore_18 , Q12___Estime_corpore_19 , Q12___Estime_corpore_22 ))
+alpha(BE_Poids )
+
+```
+
+### alpha EE
+
+```{r , echo=FALSE}
+EE<- subset (data_6, select = c( Q9_Alim_emotionnel , Q10_Alim_emotionnel , Q11_Alim_emotionnel))
+alpha(EE )
+
+```
 
 
+### alpha internalisation
 
+```{r , echo=FALSE}
+#Internalisation des normes sociales d’apparence 
+#Rousseau et al (2010) ; Validation of the French version of the Sociocultural Attitudes Towards Appearance Scale-3 (SATAQ-3) ; items : 3, 4, 7, 8, 11, 12, 15, 16, 27 de l'échelle originale
+
+# internalisation générale
+Interna <- subset (data_6, select = c( Q13___Internalisatio_1 , Q13___Internalisatio_2 , Q13___Internalisatio_3 , Q13___Internalisatio_4 , Q13___Internalisatio_5 , Q13___Internalisatio_6 , Q13___Internalisatio_7 , Q13___Internalisatio_8 , Q13___Internalisatio_9 ))
+alpha(Interna)
 
 ```
 
@@ -343,6 +380,7 @@ data_6$AI_BFC <- data_6$Q7___Alim_intuitive_18 + data_6$Q7___Alim_intuitive_19 +
 
 
 ```{r, include=FALSE}
+#v/rifier item inv de AI, BE
 #voir pour valider échelle - AF pour QSREIC
 #voir Boateng (2018) et akena (2018)
 
