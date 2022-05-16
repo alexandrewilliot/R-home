@@ -218,7 +218,9 @@ data_6$QSREIC_recentrage <- data_6$Q14___QSREIC_3 + data_6$Q14___QSREIC_7 + data
 #social : 4 items
 #reverse items 8
 
-data_6$Q14___QSREIC_8 <- recode(data_6$Q14___QSREIC_8, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q14___QSREIC_5 <- recode(data_6$Q14___QSREIC_5, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q14___QSREIC_19 <- recode(data_6$Q14___QSREIC_19, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q14___QSREIC_26 <- recode(data_6$Q14___QSREIC_26, "1=5; 2=4; 3=3;4=2; 5=1")
 
 data_6$QSREIC_social <- data_6$Q14___QSREIC_5 + data_6$Q14___QSREIC_8 + data_6$Q14___QSREIC_19 + data_6$Q14___QSREIC_26
 
@@ -237,13 +239,19 @@ data_6$QSREIC_physique<- data_6$Q14___QSREIC_23 + data_6$Q14___QSREIC_4
 #évitement: 3 items
 data_6$QSREIC_évitement <- data_6$Q14___QSREIC_27 + data_6$Q14___QSREIC_20 +  data_6$Q14___QSREIC_15
 
+
+data_6$CERQ_ADA <- data_6$QSREIC_planif + data_6$QSREIC_recentrage + data_6$QSREIC_social + data_6$QSREIC_refus 
+
+data_6$CERQ_MAL <- data_6$QSREIC_dramatisation + data_6$QSREIC_physique + data_6$QSREIC_culpa + data_6$QSREIC_rumination + data_6$QSREIC_évitement
+
 ```
 
 ## Alpha
 
 ### alpha QSREIC
+#### si r.drop inf à 0.3 alors voir retrait
 
-```{r, include=FALSE}
+```{r, echo=FALSE}
 QSREIC_alpha <- subset(data_6, select = c(81:107))
 
 #calculate Cronbach's Alpha
@@ -289,6 +297,14 @@ alpha(QSREIC_physique)
 
 QSREIC_évitement  <-subset(data_6, select = c( Q14___QSREIC_27 ,  Q14___QSREIC_20, Q14___QSREIC_15))
 alpha(QSREIC_évitement)
+
+
+
+QSREIC_ADA <-subset(data_6, select = c( Q14___QSREIC_2 ,  Q14___QSREIC_11 ,  Q14___QSREIC_12 , Q14___QSREIC_25, Q14___QSREIC_3 ,  Q14___QSREIC_7 ,  Q14___QSREIC_18, Q14___QSREIC_5 ,  Q14___QSREIC_8 ,  Q14___QSREIC_19, Q14___QSREIC_26, Q14___QSREIC_10 ,  Q14___QSREIC_16 ,  Q14___QSREIC_21, Q14___QSREIC_24))
+alpha(QSREIC_ADA)
+
+QSREIC_MAL <-subset(data_6, select = c( Q14___QSREIC_1 ,  Q14___QSREIC_9 ,  Q14___QSREIC_14 , Q14___QSREIC_17, Q14___QSREIC_23 ,  Q14___QSREIC_4, Q14___QSREIC_6 ,  Q14___QSREIC_13, Q14___QSREIC_22, Q14___QSREIC_27 ,  Q14___QSREIC_20, Q14___QSREIC_15))
+alpha(QSREIC_MAL)
 
 ```
 ### alpha CERQ
