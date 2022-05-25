@@ -395,7 +395,10 @@ summary {
 <li><a href="#alpha-internalisation">alpha internalisation</a></li>
 </ul></li>
 <li><a href="#analyse-factorielle---extraction">Analyse factorielle - extraction</a><ul>
+<li><a href="#kmo-doit-être-sup-à-0.7-pour-af-ok-min-de-.5">kmo doit être sup à 0.7 pour AF ok (min de .5)</a></li>
 <li><a href="#acp">ACP</a></li>
+<li><a href="#varimax-rotation">varimax rotation</a></li>
+<li><a href="#oblique-rotation">oblique rotation</a></li>
 </ul></li>
 </ul>
 </div>
@@ -418,7 +421,7 @@ summary {
 ## 
 ## Bootstrap 95% CI based on 1000 samples
 ##  2.5% 97.5% 
-## 0.334 0.476</code></pre>
+## 0.340 0.478</code></pre>
 <pre><code>## Warning in alpha(QSREIC_alpha): Some items were negatively correlated with the total scale and probably 
 ## should be reversed.  
 ## To do this, run the function again with the &#39;check.keys=TRUE&#39; option</code></pre>
@@ -1661,6 +1664,11 @@ summary {
 </div>
 <div id="analyse-factorielle---extraction" class="section level2">
 <h2>Analyse factorielle - extraction</h2>
+<div id="matrice-de-corrélation-besoin-de-bonnes-corrélations" class="section level4">
+<h4>matrice de corrélation ; besoin de bonnes corrélations</h4>
+</div>
+<div id="bartlett-sur-data-ou-corrélation-même-résultat-on-veut-test-signif-donc-af-ok" class="section level4">
+<h4>Bartlett sur data ou corrélation (même résultat) # on veut test signif donc AF ok</h4>
 <pre><code>##                 Q14___QSREIC_1 Q14___QSREIC_2 Q14___QSREIC_3 Q14___QSREIC_4
 ## Q14___QSREIC_1            1.00           0.03          -0.19           0.36
 ## Q14___QSREIC_2            0.03           1.00           0.43          -0.08
@@ -1874,6 +1882,12 @@ summary {
 ## 
 ## $df
 ## [1] 351</code></pre>
+</div>
+<div id="kmo-test" class="section level4">
+<h4>KMO test</h4>
+</div>
+<div id="kmo-doit-être-sup-à-0.7-pour-af-ok-min-de-.5" class="section level3">
+<h3>kmo doit être sup à 0.7 pour AF ok (min de .5)</h3>
 <pre><code>## $overall
 ## [1] 0.9026362
 ## 
@@ -2234,8 +2248,11 @@ summary {
 ## [26,]  0.8900417002  0.020119906
 ## [27,]  0.0201199058  0.952531178</code></pre>
 <pre><code>## [1] 7.455446e-05</code></pre>
+</div>
 <div id="acp" class="section level3">
 <h3>ACP</h3>
+<div id="factors-27-graphe-point-dinflexion-puis-5" class="section level4">
+<h4>factors = 27 (graphe point d’inflexion) puis 5</h4>
 <pre><code>## Principal Components Analysis
 ## Call: principal(r = QSREIC_alpha, nfactors = 27, rotate = &quot;none&quot;, scores = FALSE)
 ## Standardized loadings (pattern matrix) based upon correlation matrix
@@ -2397,6 +2414,9 @@ summary {
 ##  with the empirical chi square  1274.78  with prob &lt;  1.2e-145 
 ## 
 ## Fit based upon off diagonal values = 0.96</code></pre>
+</div>
+<div id="aprés-extraction-du-nombre-de-facteur-voir-différence-entre-matrice-de-corrélation-reproduite-et-matrice-des-données-donc-résidu" class="section level4">
+<h4>aprés extraction du nombre de facteur, voir différence entre matrice de corrélation reproduite et matrice des données donc résidu</h4>
 <pre><code>##                 Q14___QSREIC_1 Q14___QSREIC_2 Q14___QSREIC_3 Q14___QSREIC_4
 ## Q14___QSREIC_1           0.349          0.036         -0.171          0.381
 ## Q14___QSREIC_2           0.036          0.469          0.457         -0.050
@@ -2794,6 +2814,220 @@ summary {
 <pre><code>## [1] 0.3418803</code></pre>
 <pre><code>## [1] 0.05605119</code></pre>
 <p><img src="data:image/png;base64,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" width="672" /></p>
+</div>
+</div>
+<div id="varimax-rotation" class="section level3">
+<h3>varimax rotation</h3>
+<div id="examen-du-nb-de-facteur" class="section level4">
+<h4>examen du nb de facteur</h4>
+<pre><code>## Principal Components Analysis
+## Call: principal(r = QSREIC_alpha, nfactors = 5, rotate = &quot;varimax&quot;, 
+##     scores = FALSE)
+## Standardized loadings (pattern matrix) based upon correlation matrix
+##                   RC1   RC3   RC2   RC5   RC4   h2   u2 com
+## Q14___QSREIC_1  -0.26  0.25  0.45  0.07  0.07 0.35 0.65 2.4
+## Q14___QSREIC_2   0.10 -0.17  0.15  0.63 -0.10 0.47 0.53 1.4
+## Q14___QSREIC_3   0.32 -0.29 -0.13  0.63  0.02 0.60 0.40 2.1
+## Q14___QSREIC_4  -0.57  0.22  0.36  0.01  0.14 0.53 0.47 2.2
+## Q14___QSREIC_5   0.54 -0.18 -0.54 -0.04 -0.17 0.65 0.35 2.4
+## Q14___QSREIC_6  -0.44  0.25  0.10  0.50  0.08 0.53 0.47 2.6
+## Q14___QSREIC_7   0.28 -0.02 -0.11  0.60  0.08 0.46 0.54 1.5
+## Q14___QSREIC_8   0.47 -0.35 -0.14  0.35  0.15 0.52 0.48 3.2
+## Q14___QSREIC_9   0.00  0.01  0.08  0.04  0.78 0.62 0.38 1.0
+## Q14___QSREIC_10  0.63 -0.19 -0.30  0.26  0.14 0.61 0.39 2.1
+## Q14___QSREIC_11  0.47 -0.16 -0.06  0.17  0.15 0.30 0.70 1.8
+## Q14___QSREIC_12  0.37 -0.21  0.20  0.18  0.14 0.27 0.73 3.1
+## Q14___QSREIC_13 -0.48  0.55  0.24 -0.09  0.09 0.61 0.39 2.5
+## Q14___QSREIC_14 -0.05  0.67  0.11 -0.17  0.14 0.51 0.49 1.3
+## Q14___QSREIC_15  0.04  0.69 -0.09 -0.10 -0.07 0.50 0.50 1.1
+## Q14___QSREIC_16  0.67 -0.31 -0.23  0.15  0.21 0.66 0.34 2.0
+## Q14___QSREIC_17  0.11  0.11  0.01 -0.01  0.81 0.68 0.32 1.1
+## Q14___QSREIC_18  0.68 -0.05 -0.24  0.16  0.07 0.55 0.45 1.4
+## Q14___QSREIC_19  0.53 -0.22 -0.45  0.01 -0.19 0.56 0.44 2.6
+## Q14___QSREIC_20 -0.21  0.58  0.26 -0.04  0.07 0.46 0.54 1.7
+## Q14___QSREIC_21  0.57  0.15  0.29  0.18 -0.14 0.48 0.52 2.0
+## Q14___QSREIC_22 -0.17  0.32  0.66 -0.05  0.00 0.57 0.43 1.6
+## Q14___QSREIC_23 -0.61  0.39  0.30  0.13  0.00 0.63 0.37 2.4
+## Q14___QSREIC_24  0.65  0.06  0.13  0.11 -0.01 0.46 0.54 1.2
+## Q14___QSREIC_25  0.11 -0.09  0.69  0.03 -0.08 0.51 0.49 1.1
+## Q14___QSREIC_26  0.09 -0.06 -0.67  0.07 -0.07 0.47 0.53 1.1
+## Q14___QSREIC_27 -0.40  0.60  0.20  0.02  0.02 0.56 0.44 2.0
+## 
+##                        RC1  RC3  RC2  RC5  RC4
+## SS loadings           4.87 2.92 2.91 1.84 1.58
+## Proportion Var        0.18 0.11 0.11 0.07 0.06
+## Cumulative Var        0.18 0.29 0.40 0.46 0.52
+## Proportion Explained  0.35 0.21 0.21 0.13 0.11
+## Cumulative Proportion 0.35 0.55 0.76 0.89 1.00
+## 
+## Mean item complexity =  1.9
+## Test of the hypothesis that 5 components are sufficient.
+## 
+## The root mean square of the residuals (RMSR) is  0.06 
+##  with the empirical chi square  1274.78  with prob &lt;  1.2e-145 
+## 
+## Fit based upon off diagonal values = 0.96</code></pre>
+<pre><code>## Principal Components Analysis
+## Call: principal(r = QSREIC_alpha, nfactors = 5, rotate = &quot;varimax&quot;, 
+##     scores = FALSE)
+## Standardized loadings (pattern matrix) based upon correlation matrix
+##                   RC1   RC3   RC2   RC5   RC4   h2   u2 com
+## Q14___QSREIC_1               0.45             0.35 0.65 2.4
+## Q14___QSREIC_2                     0.63       0.47 0.53 1.4
+## Q14___QSREIC_3   0.32              0.63       0.60 0.40 2.1
+## Q14___QSREIC_4  -0.57        0.36             0.53 0.47 2.2
+## Q14___QSREIC_5   0.54       -0.54             0.65 0.35 2.4
+## Q14___QSREIC_6  -0.44              0.50       0.53 0.47 2.6
+## Q14___QSREIC_7                     0.60       0.46 0.54 1.5
+## Q14___QSREIC_8   0.47 -0.35        0.35       0.52 0.48 3.2
+## Q14___QSREIC_9                           0.78 0.62 0.38 1.0
+## Q14___QSREIC_10  0.63       -0.30             0.61 0.39 2.1
+## Q14___QSREIC_11  0.47                         0.30 0.70 1.8
+## Q14___QSREIC_12  0.37                         0.27 0.73 3.1
+## Q14___QSREIC_13 -0.48  0.55                   0.61 0.39 2.5
+## Q14___QSREIC_14        0.67                   0.51 0.49 1.3
+## Q14___QSREIC_15        0.69                   0.50 0.50 1.1
+## Q14___QSREIC_16  0.67 -0.31                   0.66 0.34 2.0
+## Q14___QSREIC_17                          0.81 0.68 0.32 1.1
+## Q14___QSREIC_18  0.68                         0.55 0.45 1.4
+## Q14___QSREIC_19  0.53       -0.45             0.56 0.44 2.6
+## Q14___QSREIC_20        0.58                   0.46 0.54 1.7
+## Q14___QSREIC_21  0.57                         0.48 0.52 2.0
+## Q14___QSREIC_22        0.32  0.66             0.57 0.43 1.6
+## Q14___QSREIC_23 -0.61  0.39                   0.63 0.37 2.4
+## Q14___QSREIC_24  0.65                         0.46 0.54 1.2
+## Q14___QSREIC_25              0.69             0.51 0.49 1.1
+## Q14___QSREIC_26             -0.67             0.47 0.53 1.1
+## Q14___QSREIC_27 -0.40  0.60                   0.56 0.44 2.0
+## 
+##                        RC1  RC3  RC2  RC5  RC4
+## SS loadings           4.87 2.92 2.91 1.84 1.58
+## Proportion Var        0.18 0.11 0.11 0.07 0.06
+## Cumulative Var        0.18 0.29 0.40 0.46 0.52
+## Proportion Explained  0.35 0.21 0.21 0.13 0.11
+## Cumulative Proportion 0.35 0.55 0.76 0.89 1.00
+## 
+## Mean item complexity =  1.9
+## Test of the hypothesis that 5 components are sufficient.
+## 
+## The root mean square of the residuals (RMSR) is  0.06 
+##  with the empirical chi square  1274.78  with prob &lt;  1.2e-145 
+## 
+## Fit based upon off diagonal values = 0.96</code></pre>
+</div>
+</div>
+<div id="oblique-rotation" class="section level3">
+<h3>oblique rotation</h3>
+<pre><code>## Principal Components Analysis
+## Call: principal(r = QSREIC_alpha, nfactors = 5, rotate = &quot;oblimin&quot;)
+## Standardized loadings (pattern matrix) based upon correlation matrix
+##                 item   TC1   TC3   TC2   TC5   TC4   h2   u2 com
+## Q14___QSREIC_24   24  0.69                         0.46 0.54 1.4
+## Q14___QSREIC_18   18  0.68                         0.55 0.45 1.2
+## Q14___QSREIC_16   16  0.62                         0.66 0.34 1.6
+## Q14___QSREIC_21   21  0.61        0.39             0.48 0.52 2.3
+## Q14___QSREIC_23   23 -0.60  0.30                   0.63 0.37 1.8
+## Q14___QSREIC_10   10  0.59                         0.61 0.39 1.7
+## Q14___QSREIC_4     4 -0.58                         0.53 0.47 1.4
+## Q14___QSREIC_5     5  0.56       -0.42             0.65 0.35 2.0
+## Q14___QSREIC_19   19  0.54       -0.31             0.56 0.44 1.9
+## Q14___QSREIC_11   11  0.43                         0.30 0.70 1.7
+## Q14___QSREIC_8     8  0.37              0.33       0.52 0.48 3.3
+## Q14___QSREIC_12   12  0.32                         0.27 0.73 3.6
+## Q14___QSREIC_15   15        0.76                   0.50 0.50 1.2
+## Q14___QSREIC_14   14        0.68                   0.51 0.49 1.2
+## Q14___QSREIC_27   27 -0.34  0.56                   0.56 0.44 1.7
+## Q14___QSREIC_20   20        0.56                   0.46 0.54 1.3
+## Q14___QSREIC_13   13 -0.41  0.48                   0.61 0.39 2.1
+## Q14___QSREIC_25   25              0.74             0.51 0.49 1.2
+## Q14___QSREIC_26   26             -0.66             0.47 0.53 1.1
+## Q14___QSREIC_22   22              0.61             0.57 0.43 1.4
+## Q14___QSREIC_1     1              0.38             0.35 0.65 2.4
+## Q14___QSREIC_2     2                    0.64       0.47 0.53 1.3
+## Q14___QSREIC_3     3                    0.63       0.60 0.40 1.5
+## Q14___QSREIC_7     7                    0.61       0.46 0.54 1.3
+## Q14___QSREIC_6     6 -0.53              0.53       0.53 0.47 2.3
+## Q14___QSREIC_17   17                          0.82 0.68 0.32 1.1
+## Q14___QSREIC_9     9                          0.78 0.62 0.38 1.0
+## 
+##                        TC1  TC3  TC2  TC5  TC4
+## SS loadings           5.09 2.89 2.54 1.98 1.62
+## Proportion Var        0.19 0.11 0.09 0.07 0.06
+## Cumulative Var        0.19 0.30 0.39 0.46 0.52
+## Proportion Explained  0.36 0.20 0.18 0.14 0.11
+## Cumulative Proportion 0.36 0.57 0.75 0.89 1.00
+## 
+##  With component correlations of 
+##       TC1   TC3   TC2   TC5  TC4
+## TC1  1.00 -0.34 -0.25  0.20 0.00
+## TC3 -0.34  1.00  0.25 -0.13 0.05
+## TC2 -0.25  0.25  1.00  0.03 0.06
+## TC5  0.20 -0.13  0.03  1.00 0.10
+## TC4  0.00  0.05  0.06  0.10 1.00
+## 
+## Mean item complexity =  1.7
+## Test of the hypothesis that 5 components are sufficient.
+## 
+## The root mean square of the residuals (RMSR) is  0.06 
+##  with the empirical chi square  1274.78  with prob &lt;  1.2e-145 
+## 
+## Fit based upon off diagonal values = 0.96</code></pre>
+<pre><code>##                         TC1         TC3         TC2          TC5         TC4
+## Q14___QSREIC_1  -0.38807466  0.34306059  0.48721831  0.023440546  0.10395635
+## Q14___QSREIC_2   0.11076894 -0.19323240  0.13618007  0.647374578 -0.06328678
+## Q14___QSREIC_3   0.39604757 -0.38280115 -0.16318763  0.690076819  0.04642046
+## Q14___QSREIC_4  -0.66586665  0.35507705  0.39672137 -0.092514614  0.13759014
+## Q14___QSREIC_5   0.66584028 -0.32890683 -0.57272687  0.045181629 -0.18396784
+## Q14___QSREIC_6  -0.47976879  0.30115352  0.15275913  0.401056261  0.10020580
+## Q14___QSREIC_7   0.30936786 -0.10903937 -0.10888916  0.642931107  0.11879771
+## Q14___QSREIC_8   0.54475295 -0.46079375 -0.19019682  0.454767628  0.16017127
+## Q14___QSREIC_9  -0.04865405  0.01706618  0.07627394  0.073405618  0.78384983
+## Q14___QSREIC_10  0.70526793 -0.33724448 -0.33544608  0.374200678  0.15880315
+## Q14___QSREIC_11  0.48760228 -0.25031124 -0.08635243  0.266901287  0.17080349
+## Q14___QSREIC_12  0.35155035 -0.24659631  0.16566952  0.264417539  0.17047333
+## Q14___QSREIC_13 -0.60564867  0.64881712  0.31507403 -0.194348992  0.10466924
+## Q14___QSREIC_14 -0.17933977  0.68498034  0.18039978 -0.201395171  0.17355461
+## Q14___QSREIC_15 -0.04380989  0.66015739 -0.01319890 -0.125929053 -0.03559358
+## Q14___QSREIC_16  0.73825592 -0.44592595 -0.28271394  0.283706271  0.21907161
+## Q14___QSREIC_17  0.06016728  0.09700068  0.01379563  0.041962750  0.81955171
+## Q14___QSREIC_18  0.71410599 -0.19684445 -0.25537756  0.280848429  0.09804213
+## Q14___QSREIC_19  0.64496533 -0.36088044 -0.47837136  0.100114742 -0.19545130
+## Q14___QSREIC_20 -0.34529138  0.63935957  0.32894796 -0.098067255  0.10494005
+## Q14___QSREIC_21  0.47328321  0.08084837  0.29748437  0.271148786 -0.07578861
+## Q14___QSREIC_22 -0.34773232  0.42645338  0.69614305 -0.076887066  0.05053627
+## Q14___QSREIC_23 -0.70292014  0.51314605  0.35637308  0.009333617  0.01456183
+## Q14___QSREIC_24  0.59702539 -0.03408935  0.12400663  0.230020917  0.04473548
+## Q14___QSREIC_25 -0.02150385 -0.01858983  0.67377844  0.072548106 -0.03334923
+## Q14___QSREIC_26  0.23662631 -0.16162820 -0.67131896  0.071211140 -0.10653026
+## Q14___QSREIC_27 -0.52448718  0.67431718  0.27750504 -0.079304104  0.04228472</code></pre>
+<pre><code>##                   TC1   TC3   TC2  TC5  TC4
+## Q14___QSREIC_16  0.74 -0.45                
+## Q14___QSREIC_18  0.71                      
+## Q14___QSREIC_10  0.71 -0.34 -0.34 0.37     
+## Q14___QSREIC_23  -0.7  0.51  0.36          
+## Q14___QSREIC_4  -0.67  0.36   0.4          
+## Q14___QSREIC_5   0.67 -0.33 -0.57          
+## Q14___QSREIC_19  0.64 -0.36 -0.48          
+## Q14___QSREIC_24   0.6                      
+## Q14___QSREIC_8   0.54 -0.46       0.45     
+## Q14___QSREIC_11  0.49                      
+## Q14___QSREIC_6  -0.48   0.3        0.4     
+## Q14___QSREIC_21  0.47                      
+## Q14___QSREIC_12  0.35                      
+## Q14___QSREIC_14        0.68                
+## Q14___QSREIC_27 -0.52  0.67                
+## Q14___QSREIC_15        0.66                
+## Q14___QSREIC_13 -0.61  0.65  0.32          
+## Q14___QSREIC_20 -0.35  0.64  0.33          
+## Q14___QSREIC_22 -0.35  0.43   0.7          
+## Q14___QSREIC_25              0.67          
+## Q14___QSREIC_26             -0.67          
+## Q14___QSREIC_1  -0.39  0.34  0.49          
+## Q14___QSREIC_3    0.4 -0.38       0.69     
+## Q14___QSREIC_2                    0.65     
+## Q14___QSREIC_7   0.31             0.64     
+## Q14___QSREIC_17                        0.82
+## Q14___QSREIC_9                         0.78</code></pre>
 </div>
 </div>
 
