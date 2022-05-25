@@ -550,7 +550,7 @@ residual.stats<-function(matrix){
 }
 ```
 ```{r, echo=FALSE}
-#Factor rotation # page 788 de Field
+#Factor rotation # page 788 de Field # jusqu'ici validation ok
 
 
 ```
