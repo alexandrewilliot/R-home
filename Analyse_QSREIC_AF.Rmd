@@ -598,6 +598,9 @@ ACP_5 <- cbind(ACP_5, ACP_5$scores)
 
 #http://rstudio-pubs-static.s3.amazonaws.com/11011_caa8639a12cb488aba3df58c696626bb.html
 
+
+# voir pour passer en EQS
+
 ```
 
 
