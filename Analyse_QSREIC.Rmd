@@ -1,5 +1,5 @@
 ---
-title: "Analyse"
+title: "Analyse_QSREIC"
 author: "alexandre.williot.1@ulaval.ca"
 date: "05/2022"
 output: 
@@ -8,7 +8,7 @@ output:
     theme: united
 ---
 
-#### LEGENDE :
+#### LEGENDE : SANS sous-échelle planif, drama, culpa
 
 ```{r chargement fichier, include=FALSE}
 
@@ -211,10 +211,10 @@ data_6$Interna <- data_6$Q13___Internalisatio_1 + data_6$Q13___Internalisatio_2 
 # calcul sous-dim du QSREIC
 
 #dramatisation : 4 items
-data_6$QSREIC_dramatisation <- data_6$Q14___QSREIC_1 + data_6$Q14___QSREIC_9 + data_6$Q14___QSREIC_14 + data_6$Q14___QSREIC_17
+# data_6$QSREIC_dramatisation <- data_6$Q14___QSREIC_1 + data_6$Q14___QSREIC_9 + data_6$Q14___QSREIC_14 + data_6$Q14___QSREIC_17
 
 #planification : 4 items
-data_6$QSREIC_planif <- data_6$Q14___QSREIC_2 + data_6$Q14___QSREIC_11 + data_6$Q14___QSREIC_12 + data_6$Q14___QSREIC_25
+# data_6$QSREIC_planif <- data_6$Q14___QSREIC_2 + data_6$Q14___QSREIC_11 + data_6$Q14___QSREIC_12 + data_6$Q14___QSREIC_25
 
 #recentrage : 3 items
 data_6$QSREIC_recentrage <- data_6$Q14___QSREIC_3 + data_6$Q14___QSREIC_7 + data_6$Q14___QSREIC_18 
@@ -229,7 +229,7 @@ data_6$Q14___QSREIC_26 <- recode(data_6$Q14___QSREIC_26, "1=5; 2=4; 3=3;4=2; 5=1
 data_6$QSREIC_social <- data_6$Q14___QSREIC_5 + data_6$Q14___QSREIC_8 + data_6$Q14___QSREIC_19 + data_6$Q14___QSREIC_26
 
 #culpa : 2 items
-data_6$QSREIC_culpa <- data_6$Q14___QSREIC_6 + data_6$Q14___QSREIC_13
+#data_6$QSREIC_culpa <- data_6$Q14___QSREIC_6 + data_6$Q14___QSREIC_13
 
 #refus : 4 items
 data_6$QSREIC_refus <- data_6$Q14___QSREIC_10 + data_6$Q14___QSREIC_16 + data_6$Q14___QSREIC_21 + data_6$Q14___QSREIC_24
@@ -244,9 +244,9 @@ data_6$QSREIC_physique<- data_6$Q14___QSREIC_23 + data_6$Q14___QSREIC_4
 data_6$QSREIC_évitement <- data_6$Q14___QSREIC_27 + data_6$Q14___QSREIC_20 +  data_6$Q14___QSREIC_15
 
 
-data_6$CERQ_ADA <- data_6$QSREIC_planif + data_6$QSREIC_recentrage + data_6$QSREIC_social + data_6$QSREIC_refus 
+data_6$CERQ_ADA <-  data_6$QSREIC_recentrage + data_6$QSREIC_social + data_6$QSREIC_refus 
 
-data_6$CERQ_MAL <- data_6$QSREIC_dramatisation + data_6$QSREIC_physique + data_6$QSREIC_culpa + data_6$QSREIC_rumination + data_6$QSREIC_évitement
+data_6$CERQ_MAL <-  data_6$QSREIC_physique +  data_6$QSREIC_rumination + data_6$QSREIC_évitement
 
 ```
 
@@ -257,6 +257,8 @@ data_6$CERQ_MAL <- data_6$QSREIC_dramatisation + data_6$QSREIC_physique + data_6
 
 ```{r, echo=FALSE}
 QSREIC_alpha <- subset(data_6, select = c(81:107))
+
+QSREIC_alpha<- QSREIC_alpha[,-c(1,2,6,9,11,12,13,14,25,17)]
 
 #calculate Cronbach's Alpha
 cronbach.alpha(QSREIC_alpha , CI=TRUE, standardized=TRUE)
@@ -275,11 +277,11 @@ alpha(QSREIC_alpha)
 #alpha des sous-échelles de QSREIC
 
 
-QSREIC_dram <-subset(data_6, select = c( Q14___QSREIC_1 ,  Q14___QSREIC_9 ,  Q14___QSREIC_14 , Q14___QSREIC_17))
-alpha(QSREIC_dram)
+# QSREIC_dram <-subset(data_6, select = c( Q14___QSREIC_1 ,  Q14___QSREIC_9 ,  Q14___QSREIC_14 , Q14___QSREIC_17))
+# alpha(QSREIC_dram)
 
-QSREIC_planif <-subset(data_6, select = c( Q14___QSREIC_2 ,  Q14___QSREIC_11 ,  Q14___QSREIC_12 , Q14___QSREIC_25))
-alpha(QSREIC_planif)
+# QSREIC_planif <-subset(data_6, select = c( Q14___QSREIC_2 ,  Q14___QSREIC_11 ,  Q14___QSREIC_12 , Q14___QSREIC_25))
+# alpha(QSREIC_planif)
 
 QSREIC_recentrage <-subset(data_6, select = c( Q14___QSREIC_3 ,  Q14___QSREIC_7 ,  Q14___QSREIC_18))
 alpha(QSREIC_recentrage)
@@ -287,8 +289,8 @@ alpha(QSREIC_recentrage)
 QSREIC_social  <-subset(data_6, select = c( Q14___QSREIC_5 ,  Q14___QSREIC_8 ,  Q14___QSREIC_19, Q14___QSREIC_26))
 alpha(QSREIC_social)
 
-QSREIC_culpa <-subset(data_6, select = c( Q14___QSREIC_6 ,  Q14___QSREIC_13 ))
-alpha(QSREIC_culpa)
+# QSREIC_culpa <-subset(data_6, select = c( Q14___QSREIC_6 ,  Q14___QSREIC_13 ))
+# alpha(QSREIC_culpa)
 
 QSREIC_refus  <-subset(data_6, select = c( Q14___QSREIC_10 ,  Q14___QSREIC_16 ,  Q14___QSREIC_21, Q14___QSREIC_24))
 alpha(QSREIC_refus)
@@ -304,10 +306,12 @@ alpha(QSREIC_évitement)
 
 
 
-QSREIC_ADA <-subset(data_6, select = c( Q14___QSREIC_2 ,  Q14___QSREIC_11 ,  Q14___QSREIC_12 , Q14___QSREIC_25, Q14___QSREIC_3 ,  Q14___QSREIC_7 ,  Q14___QSREIC_18, Q14___QSREIC_5 ,  Q14___QSREIC_8 ,  Q14___QSREIC_19, Q14___QSREIC_26, Q14___QSREIC_10 ,  Q14___QSREIC_16 ,  Q14___QSREIC_21, Q14___QSREIC_24))
+QSREIC_ADA <-subset(data_6, select = c( Q14___QSREIC_3 ,  Q14___QSREIC_7 ,  Q14___QSREIC_18, Q14___QSREIC_5 ,  Q14___QSREIC_8 ,  Q14___QSREIC_19, Q14___QSREIC_26, Q14___QSREIC_10 ,  Q14___QSREIC_16 ,  Q14___QSREIC_21, Q14___QSREIC_24))
+
 alpha(QSREIC_ADA)
 
-QSREIC_MAL <-subset(data_6, select = c( Q14___QSREIC_1 ,  Q14___QSREIC_9 ,  Q14___QSREIC_14 , Q14___QSREIC_17, Q14___QSREIC_23 ,  Q14___QSREIC_4, Q14___QSREIC_6 ,  Q14___QSREIC_13, Q14___QSREIC_22, Q14___QSREIC_27 ,  Q14___QSREIC_20, Q14___QSREIC_15))
+QSREIC_MAL <-subset(data_6, select = c( Q14___QSREIC_23 ,  Q14___QSREIC_4, Q14___QSREIC_22, Q14___QSREIC_27 ,  Q14___QSREIC_20, Q14___QSREIC_15))
+
 alpha(QSREIC_MAL)
 
 ```
@@ -493,7 +497,7 @@ det(matrice)
 ```{r ACP, echo=FALSE}
 #ACP
 #On raw data # peut indiquer autant de facteur que variable pour ACP mais pas AF (voir point d'inflexion)
-ACP_1 <-  principal(QSREIC_alpha, nfactors = 27, rotate = "none", scores = FALSE)
+ACP_1 <-  principal(QSREIC_alpha, nfactors = 17, rotate = "none", scores = FALSE)
 ACP_1
 #h2 est communality (porportion de variance commune au sein d'une variable) ; 1 car 1 var = 1 facteur ici
 #u2 est uniqueness (1- communality); représente la variance unique pour chaque variable

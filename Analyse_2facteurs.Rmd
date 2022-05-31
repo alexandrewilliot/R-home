@@ -1,5 +1,5 @@
 ---
-title: "Analyse"
+title: "Analyse_2facteurs"
 author: "alexandre.williot.1@ulaval.ca"
 date: "05/2022"
 output: 
@@ -489,7 +489,7 @@ det(matrice)
 ```
 
 ### ACP
-#### factors = 27 (graphe point d'inflexion) puis 5
+#### factors = 27 (graphe point d'inflexion) puis 2
 ```{r ACP, echo=FALSE}
 #ACP
 #On raw data # peut indiquer autant de facteur que variable pour ACP mais pas AF (voir point d'inflexion)
@@ -505,7 +505,7 @@ ACP_1
 #graphe de eigenvalue VS nb facteur
 plot(ACP_1$values, type = "b") # pour point d'inflexion # 5 ici
 
-ACP_2 <-  principal(QSREIC_alpha, nfactors = 5, rotate = "none", scores = FALSE)
+ACP_2 <-  principal(QSREIC_alpha, nfactors = 2, rotate = "none", scores = FALSE)
 ACP_2 # Fit based upon off diagonal values = 0.96 sup à 0.95 dc ok (examen des résidus)
 #si moins de 30 variables et communality sup à 0.7 et échantillon sup à 250 and average communality sup à 0.6 (les additionner et / leur nb)
 
@@ -563,7 +563,7 @@ residual.stats<-function(matrix){
 #maximise le fit avec un facteur et l'éloignement des autres
 # si facteur non relié alors varimax (orthogonal)
 # si facteur sont reliés alors promax ou oblimin
-ACP_3 <-  principal(QSREIC_alpha, nfactors = 5, rotate = "varimax", scores = FALSE)
+ACP_3 <-  principal(QSREIC_alpha, nfactors = 2, rotate = "varimax", scores = FALSE)
 ACP_3
 
 #réorganiser items selon facteurs
@@ -576,7 +576,7 @@ print.psych(ACP_3, cut = 0.3, sort = FALSE)
 ### oblique rotation
 ```{r, echo=FALSE}
 # si corrélation entre les composants
-ACP_4 <- principal(QSREIC_alpha, nfactors = 5, rotate = "oblimin")
+ACP_4 <- principal(QSREIC_alpha, nfactors = 2, rotate = "oblimin")
 print.psych(ACP_4, cut = 0.3, sort = TRUE)
 
 # indication des corrélations entre les composantes
@@ -601,12 +601,6 @@ factor.structure(ACP_4, cut = 0.3)
 
 
 ```{r, echo=FALSE}
-ACP_5 <- principal(QSREIC_alpha, nfactors = 5, rotate = "oblimin", scores = TRUE)
-#ACP_5$scores # trop d'information
-head(ACP_5$scores, 10)
-
-#intégrer score pour autres analyses
-ACP_5 <- cbind(ACP_5, ACP_5$scores)
 
 ```
 
