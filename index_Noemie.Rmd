@@ -1,0 +1,34 @@
+---
+title: "Resultats Projet Noemie"
+author: "alexandre.williot@uqtr.ca"
+date: "06/2022"
+output: 
+  html_document:
+    toc: TRUE
+    theme: united
+
+
+---
+
+******************************************************************************
+
+# hommes et femmes (n=578)
+## Resultats basés sur échelle originale - 27 items
+#### alpha faible pour planif, drama, culpa
+#### adaptatif = 0.82 ; maladaptatif = 0.79
+[file here:] (https://alexandrewilliot.github.io/R-home/Analyse.html)
+
+## Resultats SANS sous-échelle planif, drama, culpa (alpha faible)
+#### adaptatif = 0.83 ; maladaptatif = 0.75
+[file here:] (https://alexandrewilliot.github.io/R-home/Analyse_QSREIC.html)
+
+## Resultats avec nouvelles sous-échelles (5) (aprés Analyse factorielle)
+#### adaptatif = 0.88 ; maladaptatif = 0.61
+[file here:] (https://alexandrewilliot.github.io/R-home/Analyse_QSREIC_AF.html)
+
+## Resultats avec 2 facteurs pour analyse factorielle (échelle originale 27 items)
+#### 37% de variance cumulé
+[file here:] (https://alexandrewilliot.github.io/R-home/Analyse_2facteurs.html)
+
+
+
