@@ -32,6 +32,11 @@ output:
 
 ## Resultats avec 2 facteurs pour analyse factorielle (échelle modifié)
 #### aprés avoir retiré les items présents aux 2 facteurs de la même façon (9,17,25) et adapté alpha mal et ada selon analyse factorielle ## Résultats VALIDES QUE POUR ALPHA MAL ET ADA ET AF !
-#### 40% de variance cumulé
+#### d'autres items se placent sur les 2 facteurs
 [file here:] (https://alexandrewilliot.github.io/R-home/Analyse_2facteurs_select.html)
+
+## Resultats avec 2 facteurs pour analyse factorielle (échelle modifié 2)
+#### aprés avoir retiré les items présents aux 2 facteurs (9,17,25,10,18,16,8) et adapté alpha mal et ada selon analyse factorielle ## Résultats VALIDES QUE POUR ALPHA MAL ET ADA ET AF !
+#### adaptatif = 0.66 ; maladaptatif = 0.87
+[file here:] (https://alexandrewilliot.github.io/R-home/Analyse_2facteurs_select_2.html)
 

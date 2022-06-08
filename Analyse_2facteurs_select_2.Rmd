@@ -1,5 +1,5 @@
 ---
-title: "Analyse_2facteurs_select"
+title: "Analyse_2facteurs_select_2"
 author: "alexandre.williot.1@ulaval.ca"
 date: "05/2022"
 output: 
@@ -264,7 +264,7 @@ data_6$CERQ_MAL <- data_6$QSREIC_dramatisation + data_6$QSREIC_physique + data_6
 ```{r, echo=FALSE}
 QSREIC_alpha <- subset(data_6, select = c(81:107))
 #supp items qui corrélent aux 2 dim 9,17,25
-QSREIC_alpha<- QSREIC_alpha[,-c(9,17,25)]
+QSREIC_alpha<- QSREIC_alpha[,-c(9,17,25,10,18,16,8)]
 
 #calculate Cronbach's Alpha
 cronbach.alpha(QSREIC_alpha , CI=TRUE, standardized=TRUE)
@@ -281,7 +281,6 @@ alpha(QSREIC_alpha)
 
 ```{r , echo=FALSE}
 #alpha des sous-échelles de QSREIC
-
 
 QSREIC_dram <-subset(data_6, select = c( Q14___QSREIC_1 ,   Q14___QSREIC_14))
 alpha(QSREIC_dram)
@@ -311,8 +310,9 @@ QSREIC_évitement  <-subset(data_6, select = c( Q14___QSREIC_27 ,  Q14___QSREIC_
 alpha(QSREIC_évitement)
 
 
+# supp 9,17,25,10,18,16,8
 
-QSREIC_ADA <-subset(data_6, select = c( Q14___QSREIC_2 ,  Q14___QSREIC_11 ,  Q14___QSREIC_12 , Q14___QSREIC_3 ,  Q14___QSREIC_7 ,  Q14___QSREIC_18,   Q14___QSREIC_8 ,    Q14___QSREIC_10 ,    Q14___QSREIC_21, Q14___QSREIC_24))
+QSREIC_ADA <-subset(data_6, select = c( Q14___QSREIC_2 ,  Q14___QSREIC_11 ,  Q14___QSREIC_12 , Q14___QSREIC_3 ,  Q14___QSREIC_7 ,   Q14___QSREIC_21, Q14___QSREIC_24))
 alpha(QSREIC_ADA)
 
 #déplacement de ADA vers MAL selon AF: 5, 19, 26, 16 (sup)
