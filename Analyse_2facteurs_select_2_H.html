@@ -9,10 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="alexandre.williot@uqtr.ca" />
+<meta name="author" content="alexandre.williot.1@ulaval.ca" />
 
 
-<title>Resultats Projet Noemie</title>
+<title>Analyse_2facteurs_select_2_H</title>
 
 <script>/*! jQuery v1.11.3 | (c) 2005, 2015 jQuery Foundation, Inc. | jquery.org/license */
 !function(a,b){"object"==typeof module&&"object"==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error("jQuery requires a window with a document");return b(a)}:b(a)}("undefined"!=typeof window?window:this,function(a,b){var c=[],d=c.slice,e=c.concat,f=c.push,g=c.indexOf,h={},i=h.toString,j=h.hasOwnProperty,k={},l="1.11.3",m=function(a,b){return new m.fn.init(a,b)},n=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,o=/^-ms-/,p=/-([\da-z])/gi,q=function(a,b){return b.toUpperCase()};m.fn=m.prototype={jquery:l,constructor:m,selector:"",length:0,toArray:function(){return d.call(this)},get:function(a){return null!=a?0>a?this[a+this.length]:this[a]:d.call(this)},pushStack:function(a){var b=m.merge(this.constructor(),a);return b.prevObject=this,b.context=this.context,b},each:function(a,b){return m.each(this,a,b)},map:function(a){return this.pushStack(m.map(this,function(b,c){return a.call(b,c,b)}))},slice:function(){return this.pushStack(d.apply(this,arguments))},first:function(){return this.eq(0)},last:function(){return this.eq(-1)},eq:function(a){var b=this.length,c=+a+(0>a?b:0);return this.pushStack(c>=0&&b>c?[this[c]]:[])},end:function(){return this.prevObject||this.constructor(null)},push:f,sort:c.sort,splice:c.splice},m.extend=m.fn.extend=function(){var a,b,c,d,e,f,g=arguments[0]||{},h=1,i=arguments.length,j=!1;for("boolean"==typeof g&&(j=g,g=arguments[h]||{},h++),"object"==typeof g||m.isFunction(g)||(g={}),h===i&&(g=this,h--);i>h;h++)if(null!=(e=arguments[h]))for(d in e)a=g[d],c=e[d],g!==c&&(j&&c&&(m.isPlainObject(c)||(b=m.isArray(c)))?(b?(b=!1,f=a&&m.isArray(a)?a:[]):f=a&&m.isPlainObject(a)?a:{},g[d]=m.extend(j,f,c)):void 0!==c&&(g[d]=c));return g},m.extend({expando:"jQuery"+(l+Math.random()).replace(/\D/g,""),isReady:!0,error:function(a){throw new Error(a)},noop:function(){},isFunction:function(a){return"function"===m.type(a)},isArray:Array.isArray||function(a){return"array"===m.type(a)},isWindow:function(a){return null!=a&&a==a.window},isNumeric:function(a){return!m.isArray(a)&&a-parseFloat(a)+1>=0},isEmptyObject:function(a){var b;for(b in a)return!1;return!0},isPlainObject:function(a){var b;if(!a||"object"!==m.type(a)||a.nodeType||m.isWindow(a))return!1;try{if(a.constructor&&!j.call(a,"constructor")&&!j.call(a.constructor.prototype,"isPrototypeOf"))return!1}catch(c){return!1}if(k.ownLast)for(b in a)return j.call(a,b);for(b in a);return void 0===b||j.call(a,b)},type:function(a){return null==a?a+"":"object"==typeof a||"function"==typeof a?h[i.call(a)]||"object":typeof a},globalEval:function(b){b&&m.trim(b)&&(a.execScript||function(b){a.eval.call(a,b)})(b)},camelCase:function(a){return a.replace(o,"ms-").replace(p,q)},nodeName:function(a,b){return a.nodeName&&a.nodeName.toLowerCase()===b.toLowerCase()},each:function(a,b,c){var d,e=0,f=a.length,g=r(a);if(c){if(g){for(;f>e;e++)if(d=b.apply(a[e],c),d===!1)break}else for(e in a)if(d=b.apply(a[e],c),d===!1)break}else if(g){for(;f>e;e++)if(d=b.call(a[e],e,a[e]),d===!1)break}else for(e in a)if(d=b.call(a[e],e,a[e]),d===!1)break;return a},trim:function(a){return null==a?"":(a+"").replace(n,"")},makeArray:function(a,b){var c=b||[];return null!=a&&(r(Object(a))?m.merge(c,"string"==typeof a?[a]:a):f.call(c,a)),c},inArray:function(a,b,c){var d;if(b){if(g)return g.call(b,a,c);for(d=b.length,c=c?0>c?Math.max(0,d+c):c:0;d>c;c++)if(c in b&&b[c]===a)return c}return-1},merge:function(a,b){var c=+b.length,d=0,e=a.length;while(c>d)a[e++]=b[d++];if(c!==c)while(void 0!==b[d])a[e++]=b[d++];return a.length=e,a},grep:function(a,b,c){for(var d,e=[],f=0,g=a.length,h=!c;g>f;f++)d=!b(a[f],f),d!==h&&e.push(a[f]);return e},map:function(a,b,c){var d,f=0,g=a.length,h=r(a),i=[];if(h)for(;g>f;f++)d=b(a[f],f,c),null!=d&&i.push(d);else for(f in a)d=b(a[f],f,c),null!=d&&i.push(d);return e.apply([],i)},guid:1,proxy:function(a,b){var c,e,f;return"string"==typeof b&&(f=a[b],b=a,a=f),m.isFunction(a)?(c=d.call(arguments,2),e=function(){return a.apply(b||this,c.concat(d.call(arguments)))},e.guid=a.guid=a.guid||m.guid++,e):void 0},now:function(){return+new Date},support:k}),m.each("Boolean Number String Function Array Date RegExp Object Error".split(" "),function(a,b){h["[object "+b+"]"]=b.toLowerCase()});function r(a){var b="length"in a&&a.length,c=m.type(a);return"function"===c||m.isWindow(a)?!1:1===a.nodeType&&b?!0:"array"===c||0===b||"number"==typeof b&&b>0&&b-1 in a}var s=function(a){var b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u="sizzle"+1*new Date,v=a.document,w=0,x=0,y=ha(),z=ha(),A=ha(),B=function(a,b){return a===b&&(l=!0),0},C=1<<31,D={}.hasOwnProperty,E=[],F=E.pop,G=E.push,H=E.push,I=E.slice,J=function(a,b){for(var c=0,d=a.length;d>c;c++)if(a[c]===b)return c;return-1},K="checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",L="[\\x20\\t\\r\\n\\f]",M="(?:\\\\.|[\\w-]|[^\\x00-\\xa0])+",N=M.replace("w","w#"),O="\\["+L+"*("+M+")(?:"+L+"*([*^$|!~]?=)"+L+"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|("+N+"))|)"+L+"*\\]",P=":("+M+")(?:\\((('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|((?:\\\\.|[^\\\\()[\\]]|"+O+")*)|.*)\\)|)",Q=new RegExp(L+"+","g"),R=new RegExp("^"+L+"+|((?:^|[^\\\\])(?:\\\\.)*)"+L+"+$","g"),S=new RegExp("^"+L+"*,"+L+"*"),T=new RegExp("^"+L+"*([>+~]|"+L+")"+L+"*"),U=new RegExp("="+L+"*([^\\]'\"]*?)"+L+"*\\]","g"),V=new RegExp(P),W=new RegExp("^"+N+"$"),X={ID:new RegExp("^#("+M+")"),CLASS:new RegExp("^\\.("+M+")"),TAG:new RegExp("^("+M.replace("w","w*")+")"),ATTR:new RegExp("^"+O),PSEUDO:new RegExp("^"+P),CHILD:new RegExp("^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\("+L+"*(even|odd|(([+-]|)(\\d*)n|)"+L+"*(?:([+-]|)"+L+"*(\\d+)|))"+L+"*\\)|)","i"),bool:new RegExp("^(?:"+K+")$","i"),needsContext:new RegExp("^"+L+"*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\("+L+"*((?:-\\d)?\\d*)"+L+"*\\)|)(?=[^-]|$)","i")},Y=/^(?:input|select|textarea|button)$/i,Z=/^h\d$/i,$=/^[^{]+\{\s*\[native \w/,_=/^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,aa=/[+~]/,ba=/'|\\/g,ca=new RegExp("\\\\([\\da-f]{1,6}"+L+"?|("+L+")|.)","ig"),da=function(a,b,c){var d="0x"+b-65536;return d!==d||c?b:0>d?String.fromCharCode(d+65536):String.fromCharCode(d>>10|55296,1023&d|56320)},ea=function(){m()};try{H.apply(E=I.call(v.childNodes),v.childNodes),E[v.childNodes.length].nodeType}catch(fa){H={apply:E.length?function(a,b){G.apply(a,I.call(b))}:function(a,b){var c=a.length,d=0;while(a[c++]=b[d++]);a.length=c-1}}}function ga(a,b,d,e){var f,h,j,k,l,o,r,s,w,x;if((b?b.ownerDocument||b:v)!==n&&m(b),b=b||n,d=d||[],k=b.nodeType,"string"!=typeof a||!a||1!==k&&9!==k&&11!==k)return d;if(!e&&p){if(11!==k&&(f=_.exec(a)))if(j=f[1]){if(9===k){if(h=b.getElementById(j),!h||!h.parentNode)return d;if(h.id===j)return d.push(h),d}else if(b.ownerDocument&&(h=b.ownerDocument.getElementById(j))&&t(b,h)&&h.id===j)return d.push(h),d}else{if(f[2])return H.apply(d,b.getElementsByTagName(a)),d;if((j=f[3])&&c.getElementsByClassName)return H.apply(d,b.getElementsByClassName(j)),d}if(c.qsa&&(!q||!q.test(a))){if(s=r=u,w=b,x=1!==k&&a,1===k&&"object"!==b.nodeName.toLowerCase()){o=g(a),(r=b.getAttribute("id"))?s=r.replace(ba,"\\$&"):b.setAttribute("id",s),s="[id='"+s+"'] ",l=o.length;while(l--)o[l]=s+ra(o[l]);w=aa.test(a)&&pa(b.parentNode)||b,x=o.join(",")}if(x)try{return H.apply(d,w.querySelectorAll(x)),d}catch(y){}finally{r||b.removeAttribute("id")}}}return i(a.replace(R,"$1"),b,d,e)}function ha(){var a=[];function b(c,e){return a.push(c+" ")>d.cacheLength&&delete b[a.shift()],b[c+" "]=e}return b}function ia(a){return a[u]=!0,a}function ja(a){var b=n.createElement("div");try{return!!a(b)}catch(c){return!1}finally{b.parentNode&&b.parentNode.removeChild(b),b=null}}function ka(a,b){var c=a.split("|"),e=a.length;while(e--)d.attrHandle[c[e]]=b}function la(a,b){var c=b&&a,d=c&&1===a.nodeType&&1===b.nodeType&&(~b.sourceIndex||C)-(~a.sourceIndex||C);if(d)return d;if(c)while(c=c.nextSibling)if(c===b)return-1;return a?1:-1}function ma(a){return function(b){var c=b.nodeName.toLowerCase();return"input"===c&&b.type===a}}function na(a){return function(b){var c=b.nodeName.toLowerCase();return("input"===c||"button"===c)&&b.type===a}}function oa(a){return ia(function(b){return b=+b,ia(function(c,d){var e,f=a([],c.length,b),g=f.length;while(g--)c[e=f[g]]&&(c[e]=!(d[e]=c[e]))})})}function pa(a){return a&&"undefined"!=typeof a.getElementsByTagName&&a}c=ga.support={},f=ga.isXML=function(a){var b=a&&(a.ownerDocument||a).documentElement;return b?"HTML"!==b.nodeName:!1},m=ga.setDocument=function(a){var b,e,g=a?a.ownerDocument||a:v;return g!==n&&9===g.nodeType&&g.documentElement?(n=g,o=g.documentElement,e=g.defaultView,e&&e!==e.top&&(e.addEventListener?e.addEventListener("unload",ea,!1):e.attachEvent&&e.attachEvent("onunload",ea)),p=!f(g),c.attributes=ja(function(a){return a.className="i",!a.getAttribute("className")}),c.getElementsByTagName=ja(function(a){return a.appendChild(g.createComment("")),!a.getElementsByTagName("*").length}),c.getElementsByClassName=$.test(g.getElementsByClassName),c.getById=ja(function(a){return o.appendChild(a).id=u,!g.getElementsByName||!g.getElementsByName(u).length}),c.getById?(d.find.ID=function(a,b){if("undefined"!=typeof b.getElementById&&p){var c=b.getElementById(a);return c&&c.parentNode?[c]:[]}},d.filter.ID=function(a){var b=a.replace(ca,da);return function(a){return a.getAttribute("id")===b}}):(delete d.find.ID,d.filter.ID=function(a){var b=a.replace(ca,da);return function(a){var c="undefined"!=typeof a.getAttributeNode&&a.getAttributeNode("id");return c&&c.value===b}}),d.find.TAG=c.getElementsByTagName?function(a,b){return"undefined"!=typeof b.getElementsByTagName?b.getElementsByTagName(a):c.qsa?b.querySelectorAll(a):void 0}:function(a,b){var c,d=[],e=0,f=b.getElementsByTagName(a);if("*"===a){while(c=f[e++])1===c.nodeType&&d.push(c);return d}return f},d.find.CLASS=c.getElementsByClassName&&function(a,b){return p?b.getElementsByClassName(a):void 0},r=[],q=[],(c.qsa=$.test(g.querySelectorAll))&&(ja(function(a){o.appendChild(a).innerHTML="<a id='"+u+"'></a><select id='"+u+"-\f]' msallowcapture=''><option selected=''></option></select>",a.querySelectorAll("[msallowcapture^='']").length&&q.push("[*^$]="+L+"*(?:''|\"\")"),a.querySelectorAll("[selected]").length||q.push("\\["+L+"*(?:value|"+K+")"),a.querySelectorAll("[id~="+u+"-]").length||q.push("~="),a.querySelectorAll(":checked").length||q.push(":checked"),a.querySelectorAll("a#"+u+"+*").length||q.push(".#.+[+~]")}),ja(function(a){var b=g.createElement("input");b.setAttribute("type","hidden"),a.appendChild(b).setAttribute("name","D"),a.querySelectorAll("[name=d]").length&&q.push("name"+L+"*[*^$|!~]?="),a.querySelectorAll(":enabled").length||q.push(":enabled",":disabled"),a.querySelectorAll("*,:x"),q.push(",.*:")})),(c.matchesSelector=$.test(s=o.matches||o.webkitMatchesSelector||o.mozMatchesSelector||o.oMatchesSelector||o.msMatchesSelector))&&ja(function(a){c.disconnectedMatch=s.call(a,"div"),s.call(a,"[s!='']:x"),r.push("!=",P)}),q=q.length&&new RegExp(q.join("|")),r=r.length&&new RegExp(r.join("|")),b=$.test(o.compareDocumentPosition),t=b||$.test(o.contains)?function(a,b){var c=9===a.nodeType?a.documentElement:a,d=b&&b.parentNode;return a===d||!(!d||1!==d.nodeType||!(c.contains?c.contains(d):a.compareDocumentPosition&&16&a.compareDocumentPosition(d)))}:function(a,b){if(b)while(b=b.parentNode)if(b===a)return!0;return!1},B=b?function(a,b){if(a===b)return l=!0,0;var d=!a.compareDocumentPosition-!b.compareDocumentPosition;return d?d:(d=(a.ownerDocument||a)===(b.ownerDocument||b)?a.compareDocumentPosition(b):1,1&d||!c.sortDetached&&b.compareDocumentPosition(a)===d?a===g||a.ownerDocument===v&&t(v,a)?-1:b===g||b.ownerDocument===v&&t(v,b)?1:k?J(k,a)-J(k,b):0:4&d?-1:1)}:function(a,b){if(a===b)return l=!0,0;var c,d=0,e=a.parentNode,f=b.parentNode,h=[a],i=[b];if(!e||!f)return a===g?-1:b===g?1:e?-1:f?1:k?J(k,a)-J(k,b):0;if(e===f)return la(a,b);c=a;while(c=c.parentNode)h.unshift(c);c=b;while(c=c.parentNode)i.unshift(c);while(h[d]===i[d])d++;return d?la(h[d],i[d]):h[d]===v?-1:i[d]===v?1:0},g):n},ga.matches=function(a,b){return ga(a,null,null,b)},ga.matchesSelector=function(a,b){if((a.ownerDocument||a)!==n&&m(a),b=b.replace(U,"='$1']"),!(!c.matchesSelector||!p||r&&r.test(b)||q&&q.test(b)))try{var d=s.call(a,b);if(d||c.disconnectedMatch||a.document&&11!==a.document.nodeType)return d}catch(e){}return ga(b,n,null,[a]).length>0},ga.contains=function(a,b){return(a.ownerDocument||a)!==n&&m(a),t(a,b)},ga.attr=function(a,b){(a.ownerDocument||a)!==n&&m(a);var e=d.attrHandle[b.toLowerCase()],f=e&&D.call(d.attrHandle,b.toLowerCase())?e(a,b,!p):void 0;return void 0!==f?f:c.attributes||!p?a.getAttribute(b):(f=a.getAttributeNode(b))&&f.specified?f.value:null},ga.error=function(a){throw new Error("Syntax error, unrecognized expression: "+a)},ga.uniqueSort=function(a){var b,d=[],e=0,f=0;if(l=!c.detectDuplicates,k=!c.sortStable&&a.slice(0),a.sort(B),l){while(b=a[f++])b===a[f]&&(e=d.push(f));while(e--)a.splice(d[e],1)}return k=null,a},e=ga.getText=function(a){var b,c="",d=0,f=a.nodeType;if(f){if(1===f||9===f||11===f){if("string"==typeof a.textContent)return a.textContent;for(a=a.firstChild;a;a=a.nextSibling)c+=e(a)}else if(3===f||4===f)return a.nodeValue}else while(b=a[d++])c+=e(b);return c},d=ga.selectors={cacheLength:50,createPseudo:ia,match:X,attrHandle:{},find:{},relative:{">":{dir:"parentNode",first:!0}," ":{dir:"parentNode"},"+":{dir:"previousSibling",first:!0},"~":{dir:"previousSibling"}},preFilter:{ATTR:function(a){return a[1]=a[1].replace(ca,da),a[3]=(a[3]||a[4]||a[5]||"").replace(ca,da),"~="===a[2]&&(a[3]=" "+a[3]+" "),a.slice(0,4)},CHILD:function(a){return a[1]=a[1].toLowerCase(),"nth"===a[1].slice(0,3)?(a[3]||ga.error(a[0]),a[4]=+(a[4]?a[5]+(a[6]||1):2*("even"===a[3]||"odd"===a[3])),a[5]=+(a[7]+a[8]||"odd"===a[3])):a[3]&&ga.error(a[0]),a},PSEUDO:function(a){var b,c=!a[6]&&a[2];return X.CHILD.test(a[0])?null:(a[3]?a[2]=a[4]||a[5]||"":c&&V.test(c)&&(b=g(c,!0))&&(b=c.indexOf(")",c.length-b)-c.length)&&(a[0]=a[0].slice(0,b),a[2]=c.slice(0,b)),a.slice(0,3))}},filter:{TAG:function(a){var b=a.replace(ca,da).toLowerCase();return"*"===a?function(){return!0}:function(a){return a.nodeName&&a.nodeName.toLowerCase()===b}},CLASS:function(a){var b=y[a+" "];return b||(b=new RegExp("(^|"+L+")"+a+"("+L+"|$)"))&&y(a,function(a){return b.test("string"==typeof a.className&&a.className||"undefined"!=typeof a.getAttribute&&a.getAttribute("class")||"")})},ATTR:function(a,b,c){return function(d){var e=ga.attr(d,a);return null==e?"!="===b:b?(e+="","="===b?e===c:"!="===b?e!==c:"^="===b?c&&0===e.indexOf(c):"*="===b?c&&e.indexOf(c)>-1:"$="===b?c&&e.slice(-c.length)===c:"~="===b?(" "+e.replace(Q," ")+" ").indexOf(c)>-1:"|="===b?e===c||e.slice(0,c.length+1)===c+"-":!1):!0}},CHILD:function(a,b,c,d,e){var f="nth"!==a.slice(0,3),g="last"!==a.slice(-4),h="of-type"===b;return 1===d&&0===e?function(a){return!!a.parentNode}:function(b,c,i){var j,k,l,m,n,o,p=f!==g?"nextSibling":"previousSibling",q=b.parentNode,r=h&&b.nodeName.toLowerCase(),s=!i&&!h;if(q){if(f){while(p){l=b;while(l=l[p])if(h?l.nodeName.toLowerCase()===r:1===l.nodeType)return!1;o=p="only"===a&&!o&&"nextSibling"}return!0}if(o=[g?q.firstChild:q.lastChild],g&&s){k=q[u]||(q[u]={}),j=k[a]||[],n=j[0]===w&&j[1],m=j[0]===w&&j[2],l=n&&q.childNodes[n];while(l=++n&&l&&l[p]||(m=n=0)||o.pop())if(1===l.nodeType&&++m&&l===b){k[a]=[w,n,m];break}}else if(s&&(j=(b[u]||(b[u]={}))[a])&&j[0]===w)m=j[1];else while(l=++n&&l&&l[p]||(m=n=0)||o.pop())if((h?l.nodeName.toLowerCase()===r:1===l.nodeType)&&++m&&(s&&((l[u]||(l[u]={}))[a]=[w,m]),l===b))break;return m-=e,m===d||m%d===0&&m/d>=0}}},PSEUDO:function(a,b){var c,e=d.pseudos[a]||d.setFilters[a.toLowerCase()]||ga.error("unsupported pseudo: "+a);return e[u]?e(b):e.length>1?(c=[a,a,"",b],d.setFilters.hasOwnProperty(a.toLowerCase())?ia(function(a,c){var d,f=e(a,b),g=f.length;while(g--)d=J(a,f[g]),a[d]=!(c[d]=f[g])}):function(a){return e(a,0,c)}):e}},pseudos:{not:ia(function(a){var b=[],c=[],d=h(a.replace(R,"$1"));return d[u]?ia(function(a,b,c,e){var f,g=d(a,null,e,[]),h=a.length;while(h--)(f=g[h])&&(a[h]=!(b[h]=f))}):function(a,e,f){return b[0]=a,d(b,null,f,c),b[0]=null,!c.pop()}}),has:ia(function(a){return function(b){return ga(a,b).length>0}}),contains:ia(function(a){return a=a.replace(ca,da),function(b){return(b.textContent||b.innerText||e(b)).indexOf(a)>-1}}),lang:ia(function(a){return W.test(a||"")||ga.error("unsupported lang: "+a),a=a.replace(ca,da).toLowerCase(),function(b){var c;do if(c=p?b.lang:b.getAttribute("xml:lang")||b.getAttribute("lang"))return c=c.toLowerCase(),c===a||0===c.indexOf(a+"-");while((b=b.parentNode)&&1===b.nodeType);return!1}}),target:function(b){var c=a.location&&a.location.hash;return c&&c.slice(1)===b.id},root:function(a){return a===o},focus:function(a){return a===n.activeElement&&(!n.hasFocus||n.hasFocus())&&!!(a.type||a.href||~a.tabIndex)},enabled:function(a){return a.disabled===!1},disabled:function(a){return a.disabled===!0},checked:function(a){var b=a.nodeName.toLowerCase();return"input"===b&&!!a.checked||"option"===b&&!!a.selected},selected:function(a){return a.parentNode&&a.parentNode.selectedIndex,a.selected===!0},empty:function(a){for(a=a.firstChild;a;a=a.nextSibling)if(a.nodeType<6)return!1;return!0},parent:function(a){return!d.pseudos.empty(a)},header:function(a){return Z.test(a.nodeName)},input:function(a){return Y.test(a.nodeName)},button:function(a){var b=a.nodeName.toLowerCase();return"input"===b&&"button"===a.type||"button"===b},text:function(a){var b;return"input"===a.nodeName.toLowerCase()&&"text"===a.type&&(null==(b=a.getAttribute("type"))||"text"===b.toLowerCase())},first:oa(function(){return[0]}),last:oa(function(a,b){return[b-1]}),eq:oa(function(a,b,c){return[0>c?c+b:c]}),even:oa(function(a,b){for(var c=0;b>c;c+=2)a.push(c);return a}),odd:oa(function(a,b){for(var c=1;b>c;c+=2)a.push(c);return a}),lt:oa(function(a,b,c){for(var d=0>c?c+b:c;--d>=0;)a.push(d);return a}),gt:oa(function(a,b,c){for(var d=0>c?c+b:c;++d<b;)a.push(d);return a})}},d.pseudos.nth=d.pseudos.eq;for(b in{radio:!0,checkbox:!0,file:!0,password:!0,image:!0})d.pseudos[b]=ma(b);for(b in{submit:!0,reset:!0})d.pseudos[b]=na(b);function qa(){}qa.prototype=d.filters=d.pseudos,d.setFilters=new qa,g=ga.tokenize=function(a,b){var c,e,f,g,h,i,j,k=z[a+" "];if(k)return b?0:k.slice(0);h=a,i=[],j=d.preFilter;while(h){(!c||(e=S.exec(h)))&&(e&&(h=h.slice(e[0].length)||h),i.push(f=[])),c=!1,(e=T.exec(h))&&(c=e.shift(),f.push({value:c,type:e[0].replace(R," ")}),h=h.slice(c.length));for(g in d.filter)!(e=X[g].exec(h))||j[g]&&!(e=j[g](e))||(c=e.shift(),f.push({value:c,type:g,matches:e}),h=h.slice(c.length));if(!c)break}return b?h.length:h?ga.error(a):z(a,i).slice(0)};function ra(a){for(var b=0,c=a.length,d="";c>b;b++)d+=a[b].value;return d}function sa(a,b,c){var d=b.dir,e=c&&"parentNode"===d,f=x++;return b.first?function(b,c,f){while(b=b[d])if(1===b.nodeType||e)return a(b,c,f)}:function(b,c,g){var h,i,j=[w,f];if(g){while(b=b[d])if((1===b.nodeType||e)&&a(b,c,g))return!0}else while(b=b[d])if(1===b.nodeType||e){if(i=b[u]||(b[u]={}),(h=i[d])&&h[0]===w&&h[1]===f)return j[2]=h[2];if(i[d]=j,j[2]=a(b,c,g))return!0}}}function ta(a){return a.length>1?function(b,c,d){var e=a.length;while(e--)if(!a[e](b,c,d))return!1;return!0}:a[0]}function ua(a,b,c){for(var d=0,e=b.length;e>d;d++)ga(a,b[d],c);return c}function va(a,b,c,d,e){for(var f,g=[],h=0,i=a.length,j=null!=b;i>h;h++)(f=a[h])&&(!c||c(f,d,e))&&(g.push(f),j&&b.push(h));return g}function wa(a,b,c,d,e,f){return d&&!d[u]&&(d=wa(d)),e&&!e[u]&&(e=wa(e,f)),ia(function(f,g,h,i){var j,k,l,m=[],n=[],o=g.length,p=f||ua(b||"*",h.nodeType?[h]:h,[]),q=!a||!f&&b?p:va(p,m,a,h,i),r=c?e||(f?a:o||d)?[]:g:q;if(c&&c(q,r,h,i),d){j=va(r,n),d(j,[],h,i),k=j.length;while(k--)(l=j[k])&&(r[n[k]]=!(q[n[k]]=l))}if(f){if(e||a){if(e){j=[],k=r.length;while(k--)(l=r[k])&&j.push(q[k]=l);e(null,r=[],j,i)}k=r.length;while(k--)(l=r[k])&&(j=e?J(f,l):m[k])>-1&&(f[j]=!(g[j]=l))}}else r=va(r===g?r.splice(o,r.length):r),e?e(null,g,r,i):H.apply(g,r)})}function xa(a){for(var b,c,e,f=a.length,g=d.relative[a[0].type],h=g||d.relative[" "],i=g?1:0,k=sa(function(a){return a===b},h,!0),l=sa(function(a){return J(b,a)>-1},h,!0),m=[function(a,c,d){var e=!g&&(d||c!==j)||((b=c).nodeType?k(a,c,d):l(a,c,d));return b=null,e}];f>i;i++)if(c=d.relative[a[i].type])m=[sa(ta(m),c)];else{if(c=d.filter[a[i].type].apply(null,a[i].matches),c[u]){for(e=++i;f>e;e++)if(d.relative[a[e].type])break;return wa(i>1&&ta(m),i>1&&ra(a.slice(0,i-1).concat({value:" "===a[i-2].type?"*":""})).replace(R,"$1"),c,e>i&&xa(a.slice(i,e)),f>e&&xa(a=a.slice(e)),f>e&&ra(a))}m.push(c)}return ta(m)}function ya(a,b){var c=b.length>0,e=a.length>0,f=function(f,g,h,i,k){var l,m,o,p=0,q="0",r=f&&[],s=[],t=j,u=f||e&&d.find.TAG("*",k),v=w+=null==t?1:Math.random()||.1,x=u.length;for(k&&(j=g!==n&&g);q!==x&&null!=(l=u[q]);q++){if(e&&l){m=0;while(o=a[m++])if(o(l,g,h)){i.push(l);break}k&&(w=v)}c&&((l=!o&&l)&&p--,f&&r.push(l))}if(p+=q,c&&q!==p){m=0;while(o=b[m++])o(r,s,g,h);if(f){if(p>0)while(q--)r[q]||s[q]||(s[q]=F.call(i));s=va(s)}H.apply(i,s),k&&!f&&s.length>0&&p+b.length>1&&ga.uniqueSort(i)}return k&&(w=v,j=t),r};return c?ia(f):f}return h=ga.compile=function(a,b){var c,d=[],e=[],f=A[a+" "];if(!f){b||(b=g(a)),c=b.length;while(c--)f=xa(b[c]),f[u]?d.push(f):e.push(f);f=A(a,ya(e,d)),f.selector=a}return f},i=ga.select=function(a,b,e,f){var i,j,k,l,m,n="function"==typeof a&&a,o=!f&&g(a=n.selector||a);if(e=e||[],1===o.length){if(j=o[0]=o[0].slice(0),j.length>2&&"ID"===(k=j[0]).type&&c.getById&&9===b.nodeType&&p&&d.relative[j[1].type]){if(b=(d.find.ID(k.matches[0].replace(ca,da),b)||[])[0],!b)return e;n&&(b=b.parentNode),a=a.slice(j.shift().value.length)}i=X.needsContext.test(a)?0:j.length;while(i--){if(k=j[i],d.relative[l=k.type])break;if((m=d.find[l])&&(f=m(k.matches[0].replace(ca,da),aa.test(j[0].type)&&pa(b.parentNode)||b))){if(j.splice(i,1),a=f.length&&ra(j),!a)return H.apply(e,f),e;break}}}return(n||h(a,o))(f,b,!p,e,aa.test(a)&&pa(b.parentNode)||b),e},c.sortStable=u.split("").sort(B).join("")===u,c.detectDuplicates=!!l,m(),c.sortDetached=ja(function(a){return 1&a.compareDocumentPosition(n.createElement("div"))}),ja(function(a){return a.innerHTML="<a href='#'></a>","#"===a.firstChild.getAttribute("href")})||ka("type|href|height|width",function(a,b,c){return c?void 0:a.getAttribute(b,"type"===b.toLowerCase()?1:2)}),c.attributes&&ja(function(a){return a.innerHTML="<input/>",a.firstChild.setAttribute("value",""),""===a.firstChild.getAttribute("value")})||ka("value",function(a,b,c){return c||"input"!==a.nodeName.toLowerCase()?void 0:a.defaultValue}),ja(function(a){return null==a.getAttribute("disabled")})||ka(K,function(a,b,c){var d;return c?void 0:a[b]===!0?b.toLowerCase():(d=a.getAttributeNode(b))&&d.specified?d.value:null}),ga}(a);m.find=s,m.expr=s.selectors,m.expr[":"]=m.expr.pseudos,m.unique=s.uniqueSort,m.text=s.getText,m.isXMLDoc=s.isXML,m.contains=s.contains;var t=m.expr.match.needsContext,u=/^<(\w+)\s*\/?>(?:<\/\1>|)$/,v=/^.[^:#\[\.,]*$/;function w(a,b,c){if(m.isFunction(b))return m.grep(a,function(a,d){return!!b.call(a,d,a)!==c});if(b.nodeType)return m.grep(a,function(a){return a===b!==c});if("string"==typeof b){if(v.test(b))return m.filter(b,a,c);b=m.filter(b,a)}return m.grep(a,function(a){return m.inArray(a,b)>=0!==c})}m.filter=function(a,b,c){var d=b[0];return c&&(a=":not("+a+")"),1===b.length&&1===d.nodeType?m.find.matchesSelector(d,a)?[d]:[]:m.find.matches(a,m.grep(b,function(a){return 1===a.nodeType}))},m.fn.extend({find:function(a){var b,c=[],d=this,e=d.length;if("string"!=typeof a)return this.pushStack(m(a).filter(function(){for(b=0;e>b;b++)if(m.contains(d[b],this))return!0}));for(b=0;e>b;b++)m.find(a,d[b],c);return c=this.pushStack(e>1?m.unique(c):c),c.selector=this.selector?this.selector+" "+a:a,c},filter:function(a){return this.pushStack(w(this,a||[],!1))},not:function(a){return this.pushStack(w(this,a||[],!0))},is:function(a){return!!w(this,"string"==typeof a&&t.test(a)?m(a):a||[],!1).length}});var x,y=a.document,z=/^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]*))$/,A=m.fn.init=function(a,b){var c,d;if(!a)return this;if("string"==typeof a){if(c="<"===a.charAt(0)&&">"===a.charAt(a.length-1)&&a.length>=3?[null,a,null]:z.exec(a),!c||!c[1]&&b)return!b||b.jquery?(b||x).find(a):this.constructor(b).find(a);if(c[1]){if(b=b instanceof m?b[0]:b,m.merge(this,m.parseHTML(c[1],b&&b.nodeType?b.ownerDocument||b:y,!0)),u.test(c[1])&&m.isPlainObject(b))for(c in b)m.isFunction(this[c])?this[c](b[c]):this.attr(c,b[c]);return this}if(d=y.getElementById(c[2]),d&&d.parentNode){if(d.id!==c[2])return x.find(a);this.length=1,this[0]=d}return this.context=y,this.selector=a,this}return a.nodeType?(this.context=this[0]=a,this.length=1,this):m.isFunction(a)?"undefined"!=typeof x.ready?x.ready(a):a(m):(void 0!==a.selector&&(this.selector=a.selector,this.context=a.context),m.makeArray(a,this))};A.prototype=m.fn,x=m(y);var B=/^(?:parents|prev(?:Until|All))/,C={children:!0,contents:!0,next:!0,prev:!0};m.extend({dir:function(a,b,c){var d=[],e=a[b];while(e&&9!==e.nodeType&&(void 0===c||1!==e.nodeType||!m(e).is(c)))1===e.nodeType&&d.push(e),e=e[b];return d},sibling:function(a,b){for(var c=[];a;a=a.nextSibling)1===a.nodeType&&a!==b&&c.push(a);return c}}),m.fn.extend({has:function(a){var b,c=m(a,this),d=c.length;return this.filter(function(){for(b=0;d>b;b++)if(m.contains(this,c[b]))return!0})},closest:function(a,b){for(var c,d=0,e=this.length,f=[],g=t.test(a)||"string"!=typeof a?m(a,b||this.context):0;e>d;d++)for(c=this[d];c&&c!==b;c=c.parentNode)if(c.nodeType<11&&(g?g.index(c)>-1:1===c.nodeType&&m.find.matchesSelector(c,a))){f.push(c);break}return this.pushStack(f.length>1?m.unique(f):f)},index:function(a){return a?"string"==typeof a?m.inArray(this[0],m(a)):m.inArray(a.jquery?a[0]:a,this):this[0]&&this[0].parentNode?this.first().prevAll().length:-1},add:function(a,b){return this.pushStack(m.unique(m.merge(this.get(),m(a,b))))},addBack:function(a){return this.add(null==a?this.prevObject:this.prevObject.filter(a))}});function D(a,b){do a=a[b];while(a&&1!==a.nodeType);return a}m.each({parent:function(a){var b=a.parentNode;return b&&11!==b.nodeType?b:null},parents:function(a){return m.dir(a,"parentNode")},parentsUntil:function(a,b,c){return m.dir(a,"parentNode",c)},next:function(a){return D(a,"nextSibling")},prev:function(a){return D(a,"previousSibling")},nextAll:function(a){return m.dir(a,"nextSibling")},prevAll:function(a){return m.dir(a,"previousSibling")},nextUntil:function(a,b,c){return m.dir(a,"nextSibling",c)},prevUntil:function(a,b,c){return m.dir(a,"previousSibling",c)},siblings:function(a){return m.sibling((a.parentNode||{}).firstChild,a)},children:function(a){return m.sibling(a.firstChild)},contents:function(a){return m.nodeName(a,"iframe")?a.contentDocument||a.contentWindow.document:m.merge([],a.childNodes)}},function(a,b){m.fn[a]=function(c,d){var e=m.map(this,b,c);return"Until"!==a.slice(-5)&&(d=c),d&&"string"==typeof d&&(e=m.filter(d,e)),this.length>1&&(C[a]||(e=m.unique(e)),B.test(a)&&(e=e.reverse())),this.pushStack(e)}});var E=/\S+/g,F={};function G(a){var b=F[a]={};return m.each(a.match(E)||[],function(a,c){b[c]=!0}),b}m.Callbacks=function(a){a="string"==typeof a?F[a]||G(a):m.extend({},a);var b,c,d,e,f,g,h=[],i=!a.once&&[],j=function(l){for(c=a.memory&&l,d=!0,f=g||0,g=0,e=h.length,b=!0;h&&e>f;f++)if(h[f].apply(l[0],l[1])===!1&&a.stopOnFalse){c=!1;break}b=!1,h&&(i?i.length&&j(i.shift()):c?h=[]:k.disable())},k={add:function(){if(h){var d=h.length;!function f(b){m.each(b,function(b,c){var d=m.type(c);"function"===d?a.unique&&k.has(c)||h.push(c):c&&c.length&&"string"!==d&&f(c)})}(arguments),b?e=h.length:c&&(g=d,j(c))}return this},remove:function(){return h&&m.each(arguments,function(a,c){var d;while((d=m.inArray(c,h,d))>-1)h.splice(d,1),b&&(e>=d&&e--,f>=d&&f--)}),this},has:function(a){return a?m.inArray(a,h)>-1:!(!h||!h.length)},empty:function(){return h=[],e=0,this},disable:function(){return h=i=c=void 0,this},disabled:function(){return!h},lock:function(){return i=void 0,c||k.disable(),this},locked:function(){return!i},fireWith:function(a,c){return!h||d&&!i||(c=c||[],c=[a,c.slice?c.slice():c],b?i.push(c):j(c)),this},fire:function(){return k.fireWith(this,arguments),this},fired:function(){return!!d}};return k},m.extend({Deferred:function(a){var b=[["resolve","done",m.Callbacks("once memory"),"resolved"],["reject","fail",m.Callbacks("once memory"),"rejected"],["notify","progress",m.Callbacks("memory")]],c="pending",d={state:function(){return c},always:function(){return e.done(arguments).fail(arguments),this},then:function(){var a=arguments;return m.Deferred(function(c){m.each(b,function(b,f){var g=m.isFunction(a[b])&&a[b];e[f[1]](function(){var a=g&&g.apply(this,arguments);a&&m.isFunction(a.promise)?a.promise().done(c.resolve).fail(c.reject).progress(c.notify):c[f[0]+"With"](this===d?c.promise():this,g?[a]:arguments)})}),a=null}).promise()},promise:function(a){return null!=a?m.extend(a,d):d}},e={};return d.pipe=d.then,m.each(b,function(a,f){var g=f[2],h=f[3];d[f[1]]=g.add,h&&g.add(function(){c=h},b[1^a][2].disable,b[2][2].lock),e[f[0]]=function(){return e[f[0]+"With"](this===e?d:this,arguments),this},e[f[0]+"With"]=g.fireWith}),d.promise(e),a&&a.call(e,e),e},when:function(a){var b=0,c=d.call(arguments),e=c.length,f=1!==e||a&&m.isFunction(a.promise)?e:0,g=1===f?a:m.Deferred(),h=function(a,b,c){return function(e){b[a]=this,c[a]=arguments.length>1?d.call(arguments):e,c===i?g.notifyWith(b,c):--f||g.resolveWith(b,c)}},i,j,k;if(e>1)for(i=new Array(e),j=new Array(e),k=new Array(e);e>b;b++)c[b]&&m.isFunction(c[b].promise)?c[b].promise().done(h(b,k,c)).fail(g.reject).progress(h(b,j,i)):--f;return f||g.resolveWith(k,c),g.promise()}});var H;m.fn.ready=function(a){return m.ready.promise().done(a),this},m.extend({isReady:!1,readyWait:1,holdReady:function(a){a?m.readyWait++:m.ready(!0)},ready:function(a){if(a===!0?!--m.readyWait:!m.isReady){if(!y.body)return setTimeout(m.ready);m.isReady=!0,a!==!0&&--m.readyWait>0||(H.resolveWith(y,[m]),m.fn.triggerHandler&&(m(y).triggerHandler("ready"),m(y).off("ready")))}}});function I(){y.addEventListener?(y.removeEventListener("DOMContentLoaded",J,!1),a.removeEventListener("load",J,!1)):(y.detachEvent("onreadystatechange",J),a.detachEvent("onload",J))}function J(){(y.addEventListener||"load"===event.type||"complete"===y.readyState)&&(I(),m.ready())}m.ready.promise=function(b){if(!H)if(H=m.Deferred(),"complete"===y.readyState)setTimeout(m.ready);else if(y.addEventListener)y.addEventListener("DOMContentLoaded",J,!1),a.addEventListener("load",J,!1);else{y.attachEvent("onreadystatechange",J),a.attachEvent("onload",J);var c=!1;try{c=null==a.frameElement&&y.documentElement}catch(d){}c&&c.doScroll&&!function e(){if(!m.isReady){try{c.doScroll("left")}catch(a){return setTimeout(e,50)}I(),m.ready()}}()}return H.promise(b)};var K="undefined",L;for(L in m(k))break;k.ownLast="0"!==L,k.inlineBlockNeedsLayout=!1,m(function(){var a,b,c,d;c=y.getElementsByTagName("body")[0],c&&c.style&&(b=y.createElement("div"),d=y.createElement("div"),d.style.cssText="position:absolute;border:0;width:0;height:0;top:0;left:-9999px",c.appendChild(d).appendChild(b),typeof b.style.zoom!==K&&(b.style.cssText="display:inline;margin:0;border:0;padding:1px;width:1px;zoom:1",k.inlineBlockNeedsLayout=a=3===b.offsetWidth,a&&(c.style.zoom=1)),c.removeChild(d))}),function(){var a=y.createElement("div");if(null==k.deleteExpando){k.deleteExpando=!0;try{delete a.test}catch(b){k.deleteExpando=!1}}a=null}(),m.acceptData=function(a){var b=m.noData[(a.nodeName+" ").toLowerCase()],c=+a.nodeType||1;return 1!==c&&9!==c?!1:!b||b!==!0&&a.getAttribute("classid")===b};var M=/^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,N=/([A-Z])/g;function O(a,b,c){if(void 0===c&&1===a.nodeType){var d="data-"+b.replace(N,"-$1").toLowerCase();if(c=a.getAttribute(d),"string"==typeof c){try{c="true"===c?!0:"false"===c?!1:"null"===c?null:+c+""===c?+c:M.test(c)?m.parseJSON(c):c}catch(e){}m.data(a,b,c)}else c=void 0}return c}function P(a){var b;for(b in a)if(("data"!==b||!m.isEmptyObject(a[b]))&&"toJSON"!==b)return!1;
@@ -378,120 +378,2241 @@ summary {
 
 
 
-<h1 class="title toc-ignore">Resultats Projet Noemie</h1>
-<h4 class="author"><a href="mailto:alexandre.williot@uqtr.ca" class="email">alexandre.williot@uqtr.ca</a></h4>
-<h4 class="date">06/2022</h4>
+<h1 class="title toc-ignore">Analyse_2facteurs_select_2_H</h1>
+<h4 class="author"><a href="mailto:alexandre.williot.1@ulaval.ca" class="email">alexandre.williot.1@ulaval.ca</a></h4>
+<h4 class="date">05/2022</h4>
 
 </div>
 
 <div id="TOC">
 <ul>
-<li><a href="#hommes-et-femmes-n578">hommes et femmes (n=578)</a><ul>
-<li><a href="#resultats-basés-sur-échelle-originale---27-items">Resultats basés sur échelle originale - 27 items</a></li>
-<li><a href="#resultats-sans-sous-échelle-planif-drama-culpa-alpha-faible">Resultats SANS sous-échelle planif, drama, culpa (alpha faible)</a></li>
-<li><a href="#resultats-avec-nouvelles-sous-échelles-5-aprés-analyse-factorielle">Resultats avec nouvelles sous-échelles (5) (aprés Analyse factorielle)</a></li>
-<li><a href="#resultats-avec-2-facteurs-pour-analyse-factorielle-échelle-originale-27-items">Resultats avec 2 facteurs pour analyse factorielle (échelle originale 27 items)</a></li>
-<li><a href="#resultats-avec-2-facteurs-pour-analyse-factorielle-échelle-modifié">Resultats avec 2 facteurs pour analyse factorielle (échelle modifié)</a></li>
-<li><a href="#resultats-avec-2-facteurs-pour-analyse-factorielle-échelle-modifié-2">Resultats avec 2 facteurs pour analyse factorielle (échelle modifié 2)</a></li>
+<li><a href="#alpha">Alpha</a><ul>
+<li><a href="#alpha-qsreic">alpha QSREIC</a></li>
+<li><a href="#alpha-cerq">alpha CERQ</a></li>
+<li><a href="#alpha-ai">alpha AI</a></li>
+<li><a href="#alpha-be">alpha BE</a></li>
+<li><a href="#alpha-ee">alpha EE</a></li>
+<li><a href="#alpha-internalisation">alpha internalisation</a></li>
 </ul></li>
-<li><a href="#femmes">femmes</a><ul>
-<li><a href="#resultats-basés-sur-échelle-originale---27-items-1">Resultats basés sur échelle originale - 27 items</a></li>
-<li><a href="#resultats-avec-2-facteurs-pour-analyse-factorielle-échelle-modifié-2-1">Resultats avec 2 facteurs pour analyse factorielle (échelle modifié 2)</a></li>
-</ul></li>
-<li><a href="#hommes">Hommes</a><ul>
-<li><a href="#resultats-basés-sur-échelle-originale---27-items-2">Resultats basés sur échelle originale - 27 items</a></li>
-<li><a href="#resultats-avec-2-facteurs-pour-analyse-factorielle-échelle-modifié-2-2">Resultats avec 2 facteurs pour analyse factorielle (échelle modifié 2)</a></li>
+<li><a href="#analyse-factorielle---extraction">Analyse factorielle - extraction</a><ul>
+<li><a href="#kmo-doit-être-sup-à-0.7-pour-af-ok-min-de-.5">kmo doit être sup à 0.7 pour AF ok (min de .5)</a></li>
+<li><a href="#acp">ACP</a></li>
+<li><a href="#varimax-rotation">varimax rotation</a></li>
+<li><a href="#oblique-rotation">oblique rotation</a></li>
+<li><a href="#factor-scores">factor scores</a></li>
 </ul></li>
 </ul>
 </div>
 
-<hr />
-<div id="hommes-et-femmes-n578" class="section level1">
-<h1>hommes et femmes (n=578)</h1>
-<div id="resultats-basés-sur-échelle-originale---27-items" class="section level2">
-<h2>Resultats basés sur échelle originale - 27 items</h2>
-<div id="alpha-faible-pour-planif-drama-culpa" class="section level4">
-<h4>alpha faible pour planif, drama, culpa</h4>
+<div id="legende-aprés-avoir-retiré-les-items-présents-aux-2-facteurs-et-adapté-alpha-mal-et-ada-selon-analyse-factorielle-résultats-valides-que-pour-alpha-mal-et-ada-et-af" class="section level4">
+<h4>LEGENDE : aprés avoir retiré les items présents aux 2 facteurs et adapté alpha mal et ada selon analyse factorielle ## Résultats VALIDES QUE POUR ALPHA MAL ET ADA ET AF !</h4>
 </div>
-<div id="adaptatif-0.82-maladaptatif-0.79" class="section level4">
-<h4>adaptatif = 0.82 ; maladaptatif = 0.79</h4>
-<p>[file here:] (<a href="https://alexandrewilliot.github.io/R-home/Analyse.html" class="uri">https://alexandrewilliot.github.io/R-home/Analyse.html</a>)</p>
+<div id="retrait-item" class="section level4">
+<h4>retrait item:</h4>
+</div>
+<div id="alpha" class="section level2">
+<h2>Alpha</h2>
+<div id="alpha-qsreic" class="section level3">
+<h3>alpha QSREIC</h3>
+<div id="si-r.drop-inf-à-0.3-alors-voir-retrait" class="section level4">
+<h4>si r.drop inf à 0.3 alors voir retrait</h4>
+<pre><code>## 
+## Standardized Cronbach&#39;s alpha for the &#39;QSREIC_alpha&#39; data-set
+## 
+## Items: 20
+## Sample units: 166
+## alpha: 0.69
+## 
+## Bootstrap 95% CI based on 1000 samples
+##  2.5% 97.5% 
+## 0.621 0.743</code></pre>
+<pre><code>## Warning in alpha(QSREIC_alpha): Some items were negatively correlated with the total scale and probably 
+## should be reversed.  
+## To do this, run the function again with the &#39;check.keys=TRUE&#39; option</code></pre>
+<pre><code>## Some items ( Q14___QSREIC_2 Q14___QSREIC_3 Q14___QSREIC_10 Q14___QSREIC_11 Q14___QSREIC_12 Q14___QSREIC_18 Q14___QSREIC_21 ) were negatively correlated with the total scale and 
+## probably should be reversed.  
+## To do this, run the function again with the &#39;check.keys=TRUE&#39; option</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = QSREIC_alpha)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##       0.67      0.69    0.81       0.1 2.2 0.036  2.4 0.44     0.11
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.6 0.67 0.74 
+## 
+##  Reliability if an item is dropped:
+##                        raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r
+## Q13___Internalisatio_9      0.63      0.65    0.79     0.090 1.9    0.041 0.081
+## Q14___QSREIC_1              0.64      0.66    0.79     0.092 1.9    0.040 0.085
+## Q14___QSREIC_2              0.67      0.70    0.81     0.107 2.3    0.036 0.092
+## Q14___QSREIC_3              0.68      0.70    0.81     0.111 2.4    0.034 0.088
+## Q14___QSREIC_4              0.64      0.66    0.79     0.094 2.0    0.040 0.083
+## Q14___QSREIC_5              0.61      0.64    0.78     0.087 1.8    0.044 0.079
+## Q14___QSREIC_6              0.65      0.67    0.80     0.097 2.0    0.039 0.090
+## Q14___QSREIC_10             0.73      0.73    0.83     0.126 2.7    0.029 0.075
+## Q14___QSREIC_11             0.68      0.71    0.82     0.113 2.4    0.034 0.089
+## Q14___QSREIC_12             0.67      0.69    0.81     0.106 2.2    0.036 0.092
+## Q14___QSREIC_13             0.64      0.66    0.79     0.093 2.0    0.040 0.081
+## Q14___QSREIC_14             0.66      0.68    0.81     0.102 2.1    0.038 0.092
+## Q14___QSREIC_18             0.71      0.73    0.83     0.126 2.8    0.031 0.076
+## Q14___QSREIC_19             0.62      0.64    0.77     0.085 1.8    0.043 0.076
+## Q14___QSREIC_20             0.65      0.67    0.80     0.096 2.0    0.039 0.089
+## Q14___QSREIC_21             0.68      0.70    0.82     0.109 2.3    0.035 0.092
+## Q14___QSREIC_22             0.64      0.66    0.79     0.092 1.9    0.040 0.086
+## Q14___QSREIC_23             0.63      0.65    0.78     0.090 1.9    0.042 0.079
+## Q14___QSREIC_25             0.65      0.67    0.80     0.097 2.0    0.039 0.092
+## Q14___QSREIC_26             0.63      0.65    0.79     0.090 1.9    0.041 0.088
+##                        med.r
+## Q13___Internalisatio_9 0.088
+## Q14___QSREIC_1         0.088
+## Q14___QSREIC_2         0.143
+## Q14___QSREIC_3         0.125
+## Q14___QSREIC_4         0.088
+## Q14___QSREIC_5         0.088
+## Q14___QSREIC_6         0.092
+## Q14___QSREIC_10        0.125
+## Q14___QSREIC_11        0.138
+## Q14___QSREIC_12        0.138
+## Q14___QSREIC_13        0.088
+## Q14___QSREIC_14        0.114
+## Q14___QSREIC_18        0.125
+## Q14___QSREIC_19        0.088
+## Q14___QSREIC_20        0.088
+## Q14___QSREIC_21        0.138
+## Q14___QSREIC_22        0.088
+## Q14___QSREIC_23        0.088
+## Q14___QSREIC_25        0.109
+## Q14___QSREIC_26        0.088
+## 
+##  Item statistics 
+##                          n raw.r  std.r  r.cor r.drop mean   sd
+## Q13___Internalisatio_9 166  0.59  0.599  0.603  0.491  2.1 1.15
+## Q14___QSREIC_1         166  0.54  0.554  0.533  0.439  1.8 1.08
+## Q14___QSREIC_2         166  0.24  0.220  0.153  0.105  2.7 1.21
+## Q14___QSREIC_3         166  0.17  0.145  0.075  0.036  2.7 1.21
+## Q14___QSREIC_4         166  0.51  0.524  0.510  0.405  1.6 1.13
+## Q14___QSREIC_5         166  0.68  0.687  0.718  0.581  2.3 1.36
+## Q14___QSREIC_6         166  0.46  0.457  0.410  0.344  3.6 1.18
+## Q14___QSREIC_10        166 -0.17 -0.207 -0.296 -0.323  3.3 1.44
+## Q14___QSREIC_11        166  0.10  0.084 -0.010 -0.030  2.3 1.14
+## Q14___QSREIC_12        166  0.28  0.254  0.186  0.145  2.8 1.22
+## Q14___QSREIC_13        166  0.53  0.540  0.535  0.412  1.9 1.23
+## Q14___QSREIC_14        166  0.33  0.349  0.288  0.218  1.9 1.08
+## Q14___QSREIC_18        166 -0.18 -0.209 -0.306 -0.307  3.5 1.20
+## Q14___QSREIC_19        166  0.70  0.717  0.758  0.626  1.7 1.12
+## Q14___QSREIC_20        166  0.45  0.471  0.436  0.340  1.8 1.10
+## Q14___QSREIC_21        166  0.21  0.184  0.082  0.060  3.0 1.32
+## Q14___QSREIC_22        166  0.54  0.566  0.556  0.449  1.9 0.99
+## Q14___QSREIC_23        166  0.60  0.611  0.622  0.493  2.9 1.32
+## Q14___QSREIC_25        166  0.44  0.464  0.416  0.341  2.0 1.04
+## Q14___QSREIC_26        166  0.59  0.609  0.592  0.504  1.7 1.03
+## 
+## Non missing response frequency for each item
+##                           1    2    3    4    5 miss
+## Q13___Internalisatio_9 0.42 0.28 0.16 0.12 0.03    0
+## Q14___QSREIC_1         0.49 0.33 0.10 0.04 0.05    0
+## Q14___QSREIC_2         0.16 0.36 0.20 0.20 0.08    0
+## Q14___QSREIC_3         0.17 0.34 0.20 0.21 0.08    0
+## Q14___QSREIC_4         0.73 0.12 0.03 0.08 0.04    0
+## Q14___QSREIC_5         0.36 0.31 0.09 0.13 0.11    0
+## Q14___QSREIC_6         0.04 0.18 0.18 0.34 0.26    0
+## Q14___QSREIC_10        0.14 0.23 0.14 0.19 0.29    0
+## Q14___QSREIC_11        0.28 0.36 0.19 0.11 0.05    0
+## Q14___QSREIC_12        0.12 0.35 0.21 0.20 0.12    0
+## Q14___QSREIC_13        0.56 0.21 0.10 0.07 0.07    0
+## Q14___QSREIC_14        0.46 0.34 0.09 0.07 0.04    0
+## Q14___QSREIC_18        0.05 0.17 0.21 0.31 0.26    0
+## Q14___QSREIC_19        0.61 0.20 0.09 0.06 0.04    0
+## Q14___QSREIC_20        0.51 0.28 0.08 0.10 0.02    0
+## Q14___QSREIC_21        0.13 0.30 0.18 0.21 0.18    0
+## Q14___QSREIC_22        0.45 0.31 0.15 0.08 0.01    0
+## Q14___QSREIC_23        0.16 0.33 0.16 0.20 0.15    0
+## Q14___QSREIC_25        0.42 0.33 0.16 0.07 0.02    0
+## Q14___QSREIC_26        0.59 0.22 0.10 0.06 0.02    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = QSREIC_dram)
+## 
+##   raw_alpha std.alpha G6(smc) average_r  S/N ase mean   sd median_r
+##       0.33      0.33     0.2       0.2 0.49 0.1  1.9 0.83      0.2
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.13 0.33 0.53 
+## 
+##  Reliability if an item is dropped:
+##                 raw_alpha std.alpha G6(smc) average_r  S/N alpha se var.r med.r
+## Q14___QSREIC_1        0.2       0.2   0.039       0.2 0.25       NA     0   0.2
+## Q14___QSREIC_14       0.2       0.2   0.039       0.2 0.25       NA     0   0.2
+## 
+##  Item statistics 
+##                   n raw.r std.r r.cor r.drop mean  sd
+## Q14___QSREIC_1  166  0.78  0.77  0.34    0.2  1.8 1.1
+## Q14___QSREIC_14 166  0.77  0.77  0.34    0.2  1.9 1.1
+## 
+## Non missing response frequency for each item
+##                    1    2    3    4    5 miss
+## Q14___QSREIC_1  0.49 0.33 0.10 0.04 0.05    0
+## Q14___QSREIC_14 0.46 0.34 0.09 0.07 0.04    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = QSREIC_planif)
+## 
+##   raw_alpha std.alpha G6(smc) average_r  S/N   ase mean  sd median_r
+##       0.39      0.39    0.34      0.17 0.63 0.083  2.6 0.8     0.12
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.23 0.39 0.55 
+## 
+##  Reliability if an item is dropped:
+##                 raw_alpha std.alpha G6(smc) average_r   S/N alpha se var.r
+## Q14___QSREIC_2      0.558     0.559   0.388     0.388 1.266    0.068    NA
+## Q14___QSREIC_11     0.214     0.214   0.120     0.120 0.272    0.122    NA
+## Q14___QSREIC_12     0.032     0.032   0.016     0.016 0.033    0.150    NA
+##                 med.r
+## Q14___QSREIC_2  0.388
+## Q14___QSREIC_11 0.120
+## Q14___QSREIC_12 0.016
+## 
+##  Item statistics 
+##                   n raw.r std.r r.cor r.drop mean  sd
+## Q14___QSREIC_2  166  0.57  0.56  0.13  0.084  2.7 1.2
+## Q14___QSREIC_11 166  0.68  0.70  0.47  0.272  2.3 1.1
+## Q14___QSREIC_12 166  0.76  0.75  0.57  0.350  2.8 1.2
+## 
+## Non missing response frequency for each item
+##                    1    2    3    4    5 miss
+## Q14___QSREIC_2  0.16 0.36 0.20 0.20 0.08    0
+## Q14___QSREIC_11 0.28 0.36 0.19 0.11 0.05    0
+## Q14___QSREIC_12 0.12 0.35 0.21 0.20 0.12    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = QSREIC_recentrage)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##       0.61      0.61    0.52      0.34 1.6 0.053  3.1 0.89      0.3
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.5 0.61 0.71 
+## 
+##  Reliability if an item is dropped:
+##                 raw_alpha std.alpha G6(smc) average_r  S/N alpha se var.r med.r
+## Q14___QSREIC_3       0.46      0.46    0.30      0.30 0.86    0.084    NA  0.30
+## Q14___QSREIC_7       0.43      0.43    0.27      0.27 0.75    0.089    NA  0.27
+## Q14___QSREIC_18      0.62      0.62    0.45      0.45 1.66    0.058    NA  0.45
+## 
+##  Item statistics 
+##                   n raw.r std.r r.cor r.drop mean  sd
+## Q14___QSREIC_3  166  0.77  0.77  0.59   0.45  2.7 1.2
+## Q14___QSREIC_7  166  0.78  0.78  0.61   0.47  3.2 1.2
+## Q14___QSREIC_18 166  0.70  0.70  0.42   0.33  3.5 1.2
+## 
+## Non missing response frequency for each item
+##                    1    2    3    4    5 miss
+## Q14___QSREIC_3  0.17 0.34 0.20 0.21 0.08    0
+## Q14___QSREIC_7  0.08 0.23 0.29 0.25 0.14    0
+## Q14___QSREIC_18 0.05 0.17 0.21 0.31 0.26    0</code></pre>
+<pre><code>## Warning in alpha(QSREIC_social): Some items were negatively correlated with the total scale and probably 
+## should be reversed.  
+## To do this, run the function again with the &#39;check.keys=TRUE&#39; option</code></pre>
+<pre><code>## Some items ( Q14___QSREIC_8 ) were negatively correlated with the total scale and 
+## probably should be reversed.  
+## To do this, run the function again with the &#39;check.keys=TRUE&#39; option</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = QSREIC_social)
+## 
+##   raw_alpha std.alpha G6(smc) average_r  S/N   ase mean   sd median_r
+##       0.44      0.42    0.59      0.16 0.74 0.066  2.4 0.71     0.16
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.31 0.44 0.57 
+## 
+##  Reliability if an item is dropped:
+##                 raw_alpha std.alpha G6(smc) average_r    S/N alpha se var.r
+## Q14___QSREIC_5     -0.042    -0.019    0.20   -0.0061 -0.018    0.142 0.174
+## Q14___QSREIC_8      0.802     0.802    0.76    0.5743  4.048    0.025 0.025
+## Q14___QSREIC_19     0.064     0.062    0.26    0.0214  0.066    0.124 0.186
+## Q14___QSREIC_26     0.153     0.088    0.46    0.0313  0.097    0.108 0.394
+##                 med.r
+## Q14___QSREIC_5  -0.13
+## Q14___QSREIC_8   0.51
+## Q14___QSREIC_19 -0.13
+## Q14___QSREIC_26 -0.31
+## 
+##  Item statistics 
+##                   n raw.r std.r r.cor r.drop mean  sd
+## Q14___QSREIC_5  166 0.838 0.805  0.84   0.55  2.3 1.4
+## Q14___QSREIC_8  166 0.056 0.086 -0.36  -0.32  3.9 1.1
+## Q14___QSREIC_19 166 0.786 0.771  0.78   0.54  1.7 1.1
+## Q14___QSREIC_26 166 0.737 0.759  0.60   0.48  1.7 1.0
+## 
+## Non missing response frequency for each item
+##                    1    2    3    4    5 miss
+## Q14___QSREIC_5  0.36 0.31 0.09 0.13 0.11    0
+## Q14___QSREIC_8  0.02 0.12 0.17 0.32 0.37    0
+## Q14___QSREIC_19 0.61 0.20 0.09 0.06 0.04    0
+## Q14___QSREIC_26 0.59 0.22 0.10 0.06 0.02    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = QSREIC_culpa)
+## 
+##   raw_alpha std.alpha G6(smc) average_r  S/N   ase mean   sd median_r
+##       0.45      0.45    0.29      0.29 0.83 0.085  2.7 0.97     0.29
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.29 0.45 0.62 
+## 
+##  Reliability if an item is dropped:
+##                 raw_alpha std.alpha G6(smc) average_r  S/N alpha se var.r med.r
+## Q14___QSREIC_6       0.28      0.29   0.086      0.29 0.42       NA     0  0.29
+## Q14___QSREIC_13      0.31      0.29   0.086      0.29 0.42       NA     0  0.29
+## 
+##  Item statistics 
+##                   n raw.r std.r r.cor r.drop mean  sd
+## Q14___QSREIC_6  166  0.79   0.8  0.44   0.29  3.6 1.2
+## Q14___QSREIC_13 166  0.81   0.8  0.44   0.29  1.9 1.2
+## 
+## Non missing response frequency for each item
+##                    1    2    3    4    5 miss
+## Q14___QSREIC_6  0.04 0.18 0.18 0.34 0.26    0
+## Q14___QSREIC_13 0.56 0.21 0.10 0.07 0.07    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = QSREIC_refus)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##       0.68      0.68    0.67      0.35 2.1 0.041  2.9 0.97     0.33
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.6 0.68 0.76 
+## 
+##  Reliability if an item is dropped:
+##                 raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r med.r
+## Q14___QSREIC_10      0.61      0.61    0.53      0.34 1.6    0.052 0.011  0.36
+## Q14___QSREIC_16      0.55      0.56    0.48      0.29 1.3    0.061 0.023  0.30
+## Q14___QSREIC_21      0.69      0.69    0.62      0.42 2.2    0.042 0.028  0.36
+## Q14___QSREIC_24      0.60      0.60    0.56      0.33 1.5    0.055 0.061  0.24
+## 
+##  Item statistics 
+##                   n raw.r std.r r.cor r.drop mean  sd
+## Q14___QSREIC_10 166  0.73  0.72  0.61   0.47  3.3 1.4
+## Q14___QSREIC_16 166  0.77  0.77  0.69   0.56  2.6 1.3
+## Q14___QSREIC_21 166  0.63  0.64  0.44   0.34  3.0 1.3
+## Q14___QSREIC_24 166  0.72  0.73  0.59   0.49  2.8 1.3
+## 
+## Non missing response frequency for each item
+##                    1    2    3    4    5 miss
+## Q14___QSREIC_10 0.14 0.23 0.14 0.19 0.29    0
+## Q14___QSREIC_16 0.23 0.31 0.18 0.15 0.13    0
+## Q14___QSREIC_21 0.13 0.30 0.18 0.21 0.18    0
+## Q14___QSREIC_24 0.16 0.31 0.21 0.16 0.16    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = QSREIC_physique)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean  sd median_r
+##       0.66      0.66     0.5       0.5   2 0.052  2.2 1.1      0.5
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.56 0.66 0.76 
+## 
+##  Reliability if an item is dropped:
+##                 raw_alpha std.alpha G6(smc) average_r  S/N alpha se var.r med.r
+## Q14___QSREIC_23      0.58       0.5    0.25       0.5 0.99       NA     0   0.5
+## Q14___QSREIC_4       0.43       0.5    0.25       0.5 0.99       NA     0   0.5
+## 
+##  Item statistics 
+##                   n raw.r std.r r.cor r.drop mean  sd
+## Q14___QSREIC_23 166  0.89  0.87  0.61    0.5  2.9 1.3
+## Q14___QSREIC_4  166  0.84  0.87  0.61    0.5  1.6 1.1
+## 
+## Non missing response frequency for each item
+##                    1    2    3    4    5 miss
+## Q14___QSREIC_23 0.16 0.33 0.16 0.20 0.15    0
+## Q14___QSREIC_4  0.73 0.12 0.03 0.08 0.04    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = QSREIC_évitement)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean  sd median_r
+##       0.52      0.52    0.42      0.26 1.1 0.065  1.9 0.8     0.22
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.39 0.52 0.64 
+## 
+##  Reliability if an item is dropped:
+##                 raw_alpha std.alpha G6(smc) average_r  S/N alpha se var.r med.r
+## Q14___QSREIC_27      0.33      0.33    0.20      0.20 0.50    0.104    NA  0.20
+## Q14___QSREIC_20      0.37      0.37    0.22      0.22 0.58    0.098    NA  0.22
+## Q14___QSREIC_15      0.53      0.53    0.36      0.36 1.13    0.073    NA  0.36
+## 
+##  Item statistics 
+##                   n raw.r std.r r.cor r.drop mean  sd
+## Q14___QSREIC_27 166  0.75  0.74  0.53   0.38  1.7 1.2
+## Q14___QSREIC_20 166  0.72  0.73  0.51   0.36  1.8 1.1
+## Q14___QSREIC_15 166  0.66  0.67  0.35   0.26  2.2 1.1
+## 
+## Non missing response frequency for each item
+##                    1    2    3    4    5 miss
+## Q14___QSREIC_27 0.63 0.19 0.07 0.07 0.05    0
+## Q14___QSREIC_20 0.51 0.28 0.08 0.10 0.02    0
+## Q14___QSREIC_15 0.31 0.40 0.13 0.11 0.04    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = QSREIC_ADA)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##       0.67      0.67    0.69      0.22   2 0.039  2.8 0.71      0.2
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.59 0.67 0.75 
+## 
+##  Reliability if an item is dropped:
+##                 raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r med.r
+## Q14___QSREIC_2       0.66      0.65    0.66      0.24 1.9    0.042 0.014  0.21
+## Q14___QSREIC_11      0.65      0.65    0.66      0.24 1.9    0.042 0.020  0.20
+## Q14___QSREIC_12      0.63      0.63    0.65      0.22 1.7    0.045 0.024  0.20
+## Q14___QSREIC_3       0.59      0.58    0.58      0.19 1.4    0.049 0.015  0.17
+## Q14___QSREIC_7       0.64      0.64    0.66      0.23 1.8    0.043 0.020  0.21
+## Q14___QSREIC_21      0.63      0.64    0.65      0.23 1.8    0.044 0.021  0.20
+## Q14___QSREIC_24      0.63      0.63    0.64      0.22 1.7    0.044 0.021  0.21
+## 
+##  Item statistics 
+##                   n raw.r std.r r.cor r.drop mean  sd
+## Q14___QSREIC_2  166  0.51  0.52  0.41   0.30  2.7 1.2
+## Q14___QSREIC_11 166  0.51  0.52  0.39   0.31  2.3 1.1
+## Q14___QSREIC_12 166  0.60  0.60  0.49   0.40  2.8 1.2
+## Q14___QSREIC_3  166  0.70  0.71  0.68   0.54  2.7 1.2
+## Q14___QSREIC_7  166  0.54  0.55  0.44   0.34  3.2 1.2
+## Q14___QSREIC_21 166  0.59  0.57  0.47   0.38  3.0 1.3
+## Q14___QSREIC_24 166  0.59  0.58  0.48   0.38  2.8 1.3
+## 
+## Non missing response frequency for each item
+##                    1    2    3    4    5 miss
+## Q14___QSREIC_2  0.16 0.36 0.20 0.20 0.08    0
+## Q14___QSREIC_11 0.28 0.36 0.19 0.11 0.05    0
+## Q14___QSREIC_12 0.12 0.35 0.21 0.20 0.12    0
+## Q14___QSREIC_3  0.17 0.34 0.20 0.21 0.08    0
+## Q14___QSREIC_7  0.08 0.23 0.29 0.25 0.14    0
+## Q14___QSREIC_21 0.13 0.30 0.18 0.21 0.18    0
+## Q14___QSREIC_24 0.16 0.31 0.21 0.16 0.16    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = QSREIC_MAL)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##       0.87      0.87    0.89      0.34 6.6 0.014  2.1 0.72     0.34
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.84 0.87 0.9 
+## 
+##  Reliability if an item is dropped:
+##                 raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r med.r
+## Q14___QSREIC_5       0.85      0.85    0.87      0.32 5.6    0.017 0.024  0.31
+## Q14___QSREIC_19      0.85      0.84    0.86      0.31 5.4    0.017 0.021  0.30
+## Q14___QSREIC_26      0.86      0.86    0.88      0.34 6.2    0.015 0.029  0.36
+## Q14___QSREIC_1       0.86      0.86    0.88      0.33 5.9    0.016 0.028  0.33
+## Q14___QSREIC_14      0.87      0.87    0.89      0.35 6.6    0.014 0.028  0.37
+## Q14___QSREIC_23      0.85      0.85    0.87      0.32 5.7    0.017 0.026  0.31
+## Q14___QSREIC_4       0.86      0.86    0.88      0.33 6.0    0.016 0.026  0.32
+## Q14___QSREIC_6       0.87      0.87    0.89      0.35 6.4    0.015 0.028  0.37
+## Q14___QSREIC_13      0.85      0.85    0.87      0.32 5.7    0.016 0.028  0.32
+## Q14___QSREIC_22      0.86      0.86    0.88      0.33 6.0    0.016 0.030  0.32
+## Q14___QSREIC_27      0.86      0.85    0.88      0.33 5.9    0.016 0.030  0.32
+## Q14___QSREIC_20      0.86      0.86    0.88      0.34 6.2    0.015 0.030  0.37
+## Q14___QSREIC_15      0.88      0.88    0.89      0.37 7.2    0.013 0.020  0.39
+## 
+##  Item statistics 
+##                   n raw.r std.r r.cor r.drop mean   sd
+## Q14___QSREIC_5  166  0.77  0.76  0.76   0.70  2.3 1.36
+## Q14___QSREIC_19 166  0.81  0.81  0.82   0.77  1.7 1.12
+## Q14___QSREIC_26 166  0.57  0.58  0.53   0.48  1.7 1.03
+## Q14___QSREIC_1  166  0.66  0.66  0.63   0.59  1.8 1.08
+## Q14___QSREIC_14 166  0.46  0.47  0.41   0.36  1.9 1.08
+## Q14___QSREIC_23 166  0.75  0.74  0.73   0.68  2.9 1.32
+## Q14___QSREIC_4  166  0.66  0.65  0.62   0.58  1.6 1.13
+## Q14___QSREIC_6  166  0.51  0.51  0.44   0.41  3.6 1.18
+## Q14___QSREIC_13 166  0.73  0.72  0.71   0.66  1.9 1.23
+## Q14___QSREIC_22 166  0.62  0.64  0.60   0.55  1.9 0.99
+## Q14___QSREIC_27 166  0.67  0.67  0.63   0.59  1.7 1.16
+## Q14___QSREIC_20 166  0.56  0.57  0.53   0.47  1.8 1.10
+## Q14___QSREIC_15 166  0.29  0.30  0.22   0.18  2.2 1.12
+## 
+## Non missing response frequency for each item
+##                    1    2    3    4    5 miss
+## Q14___QSREIC_5  0.36 0.31 0.09 0.13 0.11    0
+## Q14___QSREIC_19 0.61 0.20 0.09 0.06 0.04    0
+## Q14___QSREIC_26 0.59 0.22 0.10 0.06 0.02    0
+## Q14___QSREIC_1  0.49 0.33 0.10 0.04 0.05    0
+## Q14___QSREIC_14 0.46 0.34 0.09 0.07 0.04    0
+## Q14___QSREIC_23 0.16 0.33 0.16 0.20 0.15    0
+## Q14___QSREIC_4  0.73 0.12 0.03 0.08 0.04    0
+## Q14___QSREIC_6  0.04 0.18 0.18 0.34 0.26    0
+## Q14___QSREIC_13 0.56 0.21 0.10 0.07 0.07    0
+## Q14___QSREIC_22 0.45 0.31 0.15 0.08 0.01    0
+## Q14___QSREIC_27 0.63 0.19 0.07 0.07 0.05    0
+## Q14___QSREIC_20 0.51 0.28 0.08 0.10 0.02    0
+## Q14___QSREIC_15 0.31 0.40 0.13 0.11 0.04    0</code></pre>
 </div>
 </div>
-<div id="resultats-sans-sous-échelle-planif-drama-culpa-alpha-faible" class="section level2">
-<h2>Resultats SANS sous-échelle planif, drama, culpa (alpha faible)</h2>
-<div id="adaptatif-0.83-maladaptatif-0.75" class="section level4">
-<h4>adaptatif = 0.83 ; maladaptatif = 0.75</h4>
-<p>[file here:] (<a href="https://alexandrewilliot.github.io/R-home/Analyse_QSREIC.html" class="uri">https://alexandrewilliot.github.io/R-home/Analyse_QSREIC.html</a>)</p>
+<div id="alpha-cerq" class="section level3">
+<h3>alpha CERQ</h3>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = CERQ_ACC)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean sd median_r
+##        0.7       0.7    0.54      0.54 2.3 0.047  3.4  1     0.54
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.61 0.7 0.79 
+## 
+##  Reliability if an item is dropped:
+##                        raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r
+## Q6___R_gulation_cogn_1      0.59      0.54    0.29      0.54 1.2       NA     0
+## Q6___R_gulation_cogn_5      0.49      0.54    0.29      0.54 1.2       NA     0
+##                        med.r
+## Q6___R_gulation_cogn_1  0.54
+## Q6___R_gulation_cogn_5  0.54
+## 
+##  Item statistics 
+##                          n raw.r std.r r.cor r.drop mean  sd
+## Q6___R_gulation_cogn_1 166  0.89  0.88  0.64   0.54  3.3 1.2
+## Q6___R_gulation_cogn_5 166  0.86  0.88  0.64   0.54  3.4 1.1
+## 
+## Non missing response frequency for each item
+##                           1    2    3    4    5 miss
+## Q6___R_gulation_cogn_1 0.04 0.29 0.20 0.26 0.22    0
+## Q6___R_gulation_cogn_5 0.01 0.26 0.24 0.30 0.20    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = CERQ_RUM)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean  sd median_r
+##       0.77      0.77    0.63      0.63 3.4 0.035  2.9 1.1     0.63
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.71 0.77 0.84 
+## 
+##  Reliability if an item is dropped:
+##                        raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r
+## Q6___R_gulation_cogn_2      0.62      0.63     0.4      0.63 1.7       NA     0
+## Q6___R_gulation_cogn_6      0.65      0.63     0.4      0.63 1.7       NA     0
+##                        med.r
+## Q6___R_gulation_cogn_2  0.63
+## Q6___R_gulation_cogn_6  0.63
+## 
+##  Item statistics 
+##                          n raw.r std.r r.cor r.drop mean  sd
+## Q6___R_gulation_cogn_2 166  0.90   0.9  0.72   0.63  3.0 1.2
+## Q6___R_gulation_cogn_6 166  0.91   0.9  0.72   0.63  2.8 1.2
+## 
+## Non missing response frequency for each item
+##                           1    2    3    4    5 miss
+## Q6___R_gulation_cogn_2 0.08 0.31 0.22 0.28 0.11    0
+## Q6___R_gulation_cogn_6 0.10 0.37 0.26 0.14 0.13    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = CERQ_REA)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##       0.65      0.65    0.48      0.48 1.9 0.054  3.4 0.98     0.48
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.55 0.65 0.76 
+## 
+##  Reliability if an item is dropped:
+##                        raw_alpha std.alpha G6(smc) average_r  S/N alpha se
+## Q6___R_gulation_cogn_3      0.45      0.48    0.23      0.48 0.94       NA
+## Q6___R_gulation_cogn_8      0.51      0.48    0.23      0.48 0.94       NA
+##                        var.r med.r
+## Q6___R_gulation_cogn_3     0  0.48
+## Q6___R_gulation_cogn_8     0  0.48
+## 
+##  Item statistics 
+##                          n raw.r std.r r.cor r.drop mean  sd
+## Q6___R_gulation_cogn_3 166  0.85  0.86   0.6   0.48  3.5 1.1
+## Q6___R_gulation_cogn_8 166  0.87  0.86   0.6   0.48  3.3 1.2
+## 
+## Non missing response frequency for each item
+##                           1    2    3    4    5 miss
+## Q6___R_gulation_cogn_3 0.02 0.19 0.21 0.36 0.21    0
+## Q6___R_gulation_cogn_8 0.04 0.27 0.17 0.35 0.17    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = CERQ_CUL)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N  ase mean sd median_r
+##       0.81      0.81    0.68      0.68 4.2 0.03  2.5  1     0.68
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.75 0.81 0.87 
+## 
+##  Reliability if an item is dropped:
+##                         raw_alpha std.alpha G6(smc) average_r S/N alpha se
+## Q6___R_gulation_cogn_4       0.71      0.68    0.46      0.68 2.1       NA
+## Q6___R_gulation_cogn_14      0.65      0.68    0.46      0.68 2.1       NA
+##                         var.r med.r
+## Q6___R_gulation_cogn_4      0  0.68
+## Q6___R_gulation_cogn_14     0  0.68
+## 
+##  Item statistics 
+##                           n raw.r std.r r.cor r.drop mean  sd
+## Q6___R_gulation_cogn_4  166  0.92  0.92  0.76   0.68  2.7 1.1
+## Q6___R_gulation_cogn_14 166  0.91  0.92  0.76   0.68  2.4 1.1
+## 
+## Non missing response frequency for each item
+##                            1    2    3    4    5 miss
+## Q6___R_gulation_cogn_4  0.08 0.49 0.18 0.16 0.08    0
+## Q6___R_gulation_cogn_14 0.16 0.53 0.17 0.07 0.07    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = CERQ_REC)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N  ase mean   sd median_r
+##       0.67      0.68    0.51      0.51 2.1 0.05  2.3 0.91     0.51
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.58 0.67 0.77 
+## 
+##  Reliability if an item is dropped:
+##                         raw_alpha std.alpha G6(smc) average_r S/N alpha se
+## Q6___R_gulation_cogn_7       0.51      0.51    0.26      0.51   1       NA
+## Q6___R_gulation_cogn_11      0.51      0.51    0.26      0.51   1       NA
+##                         var.r med.r
+## Q6___R_gulation_cogn_7      0  0.51
+## Q6___R_gulation_cogn_11     0  0.51
+## 
+##  Item statistics 
+##                           n raw.r std.r r.cor r.drop mean  sd
+## Q6___R_gulation_cogn_7  166  0.87  0.87  0.62   0.51  2.4 1.1
+## Q6___R_gulation_cogn_11 166  0.87  0.87  0.62   0.51  2.2 1.0
+## 
+## Non missing response frequency for each item
+##                            1    2    3    4    5 miss
+## Q6___R_gulation_cogn_7  0.20 0.42 0.20 0.14 0.03    0
+## Q6___R_gulation_cogn_11 0.27 0.42 0.17 0.12 0.02    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = CERQ_DRA)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##       0.75      0.75     0.6       0.6 3.1 0.038  1.9 0.87      0.6
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.67 0.75 0.82 
+## 
+##  Reliability if an item is dropped:
+##                         raw_alpha std.alpha G6(smc) average_r S/N alpha se
+## Q6___R_gulation_cogn_9       0.70       0.6    0.37       0.6 1.5       NA
+## Q6___R_gulation_cogn_17      0.52       0.6    0.37       0.6 1.5       NA
+##                         var.r med.r
+## Q6___R_gulation_cogn_9      0   0.6
+## Q6___R_gulation_cogn_17     0   0.6
+## 
+##  Item statistics 
+##                           n raw.r std.r r.cor r.drop mean  sd
+## Q6___R_gulation_cogn_9  166  0.91   0.9   0.7    0.6  1.9 1.0
+## Q6___R_gulation_cogn_17 166  0.88   0.9   0.7    0.6  1.8 0.9
+## 
+## Non missing response frequency for each item
+##                            1    2    3    4    5 miss
+## Q6___R_gulation_cogn_9  0.41 0.38 0.09 0.10 0.02    0
+## Q6___R_gulation_cogn_17 0.44 0.42 0.08 0.04 0.02    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = CERQ_BLA)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean  sd median_r
+##       0.79       0.8    0.67      0.67   4 0.031  1.7 0.7     0.67
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.73 0.79 0.85 
+## 
+##  Reliability if an item is dropped:
+##                         raw_alpha std.alpha G6(smc) average_r S/N alpha se
+## Q6___R_gulation_cogn_10      0.83      0.67    0.44      0.67   2       NA
+## Q6___R_gulation_cogn_18      0.54      0.67    0.44      0.67   2       NA
+##                         var.r med.r
+## Q6___R_gulation_cogn_10     0  0.67
+## Q6___R_gulation_cogn_18     0  0.67
+## 
+##  Item statistics 
+##                           n raw.r std.r r.cor r.drop mean   sd
+## Q6___R_gulation_cogn_10 166  0.93  0.91  0.75   0.67  1.8 0.84
+## Q6___R_gulation_cogn_18 166  0.89  0.91  0.75   0.67  1.6 0.68
+## 
+## Non missing response frequency for each item
+##                            1    2    3    4    5 miss
+## Q6___R_gulation_cogn_10 0.39 0.51 0.04 0.05 0.01    0
+## Q6___R_gulation_cogn_18 0.44 0.50 0.04 0.01 0.01    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = CERQ_PLA)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##       0.74      0.74    0.58      0.58 2.8 0.041  3.4 0.98     0.58
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.66 0.74 0.82 
+## 
+##  Reliability if an item is dropped:
+##                         raw_alpha std.alpha G6(smc) average_r S/N alpha se
+## Q6___R_gulation_cogn_12      0.62      0.58    0.34      0.58 1.4       NA
+## Q6___R_gulation_cogn_15      0.55      0.58    0.34      0.58 1.4       NA
+##                         var.r med.r
+## Q6___R_gulation_cogn_12     0  0.58
+## Q6___R_gulation_cogn_15     0  0.58
+## 
+##  Item statistics 
+##                           n raw.r std.r r.cor r.drop mean  sd
+## Q6___R_gulation_cogn_12 166  0.90  0.89  0.68   0.58  3.4 1.1
+## Q6___R_gulation_cogn_15 166  0.88  0.89  0.68   0.58  3.4 1.1
+## 
+## Non missing response frequency for each item
+##                            1    2    3    4    5 miss
+## Q6___R_gulation_cogn_12 0.04 0.22 0.27 0.28 0.20    0
+## Q6___R_gulation_cogn_15 0.02 0.23 0.30 0.28 0.17    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = CERQ_PERS)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##        0.7       0.7    0.54      0.54 2.3 0.046  3.1 0.97     0.54
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.61 0.7 0.79 
+## 
+##  Reliability if an item is dropped:
+##                         raw_alpha std.alpha G6(smc) average_r S/N alpha se
+## Q6___R_gulation_cogn_13      0.47      0.54    0.29      0.54 1.2       NA
+## Q6___R_gulation_cogn_16      0.61      0.54    0.29      0.54 1.2       NA
+##                         var.r med.r
+## Q6___R_gulation_cogn_13     0  0.54
+## Q6___R_gulation_cogn_16     0  0.54
+## 
+##  Item statistics 
+##                           n raw.r std.r r.cor r.drop mean  sd
+## Q6___R_gulation_cogn_13 166  0.86  0.88  0.64   0.54  2.9 1.0
+## Q6___R_gulation_cogn_16 166  0.89  0.88  0.64   0.54  3.4 1.2
+## 
+## Non missing response frequency for each item
+##                            1    2    3    4    5 miss
+## Q6___R_gulation_cogn_13 0.04 0.42 0.26 0.21 0.08    0
+## Q6___R_gulation_cogn_16 0.05 0.22 0.20 0.34 0.19    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = CERQ_MAL)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##       0.79      0.79    0.84      0.32 3.8 0.024  2.3 0.64     0.33
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.74 0.79 0.84 
+## 
+##  Reliability if an item is dropped:
+##                         raw_alpha std.alpha G6(smc) average_r S/N alpha se
+## Q6___R_gulation_cogn_4       0.78      0.78    0.81      0.34 3.6    0.026
+## Q6___R_gulation_cogn_14      0.77      0.78    0.81      0.33 3.5    0.026
+## Q6___R_gulation_cogn_10      0.79      0.79    0.81      0.34 3.7    0.025
+## Q6___R_gulation_cogn_18      0.78      0.78    0.81      0.33 3.5    0.026
+## Q6___R_gulation_cogn_2       0.77      0.77    0.81      0.33 3.4    0.027
+## Q6___R_gulation_cogn_6       0.74      0.75    0.80      0.30 3.0    0.030
+## Q6___R_gulation_cogn_9       0.75      0.75    0.80      0.30 3.0    0.029
+## Q6___R_gulation_cogn_17      0.75      0.75    0.80      0.30 3.0    0.029
+##                         var.r med.r
+## Q6___R_gulation_cogn_4  0.026  0.34
+## Q6___R_gulation_cogn_14 0.028  0.34
+## Q6___R_gulation_cogn_10 0.026  0.34
+## Q6___R_gulation_cogn_18 0.027  0.34
+## Q6___R_gulation_cogn_2  0.034  0.34
+## Q6___R_gulation_cogn_6  0.034  0.31
+## Q6___R_gulation_cogn_9  0.036  0.28
+## Q6___R_gulation_cogn_17 0.036  0.31
+## 
+##  Item statistics 
+##                           n raw.r std.r r.cor r.drop mean   sd
+## Q6___R_gulation_cogn_4  166  0.61  0.57  0.52   0.45  2.7 1.11
+## Q6___R_gulation_cogn_14 166  0.62  0.59  0.54   0.47  2.4 1.06
+## Q6___R_gulation_cogn_10 166  0.48  0.55  0.48   0.34  1.8 0.84
+## Q6___R_gulation_cogn_18 166  0.52  0.59  0.54   0.41  1.6 0.68
+## Q6___R_gulation_cogn_2  166  0.65  0.62  0.55   0.49  3.0 1.17
+## Q6___R_gulation_cogn_6  166  0.76  0.72  0.68   0.63  2.8 1.19
+## Q6___R_gulation_cogn_9  166  0.73  0.74  0.69   0.61  1.9 1.04
+## Q6___R_gulation_cogn_17 166  0.70  0.72  0.67   0.59  1.8 0.90
+## 
+## Non missing response frequency for each item
+##                            1    2    3    4    5 miss
+## Q6___R_gulation_cogn_4  0.08 0.49 0.18 0.16 0.08    0
+## Q6___R_gulation_cogn_14 0.16 0.53 0.17 0.07 0.07    0
+## Q6___R_gulation_cogn_10 0.39 0.51 0.04 0.05 0.01    0
+## Q6___R_gulation_cogn_18 0.44 0.50 0.04 0.01 0.01    0
+## Q6___R_gulation_cogn_2  0.08 0.31 0.22 0.28 0.11    0
+## Q6___R_gulation_cogn_6  0.10 0.37 0.26 0.14 0.13    0
+## Q6___R_gulation_cogn_9  0.41 0.38 0.09 0.10 0.02    0
+## Q6___R_gulation_cogn_17 0.44 0.42 0.08 0.04 0.02    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = CERQ_ADA)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##       0.82      0.82    0.84      0.31 4.4 0.021  3.1 0.68     0.31
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.77 0.82 0.86 
+## 
+##  Reliability if an item is dropped:
+##                         raw_alpha std.alpha G6(smc) average_r S/N alpha se
+## Q6___R_gulation_cogn_1       0.80      0.80    0.82      0.31 4.0    0.023
+## Q6___R_gulation_cogn_5       0.80      0.80    0.83      0.31 4.0    0.023
+## Q6___R_gulation_cogn_3       0.79      0.79    0.81      0.29 3.7    0.025
+## Q6___R_gulation_cogn_8       0.79      0.79    0.82      0.29 3.7    0.025
+## Q6___R_gulation_cogn_7       0.80      0.80    0.82      0.31 4.0    0.023
+## Q6___R_gulation_cogn_11      0.83      0.83    0.83      0.35 4.9    0.020
+## Q6___R_gulation_cogn_12      0.80      0.80    0.82      0.31 4.0    0.023
+## Q6___R_gulation_cogn_15      0.80      0.80    0.82      0.30 3.9    0.024
+## Q6___R_gulation_cogn_13      0.79      0.79    0.82      0.30 3.8    0.024
+## Q6___R_gulation_cogn_16      0.80      0.80    0.82      0.30 3.9    0.024
+##                         var.r med.r
+## Q6___R_gulation_cogn_1  0.023  0.31
+## Q6___R_gulation_cogn_5  0.024  0.32
+## Q6___R_gulation_cogn_3  0.021  0.30
+## Q6___R_gulation_cogn_8  0.025  0.30
+## Q6___R_gulation_cogn_7  0.026  0.32
+## Q6___R_gulation_cogn_11 0.010  0.32
+## Q6___R_gulation_cogn_12 0.021  0.32
+## Q6___R_gulation_cogn_15 0.019  0.30
+## Q6___R_gulation_cogn_13 0.025  0.30
+## Q6___R_gulation_cogn_16 0.025  0.32
+## 
+##  Item statistics 
+##                           n raw.r std.r r.cor r.drop mean  sd
+## Q6___R_gulation_cogn_1  166  0.61  0.60  0.54   0.48  3.3 1.2
+## Q6___R_gulation_cogn_5  166  0.59  0.59  0.53   0.47  3.4 1.1
+## Q6___R_gulation_cogn_3  166  0.71  0.71  0.68   0.62  3.5 1.1
+## Q6___R_gulation_cogn_8  166  0.71  0.70  0.66   0.60  3.3 1.2
+## Q6___R_gulation_cogn_7  166  0.58  0.59  0.54   0.47  2.4 1.1
+## Q6___R_gulation_cogn_11 166  0.34  0.35  0.28   0.20  2.2 1.0
+## Q6___R_gulation_cogn_12 166  0.62  0.61  0.56   0.50  3.4 1.1
+## Q6___R_gulation_cogn_15 166  0.64  0.64  0.61   0.53  3.4 1.1
+## Q6___R_gulation_cogn_13 166  0.67  0.68  0.63   0.57  2.9 1.0
+## Q6___R_gulation_cogn_16 166  0.65  0.64  0.59   0.53  3.4 1.2
+## 
+## Non missing response frequency for each item
+##                            1    2    3    4    5 miss
+## Q6___R_gulation_cogn_1  0.04 0.29 0.20 0.26 0.22    0
+## Q6___R_gulation_cogn_5  0.01 0.26 0.24 0.30 0.20    0
+## Q6___R_gulation_cogn_3  0.02 0.19 0.21 0.36 0.21    0
+## Q6___R_gulation_cogn_8  0.04 0.27 0.17 0.35 0.17    0
+## Q6___R_gulation_cogn_7  0.20 0.42 0.20 0.14 0.03    0
+## Q6___R_gulation_cogn_11 0.27 0.42 0.17 0.12 0.02    0
+## Q6___R_gulation_cogn_12 0.04 0.22 0.27 0.28 0.20    0
+## Q6___R_gulation_cogn_15 0.02 0.23 0.30 0.28 0.17    0
+## Q6___R_gulation_cogn_13 0.04 0.42 0.26 0.21 0.08    0
+## Q6___R_gulation_cogn_16 0.05 0.22 0.20 0.34 0.19    0</code></pre>
+</div>
+<div id="alpha-ai" class="section level3">
+<h3>alpha AI</h3>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = AI_UPE)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N  ase mean   sd median_r
+##       0.75      0.77    0.77      0.35 3.3 0.03  3.6 0.76     0.35
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.69 0.75 0.81 
+## 
+##  Reliability if an item is dropped:
+##                        raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r
+## Q7___Alim_intuitive_1       0.69      0.72    0.71      0.34 2.6    0.038 0.021
+## Q7___Alim_intuitive_3       0.71      0.72    0.70      0.34 2.6    0.034 0.013
+## Q7___Alim_intuitive_4       0.75      0.78    0.76      0.41 3.5    0.029 0.010
+## Q7___Alim_intuitive_9       0.69      0.72    0.70      0.34 2.6    0.038 0.023
+## Q7___Alim_intuitive_16      0.70      0.71    0.69      0.33 2.4    0.035 0.012
+## Q7___Alim_intuitive_17      0.71      0.73    0.73      0.36 2.8    0.034 0.020
+##                        med.r
+## Q7___Alim_intuitive_1   0.34
+## Q7___Alim_intuitive_3   0.36
+## Q7___Alim_intuitive_4   0.37
+## Q7___Alim_intuitive_9   0.36
+## Q7___Alim_intuitive_16  0.34
+## Q7___Alim_intuitive_17  0.35
+## 
+##  Item statistics 
+##                          n raw.r std.r r.cor r.drop mean   sd
+## Q7___Alim_intuitive_1  166  0.73  0.71  0.63   0.55  2.7 1.25
+## Q7___Alim_intuitive_3  166  0.63  0.70  0.65   0.51  4.2 0.76
+## Q7___Alim_intuitive_4  166  0.58  0.54  0.39   0.35  3.4 1.28
+## Q7___Alim_intuitive_9  166  0.75  0.71  0.64   0.57  3.6 1.35
+## Q7___Alim_intuitive_16 166  0.67  0.74  0.69   0.55  4.0 0.85
+## Q7___Alim_intuitive_17 166  0.67  0.67  0.57   0.48  3.8 1.23
+## 
+## Non missing response frequency for each item
+##                           1    2    3    4    5 miss
+## Q7___Alim_intuitive_1  0.17 0.39 0.16 0.19 0.10    0
+## Q7___Alim_intuitive_3  0.00 0.05 0.06 0.52 0.37    0
+## Q7___Alim_intuitive_4  0.09 0.19 0.16 0.32 0.23    0
+## Q7___Alim_intuitive_9  0.08 0.17 0.14 0.25 0.36    0
+## Q7___Alim_intuitive_16 0.01 0.07 0.12 0.54 0.26    0
+## Q7___Alim_intuitive_17 0.04 0.18 0.12 0.29 0.37    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = AI_EPPR)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N    ase mean  sd median_r
+##       0.94      0.94    0.95      0.65  15 0.0073  3.5 1.1     0.62
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.92 0.94 0.95 
+## 
+##  Reliability if an item is dropped:
+##                        raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r
+## Q7___Alim_intuitive_2       0.93      0.92    0.93      0.64  12   0.0088 0.014
+## Q7___Alim_intuitive_5       0.92      0.92    0.93      0.63  12   0.0090 0.015
+## Q7___Alim_intuitive_10      0.92      0.92    0.94      0.63  12   0.0088 0.016
+## Q7___Alim_intuitive_11      0.92      0.92    0.93      0.63  12   0.0090 0.015
+## Q7___Alim_intuitive_12      0.94      0.94    0.95      0.69  15   0.0070 0.014
+## Q7___Alim_intuitive_13      0.93      0.93    0.93      0.64  13   0.0082 0.017
+## Q7___Alim_intuitive_14      0.93      0.92    0.93      0.63  12   0.0086 0.016
+## Q7___Alim_intuitive_15      0.94      0.94    0.95      0.68  15   0.0074 0.017
+##                        med.r
+## Q7___Alim_intuitive_2   0.57
+## Q7___Alim_intuitive_5   0.57
+## Q7___Alim_intuitive_10  0.57
+## Q7___Alim_intuitive_11  0.56
+## Q7___Alim_intuitive_12  0.68
+## Q7___Alim_intuitive_13  0.57
+## Q7___Alim_intuitive_14  0.57
+## Q7___Alim_intuitive_15  0.68
+## 
+##  Item statistics 
+##                          n raw.r std.r r.cor r.drop mean  sd
+## Q7___Alim_intuitive_2  166  0.88  0.87  0.86   0.83  3.2 1.4
+## Q7___Alim_intuitive_5  166  0.89  0.89  0.88   0.85  3.5 1.3
+## Q7___Alim_intuitive_10 166  0.88  0.87  0.86   0.83  3.5 1.4
+## Q7___Alim_intuitive_11 166  0.89  0.88  0.88   0.85  3.4 1.4
+## Q7___Alim_intuitive_12 166  0.69  0.70  0.63   0.61  3.6 1.2
+## Q7___Alim_intuitive_13 166  0.83  0.84  0.83   0.78  3.5 1.2
+## Q7___Alim_intuitive_14 166  0.87  0.88  0.87   0.83  3.6 1.2
+## Q7___Alim_intuitive_15 166  0.71  0.73  0.66   0.64  3.8 1.1
+## 
+## Non missing response frequency for each item
+##                           1    2    3    4    5 miss
+## Q7___Alim_intuitive_2  0.12 0.26 0.13 0.25 0.25    0
+## Q7___Alim_intuitive_5  0.08 0.21 0.14 0.28 0.29    0
+## Q7___Alim_intuitive_10 0.11 0.16 0.19 0.21 0.33    0
+## Q7___Alim_intuitive_11 0.11 0.23 0.11 0.27 0.28    0
+## Q7___Alim_intuitive_12 0.08 0.12 0.17 0.37 0.26    0
+## Q7___Alim_intuitive_13 0.05 0.22 0.17 0.31 0.25    0
+## Q7___Alim_intuitive_14 0.05 0.19 0.17 0.30 0.28    0
+## Q7___Alim_intuitive_15 0.05 0.08 0.13 0.45 0.29    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = AI_RHSC)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N  ase mean   sd median_r
+##       0.91      0.91    0.92      0.64  11 0.01  3.2 0.98     0.67
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.89 0.91 0.93 
+## 
+##  Reliability if an item is dropped:
+##                        raw_alpha std.alpha G6(smc) average_r  S/N alpha se
+## Q7___Alim_intuitive_6       0.89      0.89    0.89      0.63  8.4    0.013
+## Q7___Alim_intuitive_7       0.92      0.92    0.92      0.69 11.1    0.010
+## Q7___Alim_intuitive_8       0.89      0.89    0.90      0.62  8.0    0.014
+## Q7___Alim_intuitive_21      0.89      0.89    0.90      0.63  8.5    0.013
+## Q7___Alim_intuitive_22      0.90      0.90    0.90      0.65  9.3    0.012
+## Q7___Alim_intuitive_23      0.89      0.89    0.89      0.62  8.1    0.014
+##                         var.r med.r
+## Q7___Alim_intuitive_6  0.0154  0.65
+## Q7___Alim_intuitive_7  0.0064  0.68
+## Q7___Alim_intuitive_8  0.0149  0.66
+## Q7___Alim_intuitive_21 0.0177  0.66
+## Q7___Alim_intuitive_22 0.0081  0.66
+## Q7___Alim_intuitive_23 0.0111  0.64
+## 
+##  Item statistics 
+##                          n raw.r std.r r.cor r.drop mean  sd
+## Q7___Alim_intuitive_6  166  0.86  0.86  0.84   0.79  3.4 1.2
+## Q7___Alim_intuitive_7  166  0.73  0.73  0.65   0.62  2.9 1.1
+## Q7___Alim_intuitive_8  166  0.88  0.88  0.86   0.82  3.1 1.2
+## Q7___Alim_intuitive_21 166  0.86  0.86  0.83   0.79  3.4 1.2
+## Q7___Alim_intuitive_22 166  0.82  0.81  0.79   0.73  3.1 1.2
+## Q7___Alim_intuitive_23 166  0.88  0.87  0.86   0.81  3.3 1.2
+## 
+## Non missing response frequency for each item
+##                           1    2    3    4    5 miss
+## Q7___Alim_intuitive_6  0.07 0.17 0.22 0.39 0.15    0
+## Q7___Alim_intuitive_7  0.12 0.25 0.29 0.28 0.06    0
+## Q7___Alim_intuitive_8  0.10 0.25 0.23 0.28 0.13    0
+## Q7___Alim_intuitive_21 0.07 0.17 0.19 0.40 0.16    0
+## Q7___Alim_intuitive_22 0.11 0.23 0.21 0.33 0.11    0
+## Q7___Alim_intuitive_23 0.09 0.20 0.20 0.39 0.12    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = AI_BFC)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##       0.88      0.88    0.84       0.7   7 0.017  3.6 0.86      0.7
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.84 0.88 0.91 
+## 
+##  Reliability if an item is dropped:
+##                        raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r
+## Q7___Alim_intuitive_18      0.89      0.89     0.8       0.8 7.9    0.018    NA
+## Q7___Alim_intuitive_19      0.75      0.75     0.6       0.6 3.1    0.038    NA
+## Q7___Alim_intuitive_20      0.82      0.82     0.7       0.7 4.7    0.027    NA
+##                        med.r
+## Q7___Alim_intuitive_18   0.8
+## Q7___Alim_intuitive_19   0.6
+## Q7___Alim_intuitive_20   0.7
+## 
+##  Item statistics 
+##                          n raw.r std.r r.cor r.drop mean   sd
+## Q7___Alim_intuitive_18 166  0.86  0.86  0.73   0.69  3.7 0.93
+## Q7___Alim_intuitive_19 166  0.94  0.93  0.90   0.84  3.6 1.02
+## Q7___Alim_intuitive_20 166  0.89  0.90  0.83   0.77  3.6 0.93
+## 
+## Non missing response frequency for each item
+##                           1    2    3    4    5 miss
+## Q7___Alim_intuitive_18 0.01 0.11 0.27 0.44 0.17    0
+## Q7___Alim_intuitive_19 0.04 0.12 0.19 0.48 0.17    0
+## Q7___Alim_intuitive_20 0.01 0.13 0.22 0.49 0.14    0</code></pre>
+</div>
+<div id="alpha-be" class="section level3">
+<h3>alpha BE</h3>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = BE_APP)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N    ase mean   sd median_r
+##       0.94      0.94    0.94       0.6  15 0.0074  3.2 0.89     0.61
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.92 0.94 0.95 
+## 
+##  Reliability if an item is dropped:
+##                         raw_alpha std.alpha G6(smc) average_r S/N alpha se
+## Q12___Estime_corpore_1       0.93      0.94    0.94      0.62  15   0.0077
+## Q12___Estime_corpore_6       0.93      0.93    0.94      0.60  14   0.0081
+## Q12___Estime_corpore_7       0.93      0.93    0.94      0.60  13   0.0083
+## Q12___Estime_corpore_9       0.93      0.93    0.94      0.61  14   0.0078
+## Q12___Estime_corpore_11      0.93      0.93    0.94      0.61  14   0.0077
+## Q12___Estime_corpore_13      0.92      0.93    0.93      0.58  12   0.0090
+## Q12___Estime_corpore_15      0.93      0.93    0.93      0.59  13   0.0084
+## Q12___Estime_corpore_17      0.93      0.93    0.93      0.59  13   0.0085
+## Q12___Estime_corpore_21      0.93      0.93    0.94      0.61  14   0.0078
+## Q12___Estime_corpore_23      0.93      0.93    0.93      0.59  13   0.0084
+##                          var.r med.r
+## Q12___Estime_corpore_1  0.0077  0.63
+## Q12___Estime_corpore_6  0.0092  0.61
+## Q12___Estime_corpore_7  0.0107  0.61
+## Q12___Estime_corpore_9  0.0098  0.62
+## Q12___Estime_corpore_11 0.0088  0.62
+## Q12___Estime_corpore_13 0.0086  0.59
+## Q12___Estime_corpore_15 0.0084  0.61
+## Q12___Estime_corpore_17 0.0099  0.61
+## Q12___Estime_corpore_21 0.0097  0.63
+## Q12___Estime_corpore_23 0.0096  0.60
+## 
+##  Item statistics 
+##                           n raw.r std.r r.cor r.drop mean   sd
+## Q12___Estime_corpore_1  166  0.71  0.72  0.68   0.64  3.0 1.01
+## Q12___Estime_corpore_6  166  0.79  0.80  0.78   0.74  2.9 0.94
+## Q12___Estime_corpore_7  166  0.82  0.82  0.79   0.77  2.8 1.13
+## Q12___Estime_corpore_9  166  0.76  0.75  0.72   0.69  2.8 1.17
+## Q12___Estime_corpore_11 166  0.76  0.74  0.71   0.69  3.8 1.27
+## Q12___Estime_corpore_13 166  0.89  0.89  0.89   0.86  3.4 1.21
+## Q12___Estime_corpore_15 166  0.85  0.86  0.85   0.81  3.2 0.96
+## Q12___Estime_corpore_17 166  0.84  0.84  0.82   0.79  3.9 1.23
+## Q12___Estime_corpore_21 166  0.75  0.74  0.70   0.68  3.0 1.19
+## Q12___Estime_corpore_23 166  0.84  0.85  0.84   0.80  2.7 1.04
+## 
+## Non missing response frequency for each item
+##                            1    2    3    4    5 miss
+## Q12___Estime_corpore_1  0.10 0.20 0.36 0.32 0.02    0
+## Q12___Estime_corpore_6  0.08 0.19 0.44 0.26 0.02    0
+## Q12___Estime_corpore_7  0.14 0.26 0.31 0.22 0.07    0
+## Q12___Estime_corpore_9  0.17 0.21 0.33 0.22 0.07    0
+## Q12___Estime_corpore_11 0.07 0.12 0.17 0.24 0.40    0
+## Q12___Estime_corpore_13 0.09 0.15 0.27 0.30 0.19    0
+## Q12___Estime_corpore_15 0.05 0.17 0.39 0.33 0.07    0
+## Q12___Estime_corpore_17 0.05 0.10 0.17 0.23 0.44    0
+## Q12___Estime_corpore_21 0.12 0.22 0.31 0.23 0.12    0
+## Q12___Estime_corpore_23 0.11 0.31 0.33 0.20 0.04    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = BE_ATT)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##       0.63      0.66    0.68      0.28   2 0.047  2.9 0.62     0.31
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.53 0.63 0.72 
+## 
+##  Reliability if an item is dropped:
+##                         raw_alpha std.alpha G6(smc) average_r S/N alpha se
+## Q12___Estime_corpore_2       0.52      0.55    0.56      0.23 1.2    0.061
+## Q12___Estime_corpore_5       0.73      0.76    0.72      0.44 3.1    0.035
+## Q12___Estime_corpore_12      0.48      0.52    0.51      0.21 1.1    0.065
+## Q12___Estime_corpore_14      0.57      0.60    0.60      0.28 1.5    0.055
+## Q12___Estime_corpore_20      0.52      0.59    0.61      0.26 1.4    0.064
+##                         var.r med.r
+## Q12___Estime_corpore_2  0.058  0.25
+## Q12___Estime_corpore_5  0.018  0.42
+## Q12___Estime_corpore_12 0.044  0.25
+## Q12___Estime_corpore_14 0.048  0.31
+## Q12___Estime_corpore_20 0.096  0.24
+## 
+##  Item statistics 
+##                           n raw.r std.r r.cor r.drop mean   sd
+## Q12___Estime_corpore_2  166  0.69  0.75  0.69   0.54  3.4 0.71
+## Q12___Estime_corpore_5  166  0.45  0.37  0.11   0.09  2.0 1.14
+## Q12___Estime_corpore_12 166  0.75  0.79  0.76   0.57  3.4 0.89
+## Q12___Estime_corpore_14 166  0.63  0.67  0.58   0.39  3.6 0.95
+## Q12___Estime_corpore_20 166  0.73  0.69  0.56   0.47  2.2 1.16
+## 
+## Non missing response frequency for each item
+##                            1    2    3    4    5 miss
+## Q12___Estime_corpore_2  0.00 0.11 0.45 0.42 0.02    0
+## Q12___Estime_corpore_5  0.45 0.27 0.17 0.07 0.04    0
+## Q12___Estime_corpore_12 0.03 0.10 0.39 0.40 0.08    0
+## Q12___Estime_corpore_14 0.01 0.13 0.30 0.38 0.18    0
+## Q12___Estime_corpore_20 0.36 0.22 0.28 0.11 0.04    0</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = BE_Poids)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N    ase mean   sd median_r
+##       0.93      0.94    0.95      0.64  14 0.0079  3.1 0.99     0.61
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.92 0.93 0.95 
+## 
+##  Reliability if an item is dropped:
+##                         raw_alpha std.alpha G6(smc) average_r S/N alpha se
+## Q12___Estime_corpore_3       0.93      0.93    0.94      0.65  13   0.0089
+## Q12___Estime_corpore_4       0.93      0.93    0.95      0.67  14   0.0083
+## Q12___Estime_corpore_8       0.92      0.92    0.93      0.62  12   0.0098
+## Q12___Estime_corpore_10      0.92      0.92    0.93      0.63  12   0.0095
+## Q12___Estime_corpore_16      0.92      0.93    0.94      0.64  13   0.0091
+## Q12___Estime_corpore_18      0.93      0.93    0.93      0.65  13   0.0088
+## Q12___Estime_corpore_19      0.92      0.93    0.93      0.65  13   0.0089
+## Q12___Estime_corpore_22      0.92      0.92    0.93      0.63  12   0.0093
+##                          var.r med.r
+## Q12___Estime_corpore_3  0.0087  0.61
+## Q12___Estime_corpore_4  0.0090  0.63
+## Q12___Estime_corpore_8  0.0075  0.60
+## Q12___Estime_corpore_10 0.0089  0.61
+## Q12___Estime_corpore_16 0.0099  0.61
+## Q12___Estime_corpore_18 0.0097  0.63
+## Q12___Estime_corpore_19 0.0100  0.61
+## Q12___Estime_corpore_22 0.0098  0.60
+## 
+##  Item statistics 
+##                           n raw.r std.r r.cor r.drop mean  sd
+## Q12___Estime_corpore_3  166  0.80  0.82  0.79   0.75  2.8 1.0
+## Q12___Estime_corpore_4  166  0.75  0.75  0.69   0.67  2.8 1.2
+## Q12___Estime_corpore_8  166  0.89  0.89  0.89   0.86  2.9 1.2
+## Q12___Estime_corpore_10 166  0.86  0.86  0.85   0.81  2.6 1.2
+## Q12___Estime_corpore_16 166  0.83  0.82  0.79   0.76  3.0 1.3
+## Q12___Estime_corpore_18 166  0.82  0.81  0.78   0.75  3.9 1.3
+## Q12___Estime_corpore_19 166  0.82  0.82  0.80   0.76  3.9 1.3
+## Q12___Estime_corpore_22 166  0.85  0.86  0.85   0.81  3.1 1.0
+## 
+## Non missing response frequency for each item
+##                            1    2    3    4    5 miss
+## Q12___Estime_corpore_3  0.12 0.27 0.34 0.23 0.04    0
+## Q12___Estime_corpore_4  0.15 0.32 0.23 0.21 0.08    0
+## Q12___Estime_corpore_8  0.14 0.23 0.30 0.24 0.08    0
+## Q12___Estime_corpore_10 0.22 0.31 0.23 0.18 0.07    0
+## Q12___Estime_corpore_16 0.18 0.20 0.21 0.30 0.11    0
+## Q12___Estime_corpore_18 0.09 0.09 0.13 0.23 0.46    0
+## Q12___Estime_corpore_19 0.07 0.10 0.14 0.26 0.42    0
+## Q12___Estime_corpore_22 0.05 0.23 0.31 0.34 0.07    0</code></pre>
+</div>
+<div id="alpha-ee" class="section level3">
+<h3>alpha EE</h3>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = EE)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean  sd median_r
+##        0.9       0.9    0.87      0.76 9.5 0.013  2.7 0.9     0.78
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.88 0.9 0.93 
+## 
+##  Reliability if an item is dropped:
+##                     raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r
+## Q9_Alim_emotionnel       0.87      0.87    0.78      0.78 7.0    0.020    NA
+## Q10_Alim_emotionnel      0.83      0.83    0.71      0.71 5.0    0.026    NA
+## Q11_Alim_emotionnel      0.88      0.88    0.79      0.79 7.5    0.018    NA
+##                     med.r
+## Q9_Alim_emotionnel   0.78
+## Q10_Alim_emotionnel  0.71
+## Q11_Alim_emotionnel  0.79
+## 
+##  Item statistics 
+##                       n raw.r std.r r.cor r.drop mean   sd
+## Q9_Alim_emotionnel  166  0.91  0.91  0.84   0.80  2.7 0.99
+## Q10_Alim_emotionnel 166  0.94  0.93  0.89   0.85  2.7 1.00
+## Q11_Alim_emotionnel 166  0.90  0.91  0.83   0.79  2.8 0.94
+## 
+## Non missing response frequency for each item
+##                        1    2    3    4 miss
+## Q9_Alim_emotionnel  0.11 0.33 0.29 0.27    0
+## Q10_Alim_emotionnel 0.14 0.27 0.34 0.25    0
+## Q11_Alim_emotionnel 0.10 0.24 0.39 0.28    0</code></pre>
+</div>
+<div id="alpha-internalisation" class="section level3">
+<h3>alpha internalisation</h3>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = Interna)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N    ase mean  sd median_r
+##       0.97      0.97    0.98      0.79  35 0.0033  2.3 1.1     0.79
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.97 0.97 0.98 
+## 
+##  Reliability if an item is dropped:
+##                        raw_alpha std.alpha G6(smc) average_r S/N alpha se
+## Q13___Internalisatio_1      0.97      0.97    0.98      0.81  33   0.0035
+## Q13___Internalisatio_2      0.97      0.97    0.97      0.80  31   0.0037
+## Q13___Internalisatio_3      0.97      0.97    0.97      0.79  29   0.0039
+## Q13___Internalisatio_4      0.97      0.97    0.97      0.80  31   0.0037
+## Q13___Internalisatio_5      0.97      0.97    0.97      0.79  30   0.0038
+## Q13___Internalisatio_6      0.97      0.97    0.97      0.79  30   0.0038
+## Q13___Internalisatio_7      0.97      0.97    0.97      0.79  30   0.0038
+## Q13___Internalisatio_8      0.97      0.97    0.97      0.80  31   0.0036
+## Q13___Internalisatio_9      0.97      0.97    0.98      0.81  34   0.0034
+##                         var.r med.r
+## Q13___Internalisatio_1 0.0032  0.81
+## Q13___Internalisatio_2 0.0029  0.79
+## Q13___Internalisatio_3 0.0028  0.77
+## Q13___Internalisatio_4 0.0030  0.79
+## Q13___Internalisatio_5 0.0034  0.77
+## Q13___Internalisatio_6 0.0030  0.78
+## Q13___Internalisatio_7 0.0029  0.79
+## Q13___Internalisatio_8 0.0030  0.80
+## Q13___Internalisatio_9 0.0028  0.81
+## 
+##  Item statistics 
+##                          n raw.r std.r r.cor r.drop mean  sd
+## Q13___Internalisatio_1 166  0.86  0.87  0.84   0.83  2.8 1.2
+## Q13___Internalisatio_2 166  0.90  0.90  0.90   0.88  2.3 1.3
+## Q13___Internalisatio_3 166  0.94  0.94  0.93   0.92  2.2 1.3
+## Q13___Internalisatio_4 166  0.90  0.90  0.89   0.88  2.2 1.3
+## Q13___Internalisatio_5 166  0.93  0.93  0.92   0.90  2.5 1.3
+## Q13___Internalisatio_6 166  0.93  0.93  0.92   0.90  2.2 1.3
+## Q13___Internalisatio_7 166  0.93  0.93  0.92   0.91  2.1 1.2
+## Q13___Internalisatio_8 166  0.90  0.90  0.89   0.87  2.2 1.3
+## Q13___Internalisatio_9 166  0.85  0.86  0.83   0.82  2.1 1.2
+## 
+## Non missing response frequency for each item
+##                           1    2    3    4    5 miss
+## Q13___Internalisatio_1 0.19 0.24 0.27 0.22 0.08    0
+## Q13___Internalisatio_2 0.38 0.25 0.14 0.17 0.06    0
+## Q13___Internalisatio_3 0.40 0.25 0.14 0.16 0.06    0
+## Q13___Internalisatio_4 0.42 0.23 0.13 0.17 0.06    0
+## Q13___Internalisatio_5 0.31 0.23 0.17 0.21 0.07    0
+## Q13___Internalisatio_6 0.40 0.25 0.16 0.14 0.05    0
+## Q13___Internalisatio_7 0.43 0.25 0.16 0.09 0.06    0
+## Q13___Internalisatio_8 0.39 0.22 0.19 0.15 0.05    0
+## Q13___Internalisatio_9 0.42 0.28 0.16 0.12 0.03    0</code></pre>
 </div>
 </div>
-<div id="resultats-avec-nouvelles-sous-échelles-5-aprés-analyse-factorielle" class="section level2">
-<h2>Resultats avec nouvelles sous-échelles (5) (aprés Analyse factorielle)</h2>
-<div id="adaptatif-0.88-maladaptatif-0.61" class="section level4">
-<h4>adaptatif = 0.88 ; maladaptatif = 0.61</h4>
-<p>[file here:] (<a href="https://alexandrewilliot.github.io/R-home/Analyse_QSREIC_AF.html" class="uri">https://alexandrewilliot.github.io/R-home/Analyse_QSREIC_AF.html</a>)</p>
+<div id="analyse-factorielle---extraction" class="section level2">
+<h2>Analyse factorielle - extraction</h2>
+<div id="matrice-de-corrélation-besoin-de-bonnes-corrélations" class="section level4">
+<h4>matrice de corrélation ; besoin de bonnes corrélations</h4>
+</div>
+<div id="bartlett-sur-data-ou-corrélation-même-résultat-on-veut-test-signif-donc-af-ok" class="section level4">
+<h4>Bartlett sur data ou corrélation (même résultat) # on veut test signif donc AF ok</h4>
+<pre><code>##                        Q13___Internalisatio_9 Q14___QSREIC_1 Q14___QSREIC_2
+## Q13___Internalisatio_9                   1.00           0.41          -0.06
+## Q14___QSREIC_1                           0.41           1.00          -0.10
+## Q14___QSREIC_2                          -0.06          -0.10           1.00
+## Q14___QSREIC_3                          -0.17          -0.16           0.52
+## Q14___QSREIC_4                           0.47           0.45          -0.05
+## Q14___QSREIC_5                           0.63           0.43          -0.01
+## Q14___QSREIC_6                           0.30           0.29           0.14
+## Q14___QSREIC_10                         -0.46          -0.34           0.20
+## Q14___QSREIC_11                         -0.14          -0.19           0.02
+## Q14___QSREIC_12                          0.02           0.01           0.12
+## Q14___QSREIC_13                          0.50           0.48          -0.16
+## Q14___QSREIC_14                          0.11           0.20          -0.18
+## Q14___QSREIC_18                         -0.49          -0.37           0.19
+## Q14___QSREIC_19                          0.68           0.58          -0.05
+## Q14___QSREIC_20                          0.28           0.28          -0.13
+## Q14___QSREIC_21                         -0.08          -0.12           0.13
+## Q14___QSREIC_22                          0.33           0.33           0.02
+## Q14___QSREIC_23                          0.58           0.52          -0.06
+## Q14___QSREIC_25                          0.23           0.21           0.09
+## Q14___QSREIC_26                          0.41           0.32           0.05
+##                        Q14___QSREIC_3 Q14___QSREIC_4 Q14___QSREIC_5
+## Q13___Internalisatio_9          -0.17           0.47           0.63
+## Q14___QSREIC_1                  -0.16           0.45           0.43
+## Q14___QSREIC_2                   0.52          -0.05          -0.01
+## Q14___QSREIC_3                   1.00          -0.17          -0.12
+## Q14___QSREIC_4                  -0.17           1.00           0.57
+## Q14___QSREIC_5                  -0.12           0.57           1.00
+## Q14___QSREIC_6                  -0.04           0.29           0.44
+## Q14___QSREIC_10                  0.35          -0.38          -0.50
+## Q14___QSREIC_11                  0.21          -0.20          -0.15
+## Q14___QSREIC_12                  0.29          -0.12          -0.02
+## Q14___QSREIC_13                 -0.24           0.50           0.49
+## Q14___QSREIC_14                 -0.13           0.15           0.18
+## Q14___QSREIC_18                  0.27          -0.41          -0.42
+## Q14___QSREIC_19                 -0.17           0.58           0.76
+## Q14___QSREIC_20                 -0.19           0.11           0.31
+## Q14___QSREIC_21                  0.23          -0.19          -0.10
+## Q14___QSREIC_22                 -0.18           0.25           0.44
+## Q14___QSREIC_23                 -0.21           0.50           0.59
+## Q14___QSREIC_25                  0.05           0.22           0.24
+## Q14___QSREIC_26                 -0.03           0.43           0.51
+##                        Q14___QSREIC_6 Q14___QSREIC_10 Q14___QSREIC_11
+## Q13___Internalisatio_9           0.30           -0.46           -0.14
+## Q14___QSREIC_1                   0.29           -0.34           -0.19
+## Q14___QSREIC_2                   0.14            0.20            0.02
+## Q14___QSREIC_3                  -0.04            0.35            0.21
+## Q14___QSREIC_4                   0.29           -0.38           -0.20
+## Q14___QSREIC_5                   0.44           -0.50           -0.15
+## Q14___QSREIC_6                   1.00           -0.22           -0.09
+## Q14___QSREIC_10                 -0.22            1.00            0.29
+## Q14___QSREIC_11                 -0.09            0.29            1.00
+## Q14___QSREIC_12                 -0.03            0.27            0.39
+## Q14___QSREIC_13                  0.29           -0.48           -0.21
+## Q14___QSREIC_14                  0.05           -0.13            0.00
+## Q14___QSREIC_18                 -0.26            0.60            0.31
+## Q14___QSREIC_19                  0.35           -0.49           -0.19
+## Q14___QSREIC_20                  0.27           -0.24           -0.07
+## Q14___QSREIC_21                 -0.09            0.14            0.17
+## Q14___QSREIC_22                  0.15           -0.39           -0.06
+## Q14___QSREIC_23                  0.40           -0.55           -0.18
+## Q14___QSREIC_25                  0.04           -0.06           -0.15
+## Q14___QSREIC_26                  0.21           -0.21           -0.10
+##                        Q14___QSREIC_12 Q14___QSREIC_13 Q14___QSREIC_14
+## Q13___Internalisatio_9            0.02            0.50            0.11
+## Q14___QSREIC_1                    0.01            0.48            0.20
+## Q14___QSREIC_2                    0.12           -0.16           -0.18
+## Q14___QSREIC_3                    0.29           -0.24           -0.13
+## Q14___QSREIC_4                   -0.12            0.50            0.15
+## Q14___QSREIC_5                   -0.02            0.49            0.18
+## Q14___QSREIC_6                   -0.03            0.29            0.05
+## Q14___QSREIC_10                   0.27           -0.48           -0.13
+## Q14___QSREIC_11                   0.39           -0.21            0.00
+## Q14___QSREIC_12                   1.00           -0.12           -0.16
+## Q14___QSREIC_13                  -0.12            1.00            0.42
+## Q14___QSREIC_14                  -0.16            0.42            1.00
+## Q14___QSREIC_18                   0.23           -0.44           -0.13
+## Q14___QSREIC_19                  -0.08            0.57            0.23
+## Q14___QSREIC_20                  -0.13            0.29            0.35
+## Q14___QSREIC_21                   0.27           -0.12            0.04
+## Q14___QSREIC_22                  -0.04            0.40            0.26
+## Q14___QSREIC_23                  -0.02            0.58            0.19
+## Q14___QSREIC_25                   0.06            0.11            0.09
+## Q14___QSREIC_26                   0.00            0.25            0.14
+##                        Q14___QSREIC_18 Q14___QSREIC_19 Q14___QSREIC_20
+## Q13___Internalisatio_9           -0.49            0.68            0.28
+## Q14___QSREIC_1                   -0.37            0.58            0.28
+## Q14___QSREIC_2                    0.19           -0.05           -0.13
+## Q14___QSREIC_3                    0.27           -0.17           -0.19
+## Q14___QSREIC_4                   -0.41            0.58            0.11
+## Q14___QSREIC_5                   -0.42            0.76            0.31
+## Q14___QSREIC_6                   -0.26            0.35            0.27
+## Q14___QSREIC_10                   0.60           -0.49           -0.24
+## Q14___QSREIC_11                   0.31           -0.19           -0.07
+## Q14___QSREIC_12                   0.23           -0.08           -0.13
+## Q14___QSREIC_13                  -0.44            0.57            0.29
+## Q14___QSREIC_14                  -0.13            0.23            0.35
+## Q14___QSREIC_18                   1.00           -0.48           -0.23
+## Q14___QSREIC_19                  -0.48            1.00            0.41
+## Q14___QSREIC_20                  -0.23            0.41            1.00
+## Q14___QSREIC_21                   0.20           -0.08            0.02
+## Q14___QSREIC_22                  -0.34            0.45            0.46
+## Q14___QSREIC_23                  -0.50            0.64            0.29
+## Q14___QSREIC_25                  -0.11            0.30            0.21
+## Q14___QSREIC_26                  -0.22            0.46            0.30
+##                        Q14___QSREIC_21 Q14___QSREIC_22 Q14___QSREIC_23
+## Q13___Internalisatio_9           -0.08            0.33            0.58
+## Q14___QSREIC_1                   -0.12            0.33            0.52
+## Q14___QSREIC_2                    0.13            0.02           -0.06
+## Q14___QSREIC_3                    0.23           -0.18           -0.21
+## Q14___QSREIC_4                   -0.19            0.25            0.50
+## Q14___QSREIC_5                   -0.10            0.44            0.59
+## Q14___QSREIC_6                   -0.09            0.15            0.40
+## Q14___QSREIC_10                   0.14           -0.39           -0.55
+## Q14___QSREIC_11                   0.17           -0.06           -0.18
+## Q14___QSREIC_12                   0.27           -0.04           -0.02
+## Q14___QSREIC_13                  -0.12            0.40            0.58
+## Q14___QSREIC_14                   0.04            0.26            0.19
+## Q14___QSREIC_18                   0.20           -0.34           -0.50
+## Q14___QSREIC_19                  -0.08            0.45            0.64
+## Q14___QSREIC_20                   0.02            0.46            0.29
+## Q14___QSREIC_21                   1.00            0.01           -0.05
+## Q14___QSREIC_22                   0.01            1.00            0.48
+## Q14___QSREIC_23                  -0.05            0.48            1.00
+## Q14___QSREIC_25                   0.04            0.37            0.15
+## Q14___QSREIC_26                   0.00            0.38            0.31
+##                        Q14___QSREIC_25 Q14___QSREIC_26
+## Q13___Internalisatio_9            0.23            0.41
+## Q14___QSREIC_1                    0.21            0.32
+## Q14___QSREIC_2                    0.09            0.05
+## Q14___QSREIC_3                    0.05           -0.03
+## Q14___QSREIC_4                    0.22            0.43
+## Q14___QSREIC_5                    0.24            0.51
+## Q14___QSREIC_6                    0.04            0.21
+## Q14___QSREIC_10                  -0.06           -0.21
+## Q14___QSREIC_11                  -0.15           -0.10
+## Q14___QSREIC_12                   0.06            0.00
+## Q14___QSREIC_13                   0.11            0.25
+## Q14___QSREIC_14                   0.09            0.14
+## Q14___QSREIC_18                  -0.11           -0.22
+## Q14___QSREIC_19                   0.30            0.46
+## Q14___QSREIC_20                   0.21            0.30
+## Q14___QSREIC_21                   0.04            0.00
+## Q14___QSREIC_22                   0.37            0.38
+## Q14___QSREIC_23                   0.15            0.31
+## Q14___QSREIC_25                   1.00            0.44
+## Q14___QSREIC_26                   0.44            1.00</code></pre>
+<pre><code>## R was not square, finding R from data</code></pre>
+<pre><code>## $chisq
+## [1] 1317.268
+## 
+## $p.value
+## [1] 8.745859e-168
+## 
+## $df
+## [1] 190</code></pre>
+<pre><code>## $chisq
+## [1] 4763.074
+## 
+## $p.value
+## [1] 0
+## 
+## $df
+## [1] 190</code></pre>
+</div>
+<div id="kmo-test" class="section level4">
+<h4>KMO test</h4>
+</div>
+<div id="kmo-doit-être-sup-à-0.7-pour-af-ok-min-de-.5" class="section level3">
+<h3>kmo doit être sup à 0.7 pour AF ok (min de .5)</h3>
+<pre><code>## $overall
+## [1] 0.8559984
+## 
+## $report
+## [1] &quot;The KMO test yields a degree of common variance meritorious.&quot;
+## 
+## $individual
+## Q13___Internalisatio_9         Q14___QSREIC_1         Q14___QSREIC_2 
+##              0.9167195              0.9102061              0.5543671 
+##         Q14___QSREIC_3         Q14___QSREIC_4         Q14___QSREIC_5 
+##              0.7406060              0.9133394              0.8757225 
+##         Q14___QSREIC_6        Q14___QSREIC_10        Q14___QSREIC_11 
+##              0.7871610              0.9015202              0.7180605 
+##        Q14___QSREIC_12        Q14___QSREIC_13        Q14___QSREIC_14 
+##              0.6096498              0.8969323              0.7013482 
+##        Q14___QSREIC_18        Q14___QSREIC_19        Q14___QSREIC_20 
+##              0.9098216              0.8927220              0.7984644 
+##        Q14___QSREIC_21        Q14___QSREIC_22        Q14___QSREIC_23 
+##              0.7356904              0.8101254              0.9300582 
+##        Q14___QSREIC_25        Q14___QSREIC_26 
+##              0.7442734              0.8786234 
+## 
+## $AIS
+##               [,1]         [,2]         [,3]         [,4]          [,5]
+##  [1,]  0.427207162  0.034697256 -0.020524652  0.034231465  0.0126385329
+##  [2,]  0.034697256  0.560258392  0.036812624  0.002226563 -0.0527898875
+##  [3,] -0.020524652  0.036812624  0.626821291 -0.294227345 -0.0171358836
+##  [4,]  0.034231465  0.002226563 -0.294227345  0.594326775  0.0284205236
+##  [5,]  0.012638533 -0.052789887 -0.017135884  0.028420524  0.4983730751
+##  [6,] -0.054357130  0.057745235  0.014736222 -0.028422415 -0.0610250145
+##  [7,]  0.021144453 -0.053948648 -0.144190778  0.025027429 -0.0003793702
+##  [8,]  0.024411845 -0.003359642 -0.027341223 -0.062993460 -0.0144966471
+##  [9,] -0.032427847  0.061960692  0.084617664 -0.070747584 -0.0143599448
+## [10,] -0.070410405 -0.101341326  0.033982343 -0.088762155  0.0463384392
+## [11,] -0.067036743 -0.052901676  0.033083188 -0.005226130 -0.0901468346
+## [12,]  0.058794340 -0.020160714  0.067923679 -0.016230622  0.0083455993
+## [13,]  0.085805694  0.018547942 -0.076996736  0.032025144  0.0434430752
+## [14,] -0.085270825 -0.108521925 -0.014193811 -0.009112182 -0.0473011882
+## [15,] -0.028148669 -0.013445378  0.075527102  0.022063785  0.0966642256
+## [16,]  0.006834494  0.063205454 -0.021157090 -0.080415532  0.0625818001
+## [17,]  0.067950693 -0.008327237 -0.115079573  0.076610345  0.0649287603
+## [18,] -0.059185764 -0.071364825 -0.004017017  0.017718271 -0.0461222694
+## [19,] -0.036655802 -0.012383195 -0.003647693 -0.045935092 -0.0393823639
+## [20,] -0.058676510 -0.041125096 -0.007768873 -0.013287708 -0.1163897192
+##              [,6]          [,7]         [,8]         [,9]        [,10]
+##  [1,] -0.05435713  0.0211444530  0.024411845 -0.032427847 -0.070410405
+##  [2,]  0.05774523 -0.0539486483 -0.003359642  0.061960692 -0.101341326
+##  [3,]  0.01473622 -0.1441907783 -0.027341223  0.084617664  0.033982343
+##  [4,] -0.02842241  0.0250274289 -0.062993460 -0.070747584 -0.088762155
+##  [5,] -0.06102501 -0.0003793702 -0.014496647 -0.014359945  0.046338439
+##  [6,]  0.30767016 -0.1188010945  0.070724452  0.018532059 -0.050488837
+##  [7,] -0.11880109  0.6734266707 -0.040357406 -0.034960042  0.022339738
+##  [8,]  0.07072445 -0.0403574058  0.457238561 -0.037520368 -0.097381340
+##  [9,]  0.01853206 -0.0349600421 -0.037520368  0.714351804 -0.220012426
+## [10,] -0.05048884  0.0223397384 -0.097381340 -0.220012426  0.656502759
+## [11,]  0.02001880 -0.0494194581  0.052843456  0.060351357 -0.020174298
+## [12,] -0.03195704  0.0638243976 -0.061509984 -0.082009456  0.116216430
+## [13,] -0.03030561  0.0521820849 -0.152419678 -0.083611331 -0.041118212
+## [14,] -0.12230580  0.0412731287 -0.008914055 -0.014234430  0.048196905
+## [15,]  0.03713233 -0.1535923411 -0.007520013  0.011765796  0.045744172
+## [16,]  0.03689327  0.0330902563  0.032129736 -0.008340058 -0.145114869
+## [17,] -0.05491932  0.1033031135  0.055343660 -0.098571357 -0.002081712
+## [18,] -0.01394808 -0.0945474296  0.067192519  0.021878377 -0.055652571
+## [19,]  0.03846133  0.0323847089 -0.044996235  0.138495885 -0.066801876
+## [20,] -0.09224346 -0.0002324506 -0.021237914 -0.004390783  0.019040377
+##             [,11]        [,12]        [,13]        [,14]        [,15]
+##  [1,] -0.06703674  0.058794340  0.085805694 -0.085270825 -0.028148669
+##  [2,] -0.05290168 -0.020160714  0.018547942 -0.108521925 -0.013445378
+##  [3,]  0.03308319  0.067923679 -0.076996736 -0.014193811  0.075527102
+##  [4,] -0.00522613 -0.016230622  0.032025144 -0.009112182  0.022063785
+##  [5,] -0.09014683  0.008345599  0.043443075 -0.047301188  0.096664226
+##  [6,]  0.02001880 -0.031957042 -0.030305614 -0.122305800  0.037132331
+##  [7,] -0.04941946  0.063824398  0.052182085  0.041273129 -0.153592341
+##  [8,]  0.05284346 -0.061509984 -0.152419678 -0.008914055 -0.007520013
+##  [9,]  0.06035136 -0.082009456 -0.083611331 -0.014234430  0.011765796
+## [10,] -0.02017430  0.116216430 -0.041118212  0.048196905  0.045744172
+## [11,]  0.43984981 -0.203583237 -0.010589077 -0.032795334  0.031921063
+## [12,] -0.20358324  0.684569087  0.004736733  0.011123307 -0.147084764
+## [13,] -0.01058908  0.004736733  0.511066710  0.017123490 -0.014583663
+## [14,] -0.03279533  0.011123307  0.017123490  0.262558479 -0.082894925
+## [15,]  0.03192106 -0.147084764 -0.014583663 -0.082894925  0.601590740
+## [16,]  0.02658931 -0.080274273 -0.063524079 -0.027448410 -0.032599906
+## [17,] -0.06608470 -0.012118967  0.055966075  0.008159707 -0.164087962
+## [18,] -0.05330365  0.002810870  0.034510859 -0.034653405  0.028584699
+## [19,]  0.04957860 -0.021004728 -0.006936614 -0.048486499  0.001075784
+## [20,]  0.04275449 -0.007115996 -0.023017675  0.015387213 -0.065366189
+##              [,16]        [,17]        [,18]        [,19]         [,20]
+##  [1,]  0.006834494  0.067950693 -0.059185764 -0.036655802 -0.0586765104
+##  [2,]  0.063205454 -0.008327237 -0.071364825 -0.012383195 -0.0411250964
+##  [3,] -0.021157090 -0.115079573 -0.004017017 -0.003647693 -0.0077688728
+##  [4,] -0.080415532  0.076610345  0.017718271 -0.045935092 -0.0132877081
+##  [5,]  0.062581800  0.064928760 -0.046122269 -0.039382364 -0.1163897192
+##  [6,]  0.036893272 -0.054919319 -0.013948082  0.038461328 -0.0922434630
+##  [7,]  0.033090256  0.103303113 -0.094547430  0.032384709 -0.0002324506
+##  [8,]  0.032129736  0.055343660  0.067192519 -0.044996235 -0.0212379138
+##  [9,] -0.008340058 -0.098571357  0.021878377  0.138495885 -0.0043907827
+## [10,] -0.145114869 -0.002081712 -0.055652571 -0.066801876  0.0190403773
+## [11,]  0.026589315 -0.066084701 -0.053303651  0.049578601  0.0427544886
+## [12,] -0.080274273 -0.012118967  0.002810870 -0.021004728 -0.0071159958
+## [13,] -0.063524079  0.055966075  0.034510859 -0.006936614 -0.0230176747
+## [14,] -0.027448410  0.008159707 -0.034653405 -0.048486499  0.0153872135
+## [15,] -0.032599906 -0.164087962  0.028584699  0.001075784 -0.0653661888
+## [16,]  0.834818749 -0.007926663 -0.052401440 -0.013220481 -0.0333124389
+## [17,] -0.007926663  0.496072930 -0.101571636 -0.162163729 -0.0538261807
+## [18,] -0.052401440 -0.101571636  0.390914182  0.045780453  0.0286040143
+## [19,] -0.013220481 -0.162163729  0.045780453  0.677942330 -0.1712528669
+## [20,] -0.033312439 -0.053826181  0.028604014 -0.171252867  0.5761058692
+## 
+## $AIR
+##              [,1]         [,2]         [,3]         [,4]          [,5]
+##  [1,]  0.91671950  0.070922117 -0.039662918  0.067934999  0.0273905097
+##  [2,]  0.07092212  0.910206098  0.062119896  0.003858586 -0.0999031692
+##  [3,] -0.03966292  0.062119896  0.554367100 -0.482057135 -0.0306589550
+##  [4,]  0.06793500  0.003858586 -0.482057135  0.740606028  0.0522206342
+##  [5,]  0.02739051 -0.099903169 -0.030658955  0.052220634  0.9133393999
+##  [6,] -0.14993208  0.139084675  0.033556109 -0.066466933 -0.1558432224
+##  [7,]  0.03942140 -0.087829665 -0.221932273  0.039560196 -0.0006548484
+##  [8,]  0.05523444 -0.006637849 -0.051071034 -0.120840188 -0.0303681864
+##  [9,] -0.05870063  0.097941331  0.126454151 -0.108578264 -0.0240668589
+## [10,] -0.13295336 -0.167099103  0.052974049 -0.142100927  0.0810113441
+## [11,] -0.15464698 -0.106567075  0.063006198 -0.010221517 -0.1925400116
+## [12,]  0.10871954 -0.032553904  0.103690912 -0.025445670  0.0142880052
+## [13,]  0.18363609  0.034662729 -0.136038441  0.058108498  0.0860804400
+## [14,] -0.25460573 -0.282950380 -0.034987599 -0.023067298 -0.1307620561
+## [15,] -0.05552493 -0.023159452  0.122992995  0.036899186  0.1765378850
+## [16,]  0.01144435  0.092419640 -0.029247448 -0.114164531  0.0970229931
+## [17,]  0.14760527 -0.015795522 -0.206373347  0.141091875  0.1305831259
+## [18,] -0.14482958 -0.152492788 -0.008115048  0.036759363 -0.1044943164
+## [19,] -0.06811254 -0.020092878 -0.005595643 -0.072366166 -0.0677529360
+## [20,] -0.11827525 -0.072387169 -0.012928109 -0.022708387 -0.2172131855
+##              [,6]          [,7]         [,8]        [,9]        [,10]
+##  [1,] -0.14993208  0.0394213993  0.055234436 -0.05870063 -0.132953356
+##  [2,]  0.13908468 -0.0878296651 -0.006637849  0.09794133 -0.167099103
+##  [3,]  0.03355611 -0.2219322726 -0.051071034  0.12645415  0.052974049
+##  [4,] -0.06646693  0.0395601957 -0.120840188 -0.10857826 -0.142100927
+##  [5,] -0.15584322 -0.0006548484 -0.030368186 -0.02406686  0.081011344
+##  [6,]  0.87572253 -0.2609952476  0.188562567  0.03952983 -0.112339995
+##  [7,] -0.26099525  0.7871610415 -0.072728840 -0.05040466  0.033598095
+##  [8,]  0.18856257 -0.0727288401  0.901520250 -0.06565073 -0.177740355
+##  [9,]  0.03952983 -0.0504046633 -0.065650735  0.71806053 -0.321271987
+## [10,] -0.11233999  0.0335980946 -0.177740355 -0.32127199  0.609649766
+## [11,]  0.05441808 -0.0908030885  0.117833178  0.10766605 -0.037542911
+## [12,] -0.06963302  0.0940010980 -0.109942484 -0.11727332  0.173356692
+## [13,] -0.07642608  0.0889482636 -0.315304973 -0.13837903 -0.070986726
+## [14,] -0.43031981  0.0981542733 -0.025727102 -0.03286783  0.116088139
+## [15,]  0.08630957 -0.2413091738 -0.014338265  0.01794794  0.072789196
+## [16,]  0.07279615  0.0441325353  0.052004346 -0.01079983 -0.196018715
+## [17,] -0.14057552  0.1787291912  0.116204699 -0.16558535 -0.003647787
+## [18,] -0.04021898 -0.1842739125  0.158931061  0.04140171 -0.109856623
+## [19,]  0.08421418  0.0479290108 -0.080818052  0.19901436 -0.100132258
+## [20,] -0.21909969 -0.0003731938 -0.041379885 -0.00684439  0.030960369
+##             [,11]        [,12]        [,13]       [,14]        [,15]
+##  [1,] -0.15464698  0.108719543  0.183636094 -0.25460573 -0.055524931
+##  [2,] -0.10656708 -0.032553904  0.034662729 -0.28295038 -0.023159452
+##  [3,]  0.06300620  0.103690912 -0.136038441 -0.03498760  0.122992995
+##  [4,] -0.01022152 -0.025445670  0.058108498 -0.02306730  0.036899186
+##  [5,] -0.19254001  0.014288005  0.086080440 -0.13076206  0.176537885
+##  [6,]  0.05441808 -0.069633022 -0.076426085 -0.43031981  0.086309571
+##  [7,] -0.09080309  0.094001098  0.088948264  0.09815427 -0.241309174
+##  [8,]  0.11783318 -0.109942484 -0.315304973 -0.02572710 -0.014338265
+##  [9,]  0.10766605 -0.117273319 -0.138379026 -0.03286783  0.017947942
+## [10,] -0.03754291  0.173356692 -0.070986726  0.11608814  0.072789196
+## [11,]  0.89693231 -0.371006203 -0.022334030 -0.09650434  0.062054685
+## [12,] -0.37100620  0.701348225  0.008008137  0.02623688 -0.229196760
+## [13,] -0.02233403  0.008008137  0.909821617  0.04674557 -0.026301302
+## [14,] -0.09650434  0.026236885  0.046745570  0.89272197 -0.208576008
+## [15,]  0.06205468 -0.229196760 -0.026301302 -0.20857601  0.798464371
+## [16,]  0.04387921 -0.106187072 -0.097253107 -0.05862840 -0.046001255
+## [17,] -0.14147378 -0.020796209  0.111150978  0.02260939 -0.300367808
+## [18,] -0.12854762  0.005433648  0.077210482 -0.10816635  0.058944370
+## [19,]  0.09079160 -0.030832734 -0.011784532 -0.11492418  0.001684528
+## [20,]  0.08493337 -0.011331200 -0.042420082  0.03956360 -0.111032839
+##             [,16]        [,17]        [,18]        [,19]         [,20]
+##  [1,]  0.01144435  0.147605270 -0.144829584 -0.068112541 -0.1182752475
+##  [2,]  0.09241964 -0.015795522 -0.152492788 -0.020092878 -0.0723871693
+##  [3,] -0.02924745 -0.206373347 -0.008115048 -0.005595643 -0.0129281086
+##  [4,] -0.11416453  0.141091875  0.036759363 -0.072366166 -0.0227083867
+##  [5,]  0.09702299  0.130583126 -0.104494316 -0.067752936 -0.2172131855
+##  [6,]  0.07279615 -0.140575519 -0.040218984  0.084214178 -0.2190996899
+##  [7,]  0.04413254  0.178729191 -0.184273912  0.047929011 -0.0003731938
+##  [8,]  0.05200435  0.116204699  0.158931061 -0.080818052 -0.0413798850
+##  [9,] -0.01079983 -0.165585345  0.041401713  0.199014363 -0.0068443896
+## [10,] -0.19601872 -0.003647787 -0.109856623 -0.100132258  0.0309603686
+## [11,]  0.04387921 -0.141473781 -0.128547620  0.090791604  0.0849333715
+## [12,] -0.10618707 -0.020796209  0.005433648 -0.030832734 -0.0113311996
+## [13,] -0.09725311  0.111150978  0.077210482 -0.011784532 -0.0424200819
+## [14,] -0.05862840  0.022609387 -0.108166350 -0.114924183  0.0395636003
+## [15,] -0.04600126 -0.300367808  0.058944370  0.001684528 -0.1110328386
+## [16,]  0.73569040 -0.012317471 -0.091728948 -0.017573360 -0.0480351535
+## [17,] -0.01231747  0.810125409 -0.230652927 -0.279630527 -0.1006861304
+## [18,] -0.09172895 -0.230652927  0.930058200  0.088928915  0.0602747092
+## [19,] -0.01757336 -0.279630527  0.088928915  0.744273446 -0.2740250874
+## [20,] -0.04803515 -0.100686130  0.060274709 -0.274025087  0.8786234110</code></pre>
+<pre><code>## [1] 0.0002332017</code></pre>
+</div>
+<div id="acp" class="section level3">
+<h3>ACP</h3>
+<div id="factors-27-graphe-point-dinflexion-puis-2" class="section level4">
+<h4>factors = 27 (graphe point d’inflexion) puis 2</h4>
+<pre><code>## Principal Components Analysis
+## Call: principal(r = QSREIC_alpha, nfactors = 20, rotate = &quot;none&quot;, scores = FALSE)
+## Standardized loadings (pattern matrix) based upon correlation matrix
+##                          PC1   PC2   PC3   PC4   PC5   PC6   PC7   PC8   PC9
+## Q13___Internalisatio_9  0.74  0.15 -0.13  0.17 -0.16 -0.08 -0.02  0.00 -0.16
+## Q14___QSREIC_1          0.66  0.07 -0.02  0.12 -0.05  0.19  0.13  0.21  0.48
+## Q14___QSREIC_2         -0.15  0.59 -0.39 -0.27  0.41 -0.09  0.07 -0.21  0.06
+## Q14___QSREIC_3         -0.34  0.65 -0.22 -0.07  0.26  0.03  0.24 -0.18  0.01
+## Q14___QSREIC_4          0.68  0.04 -0.26  0.02 -0.15  0.32  0.20  0.01 -0.18
+## Q14___QSREIC_5          0.79  0.21 -0.14  0.08 -0.01  0.04 -0.09 -0.02 -0.25
+## Q14___QSREIC_6          0.46  0.17 -0.27  0.15  0.48  0.11 -0.41  0.31  0.02
+## Q14___QSREIC_10        -0.68  0.30  0.10 -0.07  0.00  0.39 -0.03  0.17  0.10
+## Q14___QSREIC_11        -0.32  0.36  0.31  0.53 -0.08  0.17 -0.25 -0.36 -0.17
+## Q14___QSREIC_12        -0.18  0.60  0.07  0.48 -0.32 -0.04 -0.02  0.05  0.28
+## Q14___QSREIC_13         0.73 -0.10  0.09  0.18  0.16  0.13  0.31 -0.07  0.10
+## Q14___QSREIC_14         0.33 -0.09  0.61 -0.01  0.35  0.33  0.35 -0.09 -0.09
+## Q14___QSREIC_18        -0.67  0.27  0.16 -0.03  0.02  0.27 -0.03  0.15 -0.03
+## Q14___QSREIC_19         0.85  0.16 -0.04  0.05 -0.03  0.04  0.03  0.04 -0.06
+## Q14___QSREIC_20         0.49  0.05  0.52 -0.16  0.28 -0.05 -0.39  0.13  0.05
+## Q14___QSREIC_21        -0.18  0.44  0.35  0.13  0.07 -0.49  0.33  0.42 -0.25
+## Q14___QSREIC_22         0.60  0.18  0.36 -0.19  0.02 -0.27 -0.14 -0.36  0.18
+## Q14___QSREIC_23         0.78  0.07 -0.07  0.24  0.06 -0.17  0.06 -0.02  0.13
+## Q14___QSREIC_25         0.33  0.40  0.16 -0.57 -0.37  0.02  0.02  0.03  0.17
+## Q14___QSREIC_26         0.55  0.37  0.06 -0.32 -0.26  0.19 -0.13  0.08 -0.30
+##                         PC10  PC11  PC12  PC13  PC14  PC15  PC16  PC17  PC18
+## Q13___Internalisatio_9 -0.32 -0.01  0.25  0.10  0.13 -0.26  0.06  0.04  0.03
+## Q14___QSREIC_1          0.01  0.30 -0.26  0.05 -0.11 -0.17 -0.01 -0.06 -0.05
+## Q14___QSREIC_2          0.12  0.11  0.12  0.02  0.15 -0.20 -0.13 -0.19  0.03
+## Q14___QSREIC_3         -0.32  0.02 -0.20 -0.05 -0.13  0.20  0.18  0.14  0.03
+## Q14___QSREIC_4          0.21  0.03 -0.12  0.11  0.27  0.29 -0.07 -0.10  0.08
+## Q14___QSREIC_5         -0.01  0.04  0.14 -0.05 -0.27  0.14 -0.17  0.01 -0.14
+## Q14___QSREIC_6          0.14 -0.34 -0.08  0.03 -0.06 -0.03  0.04  0.01 -0.06
+## Q14___QSREIC_10        -0.04  0.01  0.10  0.08  0.23 -0.02 -0.13  0.34 -0.16
+## Q14___QSREIC_11         0.08  0.01 -0.21  0.25  0.00 -0.11  0.07 -0.05  0.01
+## Q14___QSREIC_12        -0.07 -0.17  0.12 -0.28  0.06  0.11 -0.12 -0.15  0.02
+## Q14___QSREIC_13         0.07 -0.11  0.19 -0.05  0.12  0.01  0.37 -0.04 -0.17
+## Q14___QSREIC_14        -0.07 -0.19  0.00 -0.09 -0.09 -0.11 -0.22 -0.04  0.09
+## Q14___QSREIC_18         0.25  0.22  0.37  0.04 -0.21  0.04  0.16 -0.05  0.13
+## Q14___QSREIC_19        -0.14  0.19  0.10  0.18 -0.10  0.05 -0.10  0.02 -0.10
+## Q14___QSREIC_20        -0.26  0.19  0.01  0.00  0.19  0.18  0.06 -0.12  0.12
+## Q14___QSREIC_21         0.13  0.03 -0.11  0.10  0.04 -0.01  0.00  0.00 -0.07
+## Q14___QSREIC_22         0.28  0.05  0.03 -0.06  0.02  0.07 -0.04  0.14 -0.18
+## Q14___QSREIC_23         0.16  0.00  0.05  0.01  0.00  0.00 -0.02  0.30  0.37
+## Q14___QSREIC_25        -0.02 -0.34  0.01  0.28 -0.10  0.00  0.05 -0.07  0.07
+## Q14___QSREIC_26         0.09  0.07 -0.17 -0.36  0.04 -0.19  0.12  0.05  0.03
+##                         PC19  PC20 h2       u2 com
+## Q13___Internalisatio_9  0.25  0.02  1  7.8e-16 3.1
+## Q14___QSREIC_1          0.08  0.08  1  2.3e-15 3.9
+## Q14___QSREIC_2         -0.09  0.03  1 -2.2e-16 5.3
+## Q14___QSREIC_3          0.09 -0.02  1  3.3e-16 4.6
+## Q14___QSREIC_4          0.13 -0.01  1 -1.6e-15 4.0
+## Q14___QSREIC_5         -0.05  0.24  1 -6.7e-16 2.4
+## Q14___QSREIC_6          0.08 -0.07  1  1.0e-15 6.5
+## Q14___QSREIC_10        -0.06  0.06  1 -6.7e-16 3.7
+## Q14___QSREIC_11        -0.06  0.03  1  1.1e-15 7.1
+## Q14___QSREIC_12        -0.02 -0.05  1  4.4e-16 4.7
+## Q14___QSREIC_13        -0.14  0.05  1  2.2e-16 3.1
+## Q14___QSREIC_14         0.06 -0.03  1  6.7e-16 5.0
+## Q14___QSREIC_18         0.11 -0.04  1  1.1e-16 4.2
+## Q14___QSREIC_19        -0.18 -0.28  1 -1.1e-15 1.9
+## Q14___QSREIC_20        -0.04  0.07  1 -2.2e-16 5.9
+## Q14___QSREIC_21         0.01  0.02  1  5.6e-16 6.3
+## Q14___QSREIC_22         0.19 -0.06  1  3.3e-16 5.4
+## Q14___QSREIC_23        -0.12  0.03  1 -1.1e-15 2.4
+## Q14___QSREIC_25        -0.05  0.04  1  2.2e-16 5.6
+## Q14___QSREIC_26        -0.07 -0.04  1 -2.2e-16 6.4
+## 
+##                        PC1  PC2  PC3  PC4  PC5  PC6  PC7  PC8  PC9 PC10 PC11
+## SS loadings           6.50 2.11 1.46 1.25 1.06 0.93 0.88 0.74 0.73 0.58 0.54
+## Proportion Var        0.32 0.11 0.07 0.06 0.05 0.05 0.04 0.04 0.04 0.03 0.03
+## Cumulative Var        0.32 0.43 0.50 0.57 0.62 0.67 0.71 0.75 0.78 0.81 0.84
+## Proportion Explained  0.32 0.11 0.07 0.06 0.05 0.05 0.04 0.04 0.04 0.03 0.03
+## Cumulative Proportion 0.32 0.43 0.50 0.57 0.62 0.67 0.71 0.75 0.78 0.81 0.84
+##                       PC12 PC13 PC14 PC15 PC16 PC17 PC18 PC19 PC20
+## SS loadings           0.52 0.45 0.40 0.40 0.37 0.35 0.32 0.24 0.17
+## Proportion Var        0.03 0.02 0.02 0.02 0.02 0.02 0.02 0.01 0.01
+## Cumulative Var        0.87 0.89 0.91 0.93 0.95 0.96 0.98 0.99 1.00
+## Proportion Explained  0.03 0.02 0.02 0.02 0.02 0.02 0.02 0.01 0.01
+## Cumulative Proportion 0.87 0.89 0.91 0.93 0.95 0.96 0.98 0.99 1.00
+## 
+## Mean item complexity =  4.6
+## Test of the hypothesis that 20 components are sufficient.
+## 
+## The root mean square of the residuals (RMSR) is  0 
+##  with the empirical chi square  0  with prob &lt;  NA 
+## 
+## Fit based upon off diagonal values = 1</code></pre>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABUAAAAPACAMAAADDuCPrAAAA4VBMVEUAAAAAADoAAGYAOjoAOmYAOpAAZmYAZrY6AAA6AGY6OgA6Ojo6OmY6OpA6ZmY6ZpA6ZrY6kJA6kLY6kNtmAABmADpmOgBmOjpmZjpmZmZmZpBmkJBmkLZmkNtmtrZmtttmtv+QOgCQOjqQZgCQZjqQZmaQkJCQkLaQtraQttuQtv+Q2/+2ZgC2Zjq2kDq2kGa2kLa2tpC2tra2ttu225C227a229u22/+2///bkDrbkGbbtmbbtpDbtrbb25Db27bb29vb2//b/7bb////tmb/25D/27b/29v//7b//9v///+xhGNRAAAACXBIWXMAAB2HAAAdhwGP5fFlAAAgAElEQVR4nO3d/WPUVr7YYZmY4gbuQhdKrrdsA71sb7iYZUNaiBdSyMUYZv7/P6jSvFk2Y8fz5ehIR3qeH8JgRpqxduazej2q5gCEVH2/AYBSCShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIE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" width="672" /></p>
+<pre><code>## Principal Components Analysis
+## Call: principal(r = QSREIC_alpha, nfactors = 2, rotate = &quot;none&quot;, scores = FALSE)
+## Standardized loadings (pattern matrix) based upon correlation matrix
+##                          PC1   PC2   h2   u2 com
+## Q13___Internalisatio_9  0.74  0.15 0.57 0.43 1.1
+## Q14___QSREIC_1          0.66  0.07 0.44 0.56 1.0
+## Q14___QSREIC_2         -0.15  0.59 0.37 0.63 1.1
+## Q14___QSREIC_3         -0.34  0.65 0.53 0.47 1.5
+## Q14___QSREIC_4          0.68  0.04 0.47 0.53 1.0
+## Q14___QSREIC_5          0.79  0.21 0.68 0.32 1.1
+## Q14___QSREIC_6          0.46  0.17 0.24 0.76 1.3
+## Q14___QSREIC_10        -0.68  0.30 0.56 0.44 1.4
+## Q14___QSREIC_11        -0.32  0.36 0.23 0.77 2.0
+## Q14___QSREIC_12        -0.18  0.60 0.40 0.60 1.2
+## Q14___QSREIC_13         0.73 -0.10 0.54 0.46 1.0
+## Q14___QSREIC_14         0.33 -0.09 0.12 0.88 1.2
+## Q14___QSREIC_18        -0.67  0.27 0.52 0.48 1.3
+## Q14___QSREIC_19         0.85  0.16 0.75 0.25 1.1
+## Q14___QSREIC_20         0.49  0.05 0.24 0.76 1.0
+## Q14___QSREIC_21        -0.18  0.44 0.22 0.78 1.3
+## Q14___QSREIC_22         0.60  0.18 0.40 0.60 1.2
+## Q14___QSREIC_23         0.78  0.07 0.62 0.38 1.0
+## Q14___QSREIC_25         0.33  0.40 0.27 0.73 1.9
+## Q14___QSREIC_26         0.55  0.37 0.44 0.56 1.8
+## 
+##                        PC1  PC2
+## SS loadings           6.50 2.11
+## Proportion Var        0.32 0.11
+## Cumulative Var        0.32 0.43
+## Proportion Explained  0.75 0.25
+## Cumulative Proportion 0.75 1.00
+## 
+## Mean item complexity =  1.3
+## Test of the hypothesis that 2 components are sufficient.
+## 
+## The root mean square of the residuals (RMSR) is  0.08 
+##  with the empirical chi square  395.95  with prob &lt;  7.3e-24 
+## 
+## Fit based upon off diagonal values = 0.93</code></pre>
+</div>
+<div id="aprés-extraction-du-nombre-de-facteur-voir-différence-entre-matrice-de-corrélation-reproduite-et-matrice-des-données-donc-résidu" class="section level4">
+<h4>aprés extraction du nombre de facteur, voir différence entre matrice de corrélation reproduite et matrice des données donc résidu</h4>
+<pre><code>##                        Q13___Internalisatio_9 Q14___QSREIC_1 Q14___QSREIC_2
+## Q13___Internalisatio_9                  0.568          0.496         -0.024
+## Q14___QSREIC_1                          0.496          0.436         -0.055
+## Q14___QSREIC_2                         -0.024         -0.055          0.373
+## Q14___QSREIC_3                         -0.153         -0.173          0.435
+## Q14___QSREIC_4                          0.510          0.450         -0.077
+## Q14___QSREIC_5                          0.619          0.537          0.007
+## Q14___QSREIC_6                          0.363          0.312          0.032
+## Q14___QSREIC_10                        -0.460         -0.426          0.284
+## Q14___QSREIC_11                        -0.180         -0.181          0.261
+## Q14___QSREIC_12                        -0.046         -0.076          0.385
+## Q14___QSREIC_13                         0.525          0.472         -0.168
+## Q14___QSREIC_14                         0.232          0.212         -0.105
+## Q14___QSREIC_18                        -0.455         -0.420          0.262
+## Q14___QSREIC_19                         0.651          0.569         -0.031
+## Q14___QSREIC_20                         0.368          0.324         -0.042
+## Q14___QSREIC_21                        -0.068         -0.085          0.286
+## Q14___QSREIC_22                         0.474          0.410          0.016
+## Q14___QSREIC_23                         0.589          0.519         -0.077
+## Q14___QSREIC_25                         0.306          0.249          0.184
+## Q14___QSREIC_26                         0.461          0.388          0.137
+##                        Q14___QSREIC_3 Q14___QSREIC_4 Q14___QSREIC_5
+## Q13___Internalisatio_9         -0.153          0.510          0.619
+## Q14___QSREIC_1                 -0.173          0.450          0.537
+## Q14___QSREIC_2                  0.435         -0.077          0.007
+## Q14___QSREIC_3                  0.534         -0.201         -0.128
+## Q14___QSREIC_4                 -0.201          0.466          0.551
+## Q14___QSREIC_5                 -0.128          0.551          0.678
+## Q14___QSREIC_6                 -0.043          0.319          0.400
+## Q14___QSREIC_10                 0.428         -0.452         -0.478
+## Q14___QSREIC_11                 0.340         -0.200         -0.174
+## Q14___QSREIC_12                 0.454         -0.098         -0.016
+## Q14___QSREIC_13                -0.309          0.493          0.560
+## Q14___QSREIC_14                -0.172          0.223          0.245
+## Q14___QSREIC_18                 0.402         -0.444         -0.474
+## Q14___QSREIC_19                -0.180          0.585          0.709
+## Q14___QSREIC_20                -0.130          0.335          0.399
+## Q14___QSREIC_21                 0.344         -0.103         -0.049
+## Q14___QSREIC_22                -0.086          0.420          0.520
+## Q14___QSREIC_23                -0.219          0.537          0.638
+## Q14___QSREIC_25                 0.144          0.245          0.351
+## Q14___QSREIC_26                 0.056          0.391          0.516
+##                        Q14___QSREIC_6 Q14___QSREIC_10 Q14___QSREIC_11
+## Q13___Internalisatio_9          0.363          -0.460          -0.180
+## Q14___QSREIC_1                  0.312          -0.426          -0.181
+## Q14___QSREIC_2                  0.032           0.284           0.261
+## Q14___QSREIC_3                 -0.043           0.428           0.340
+## Q14___QSREIC_4                  0.319          -0.452          -0.200
+## Q14___QSREIC_5                  0.400          -0.478          -0.174
+## Q14___QSREIC_6                  0.238          -0.260          -0.083
+## Q14___QSREIC_10                -0.260           0.560           0.326
+## Q14___QSREIC_11                -0.083           0.326           0.230
+## Q14___QSREIC_12                 0.019           0.310           0.276
+## Q14___QSREIC_13                 0.317          -0.529          -0.266
+## Q14___QSREIC_14                 0.137          -0.256          -0.138
+## Q14___QSREIC_18                -0.260           0.541           0.310
+## Q14___QSREIC_19                 0.416          -0.530          -0.209
+## Q14___QSREIC_20                 0.232          -0.317          -0.135
+## Q14___QSREIC_21                -0.007           0.256           0.214
+## Q14___QSREIC_22                 0.307          -0.358          -0.126
+## Q14___QSREIC_23                 0.370          -0.515          -0.223
+## Q14___QSREIC_25                 0.221          -0.108           0.037
+## Q14___QSREIC_26                 0.314          -0.262          -0.040
+##                        Q14___QSREIC_12 Q14___QSREIC_13 Q14___QSREIC_14
+## Q13___Internalisatio_9          -0.046           0.525           0.232
+## Q14___QSREIC_1                  -0.076           0.472           0.212
+## Q14___QSREIC_2                   0.385          -0.168          -0.105
+## Q14___QSREIC_3                   0.454          -0.309          -0.172
+## Q14___QSREIC_4                  -0.098           0.493           0.223
+## Q14___QSREIC_5                  -0.016           0.560           0.245
+## Q14___QSREIC_6                   0.019           0.317           0.137
+## Q14___QSREIC_10                  0.310          -0.529          -0.256
+## Q14___QSREIC_11                  0.276          -0.266          -0.138
+## Q14___QSREIC_12                  0.399          -0.192          -0.116
+## Q14___QSREIC_13                 -0.192           0.543           0.252
+## Q14___QSREIC_14                 -0.116           0.252           0.119
+## Q14___QSREIC_18                  0.287          -0.516          -0.248
+## Q14___QSREIC_19                 -0.056           0.604           0.268
+## Q14___QSREIC_20                 -0.057           0.351           0.158
+## Q14___QSREIC_21                  0.297          -0.173          -0.100
+## Q14___QSREIC_22                 -0.001           0.424           0.185
+## Q14___QSREIC_23                 -0.102           0.566           0.255
+## Q14___QSREIC_25                  0.178           0.206           0.075
+## Q14___QSREIC_26                  0.124           0.365           0.149
+##                        Q14___QSREIC_18 Q14___QSREIC_19 Q14___QSREIC_20
+## Q13___Internalisatio_9          -0.455           0.651           0.368
+## Q14___QSREIC_1                  -0.420           0.569           0.324
+## Q14___QSREIC_2                   0.262          -0.031          -0.042
+## Q14___QSREIC_3                   0.402          -0.180          -0.130
+## Q14___QSREIC_4                  -0.444           0.585           0.335
+## Q14___QSREIC_5                  -0.474           0.709           0.399
+## Q14___QSREIC_6                  -0.260           0.416           0.232
+## Q14___QSREIC_10                  0.541          -0.530          -0.317
+## Q14___QSREIC_11                  0.310          -0.209          -0.135
+## Q14___QSREIC_12                  0.287          -0.056          -0.057
+## Q14___QSREIC_13                 -0.516           0.604           0.351
+## Q14___QSREIC_14                 -0.248           0.268           0.158
+## Q14___QSREIC_18                  0.523          -0.524          -0.312
+## Q14___QSREIC_19                 -0.524           0.746           0.423
+## Q14___QSREIC_20                 -0.312           0.423           0.241
+## Q14___QSREIC_21                  0.239          -0.080          -0.064
+## Q14___QSREIC_22                 -0.356           0.543           0.305
+## Q14___QSREIC_23                 -0.506           0.676           0.386
+## Q14___QSREIC_25                 -0.117           0.349           0.184
+## Q14___QSREIC_26                 -0.267           0.527           0.288
+##                        Q14___QSREIC_21 Q14___QSREIC_22 Q14___QSREIC_23
+## Q13___Internalisatio_9          -0.068           0.474           0.589
+## Q14___QSREIC_1                  -0.085           0.410           0.519
+## Q14___QSREIC_2                   0.286           0.016          -0.077
+## Q14___QSREIC_3                   0.344          -0.086          -0.219
+## Q14___QSREIC_4                  -0.103           0.420           0.537
+## Q14___QSREIC_5                  -0.049           0.520           0.638
+## Q14___QSREIC_6                  -0.007           0.307           0.370
+## Q14___QSREIC_10                  0.256          -0.358          -0.515
+## Q14___QSREIC_11                  0.214          -0.126          -0.223
+## Q14___QSREIC_12                  0.297          -0.001          -0.102
+## Q14___QSREIC_13                 -0.173           0.424           0.566
+## Q14___QSREIC_14                 -0.100           0.185           0.255
+## Q14___QSREIC_18                  0.239          -0.356          -0.506
+## Q14___QSREIC_19                 -0.080           0.543           0.676
+## Q14___QSREIC_20                 -0.064           0.305           0.386
+## Q14___QSREIC_21                  0.223          -0.029          -0.110
+## Q14___QSREIC_22                 -0.029           0.399           0.487
+## Q14___QSREIC_23                 -0.110           0.487           0.619
+## Q14___QSREIC_25                  0.113           0.274           0.290
+## Q14___QSREIC_26                  0.064           0.400           0.456
+##                        Q14___QSREIC_25 Q14___QSREIC_26
+## Q13___Internalisatio_9           0.306           0.461
+## Q14___QSREIC_1                   0.249           0.388
+## Q14___QSREIC_2                   0.184           0.137
+## Q14___QSREIC_3                   0.144           0.056
+## Q14___QSREIC_4                   0.245           0.391
+## Q14___QSREIC_5                   0.351           0.516
+## Q14___QSREIC_6                   0.221           0.314
+## Q14___QSREIC_10                 -0.108          -0.262
+## Q14___QSREIC_11                  0.037          -0.040
+## Q14___QSREIC_12                  0.178           0.124
+## Q14___QSREIC_13                  0.206           0.365
+## Q14___QSREIC_14                  0.075           0.149
+## Q14___QSREIC_18                 -0.117          -0.267
+## Q14___QSREIC_19                  0.349           0.527
+## Q14___QSREIC_20                  0.184           0.288
+## Q14___QSREIC_21                  0.113           0.064
+## Q14___QSREIC_22                  0.274           0.400
+## Q14___QSREIC_23                  0.290           0.456
+## Q14___QSREIC_25                  0.269           0.331
+## Q14___QSREIC_26                  0.331           0.440</code></pre>
+<pre><code>##                        Q13___Internalisatio_9 Q14___QSREIC_1 Q14___QSREIC_2
+## Q13___Internalisatio_9                  0.432         -0.087         -0.034
+## Q14___QSREIC_1                         -0.087          0.564         -0.044
+## Q14___QSREIC_2                         -0.034         -0.044          0.627
+## Q14___QSREIC_3                         -0.017          0.008          0.086
+## Q14___QSREIC_4                         -0.042         -0.001          0.030
+## Q14___QSREIC_5                          0.013         -0.111         -0.015
+## Q14___QSREIC_6                         -0.059         -0.022          0.108
+## Q14___QSREIC_10                        -0.003          0.088         -0.087
+## Q14___QSREIC_11                         0.044         -0.008         -0.245
+## Q14___QSREIC_12                         0.071          0.089         -0.265
+## Q14___QSREIC_13                        -0.026          0.009          0.013
+## Q14___QSREIC_14                        -0.123         -0.014         -0.078
+## Q14___QSREIC_18                        -0.031          0.049         -0.071
+## Q14___QSREIC_19                         0.027          0.011         -0.019
+## Q14___QSREIC_20                        -0.087         -0.049         -0.085
+## Q14___QSREIC_21                        -0.013         -0.035         -0.161
+## Q14___QSREIC_22                        -0.143         -0.082          0.001
+## Q14___QSREIC_23                        -0.010          0.003          0.015
+## Q14___QSREIC_25                        -0.072         -0.039         -0.092
+## Q14___QSREIC_26                        -0.051         -0.068         -0.090
+##                        Q14___QSREIC_3 Q14___QSREIC_4 Q14___QSREIC_5
+## Q13___Internalisatio_9         -0.017         -0.042          0.013
+## Q14___QSREIC_1                  0.008         -0.001         -0.111
+## Q14___QSREIC_2                  0.086          0.030         -0.015
+## Q14___QSREIC_3                  0.466          0.033          0.004
+## Q14___QSREIC_4                  0.033          0.534          0.016
+## Q14___QSREIC_5                  0.004          0.016          0.322
+## Q14___QSREIC_6                  0.006         -0.034          0.036
+## Q14___QSREIC_10                -0.076          0.074         -0.020
+## Q14___QSREIC_11                -0.134          0.000          0.019
+## Q14___QSREIC_12                -0.163         -0.021         -0.007
+## Q14___QSREIC_13                 0.069          0.006         -0.071
+## Q14___QSREIC_14                 0.041         -0.073         -0.063
+## Q14___QSREIC_18                -0.130          0.038          0.051
+## Q14___QSREIC_19                 0.013         -0.006          0.046
+## Q14___QSREIC_20                -0.057         -0.220         -0.092
+## Q14___QSREIC_21                -0.117         -0.086         -0.056
+## Q14___QSREIC_22                -0.089         -0.175         -0.081
+## Q14___QSREIC_23                 0.005         -0.040         -0.044
+## Q14___QSREIC_25                -0.096         -0.028         -0.113
+## Q14___QSREIC_26                -0.088          0.041         -0.008
+##                        Q14___QSREIC_6 Q14___QSREIC_10 Q14___QSREIC_11
+## Q13___Internalisatio_9         -0.059          -0.003           0.044
+## Q14___QSREIC_1                 -0.022           0.088          -0.008
+## Q14___QSREIC_2                  0.108          -0.087          -0.245
+## Q14___QSREIC_3                  0.006          -0.076          -0.134
+## Q14___QSREIC_4                 -0.034           0.074           0.000
+## Q14___QSREIC_5                  0.036          -0.020           0.019
+## Q14___QSREIC_6                  0.762           0.041          -0.006
+## Q14___QSREIC_10                 0.041           0.440          -0.035
+## Q14___QSREIC_11                -0.006          -0.035           0.770
+## Q14___QSREIC_12                -0.054          -0.040           0.112
+## Q14___QSREIC_13                -0.024           0.050           0.055
+## Q14___QSREIC_14                -0.088           0.130           0.135
+## Q14___QSREIC_18                 0.003           0.063          -0.002
+## Q14___QSREIC_19                -0.068           0.045           0.018
+## Q14___QSREIC_20                 0.034           0.082           0.063
+## Q14___QSREIC_21                -0.085          -0.112          -0.045
+## Q14___QSREIC_22                -0.153          -0.033           0.067
+## Q14___QSREIC_23                 0.028          -0.031           0.041
+## Q14___QSREIC_25                -0.183           0.046          -0.186
+## Q14___QSREIC_26                -0.101           0.050          -0.059
+##                        Q14___QSREIC_12 Q14___QSREIC_13 Q14___QSREIC_14
+## Q13___Internalisatio_9           0.071          -0.026          -0.123
+## Q14___QSREIC_1                   0.089           0.009          -0.014
+## Q14___QSREIC_2                  -0.265           0.013          -0.078
+## Q14___QSREIC_3                  -0.163           0.069           0.041
+## Q14___QSREIC_4                  -0.021           0.006          -0.073
+## Q14___QSREIC_5                  -0.007          -0.071          -0.063
+## Q14___QSREIC_6                  -0.054          -0.024          -0.088
+## Q14___QSREIC_10                 -0.040           0.050           0.130
+## Q14___QSREIC_11                  0.112           0.055           0.135
+## Q14___QSREIC_12                  0.601           0.070          -0.044
+## Q14___QSREIC_13                  0.070           0.457           0.167
+## Q14___QSREIC_14                 -0.044           0.167           0.881
+## Q14___QSREIC_18                 -0.057           0.080           0.114
+## Q14___QSREIC_19                 -0.027          -0.035          -0.037
+## Q14___QSREIC_20                 -0.068          -0.066           0.192
+## Q14___QSREIC_21                 -0.030           0.052           0.140
+## Q14___QSREIC_22                 -0.042          -0.023           0.071
+## Q14___QSREIC_23                  0.085           0.011          -0.066
+## Q14___QSREIC_25                 -0.116          -0.092           0.013
+## Q14___QSREIC_26                 -0.126          -0.115          -0.011
+##                        Q14___QSREIC_18 Q14___QSREIC_19 Q14___QSREIC_20
+## Q13___Internalisatio_9          -0.031           0.027          -0.087
+## Q14___QSREIC_1                   0.049           0.011          -0.049
+## Q14___QSREIC_2                  -0.071          -0.019          -0.085
+## Q14___QSREIC_3                  -0.130           0.013          -0.057
+## Q14___QSREIC_4                   0.038          -0.006          -0.220
+## Q14___QSREIC_5                   0.051           0.046          -0.092
+## Q14___QSREIC_6                   0.003          -0.068           0.034
+## Q14___QSREIC_10                  0.063           0.045           0.082
+## Q14___QSREIC_11                 -0.002           0.018           0.063
+## Q14___QSREIC_12                 -0.057          -0.027          -0.068
+## Q14___QSREIC_13                  0.080          -0.035          -0.066
+## Q14___QSREIC_14                  0.114          -0.037           0.192
+## Q14___QSREIC_18                  0.477           0.044           0.086
+## Q14___QSREIC_19                  0.044           0.254          -0.013
+## Q14___QSREIC_20                  0.086          -0.013           0.759
+## Q14___QSREIC_21                 -0.035          -0.002           0.083
+## Q14___QSREIC_22                  0.013          -0.089           0.159
+## Q14___QSREIC_23                  0.002          -0.040          -0.097
+## Q14___QSREIC_25                  0.002          -0.046           0.022
+## Q14___QSREIC_26                  0.051          -0.068           0.009
+##                        Q14___QSREIC_21 Q14___QSREIC_22 Q14___QSREIC_23
+## Q13___Internalisatio_9          -0.013          -0.143          -0.010
+## Q14___QSREIC_1                  -0.035          -0.082           0.003
+## Q14___QSREIC_2                  -0.161           0.001           0.015
+## Q14___QSREIC_3                  -0.117          -0.089           0.005
+## Q14___QSREIC_4                  -0.086          -0.175          -0.040
+## Q14___QSREIC_5                  -0.056          -0.081          -0.044
+## Q14___QSREIC_6                  -0.085          -0.153           0.028
+## Q14___QSREIC_10                 -0.112          -0.033          -0.031
+## Q14___QSREIC_11                 -0.045           0.067           0.041
+## Q14___QSREIC_12                 -0.030          -0.042           0.085
+## Q14___QSREIC_13                  0.052          -0.023           0.011
+## Q14___QSREIC_14                  0.140           0.071          -0.066
+## Q14___QSREIC_18                 -0.035           0.013           0.002
+## Q14___QSREIC_19                 -0.002          -0.089          -0.040
+## Q14___QSREIC_20                  0.083           0.159          -0.097
+## Q14___QSREIC_21                  0.777           0.035           0.060
+## Q14___QSREIC_22                  0.035           0.601          -0.004
+## Q14___QSREIC_23                  0.060          -0.004           0.381
+## Q14___QSREIC_25                 -0.069           0.097          -0.136
+## Q14___QSREIC_26                 -0.069          -0.023          -0.142
+##                        Q14___QSREIC_25 Q14___QSREIC_26
+## Q13___Internalisatio_9          -0.072          -0.051
+## Q14___QSREIC_1                  -0.039          -0.068
+## Q14___QSREIC_2                  -0.092          -0.090
+## Q14___QSREIC_3                  -0.096          -0.088
+## Q14___QSREIC_4                  -0.028           0.041
+## Q14___QSREIC_5                  -0.113          -0.008
+## Q14___QSREIC_6                  -0.183          -0.101
+## Q14___QSREIC_10                  0.046           0.050
+## Q14___QSREIC_11                 -0.186          -0.059
+## Q14___QSREIC_12                 -0.116          -0.126
+## Q14___QSREIC_13                 -0.092          -0.115
+## Q14___QSREIC_14                  0.013          -0.011
+## Q14___QSREIC_18                  0.002           0.051
+## Q14___QSREIC_19                 -0.046          -0.068
+## Q14___QSREIC_20                  0.022           0.009
+## Q14___QSREIC_21                 -0.069          -0.069
+## Q14___QSREIC_22                  0.097          -0.023
+## Q14___QSREIC_23                 -0.136          -0.142
+## Q14___QSREIC_25                  0.731           0.108
+## Q14___QSREIC_26                  0.108           0.560</code></pre>
+<pre><code>## [1] 0.9338615</code></pre>
+<pre><code>## [1] 95</code></pre>
+<pre><code>## [1] 0.5</code></pre>
+<pre><code>## [1] 0.0792274</code></pre>
+<p><img src="data:image/png;base64,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" width="672" /></p>
 </div>
 </div>
-<div id="resultats-avec-2-facteurs-pour-analyse-factorielle-échelle-originale-27-items" class="section level2">
-<h2>Resultats avec 2 facteurs pour analyse factorielle (échelle originale 27 items)</h2>
-<div id="de-variance-cumulé" class="section level4">
-<h4>37% de variance cumulé</h4>
-<p>[file here:] (<a href="https://alexandrewilliot.github.io/R-home/Analyse_2facteurs.html" class="uri">https://alexandrewilliot.github.io/R-home/Analyse_2facteurs.html</a>)</p>
+<div id="varimax-rotation" class="section level3">
+<h3>varimax rotation</h3>
+<div id="examen-du-nb-de-facteur" class="section level4">
+<h4>examen du nb de facteur</h4>
+<pre><code>## Principal Components Analysis
+## Call: principal(r = QSREIC_alpha, nfactors = 2, rotate = &quot;varimax&quot;, 
+##     scores = FALSE)
+## Standardized loadings (pattern matrix) based upon correlation matrix
+##                          RC1   RC2   h2   u2 com
+## Q13___Internalisatio_9  0.75 -0.10 0.57 0.43 1.0
+## Q14___QSREIC_1          0.64 -0.14 0.44 0.56 1.1
+## Q14___QSREIC_2          0.05  0.61 0.37 0.63 1.0
+## Q14___QSREIC_3         -0.11  0.72 0.53 0.47 1.0
+## Q14___QSREIC_4          0.66 -0.18 0.47 0.53 1.1
+## Q14___QSREIC_5          0.82 -0.06 0.68 0.32 1.0
+## Q14___QSREIC_6          0.49  0.01 0.24 0.76 1.0
+## Q14___QSREIC_10        -0.55  0.51 0.56 0.44 2.0
+## Q14___QSREIC_11        -0.18  0.44 0.23 0.77 1.3
+## Q14___QSREIC_12         0.02  0.63 0.40 0.60 1.0
+## Q14___QSREIC_13         0.66 -0.33 0.54 0.46 1.5
+## Q14___QSREIC_14         0.29 -0.20 0.12 0.88 1.8
+## Q14___QSREIC_18        -0.55  0.47 0.52 0.48 2.0
+## Q14___QSREIC_19         0.86 -0.12 0.75 0.25 1.0
+## Q14___QSREIC_20         0.48 -0.11 0.24 0.76 1.1
+## Q14___QSREIC_21        -0.03  0.47 0.22 0.78 1.0
+## Q14___QSREIC_22         0.63 -0.03 0.40 0.60 1.0
+## Q14___QSREIC_23         0.76 -0.19 0.62 0.38 1.1
+## Q14___QSREIC_25         0.45  0.27 0.27 0.73 1.6
+## Q14___QSREIC_26         0.64  0.17 0.44 0.56 1.1
+## 
+##                        RC1  RC2
+## SS loadings           6.03 2.57
+## Proportion Var        0.30 0.13
+## Cumulative Var        0.30 0.43
+## Proportion Explained  0.70 0.30
+## Cumulative Proportion 0.70 1.00
+## 
+## Mean item complexity =  1.2
+## Test of the hypothesis that 2 components are sufficient.
+## 
+## The root mean square of the residuals (RMSR) is  0.08 
+##  with the empirical chi square  395.95  with prob &lt;  7.3e-24 
+## 
+## Fit based upon off diagonal values = 0.93</code></pre>
+<pre><code>## Principal Components Analysis
+## Call: principal(r = QSREIC_alpha, nfactors = 2, rotate = &quot;varimax&quot;, 
+##     scores = FALSE)
+## Standardized loadings (pattern matrix) based upon correlation matrix
+##                          RC1   RC2   h2   u2 com
+## Q13___Internalisatio_9  0.75       0.57 0.43 1.0
+## Q14___QSREIC_1          0.64       0.44 0.56 1.1
+## Q14___QSREIC_2                0.61 0.37 0.63 1.0
+## Q14___QSREIC_3                0.72 0.53 0.47 1.0
+## Q14___QSREIC_4          0.66       0.47 0.53 1.1
+## Q14___QSREIC_5          0.82       0.68 0.32 1.0
+## Q14___QSREIC_6          0.49       0.24 0.76 1.0
+## Q14___QSREIC_10        -0.55  0.51 0.56 0.44 2.0
+## Q14___QSREIC_11               0.44 0.23 0.77 1.3
+## Q14___QSREIC_12               0.63 0.40 0.60 1.0
+## Q14___QSREIC_13         0.66 -0.33 0.54 0.46 1.5
+## Q14___QSREIC_14                    0.12 0.88 1.8
+## Q14___QSREIC_18        -0.55  0.47 0.52 0.48 2.0
+## Q14___QSREIC_19         0.86       0.75 0.25 1.0
+## Q14___QSREIC_20         0.48       0.24 0.76 1.1
+## Q14___QSREIC_21               0.47 0.22 0.78 1.0
+## Q14___QSREIC_22         0.63       0.40 0.60 1.0
+## Q14___QSREIC_23         0.76       0.62 0.38 1.1
+## Q14___QSREIC_25         0.45       0.27 0.73 1.6
+## Q14___QSREIC_26         0.64       0.44 0.56 1.1
+## 
+##                        RC1  RC2
+## SS loadings           6.03 2.57
+## Proportion Var        0.30 0.13
+## Cumulative Var        0.30 0.43
+## Proportion Explained  0.70 0.30
+## Cumulative Proportion 0.70 1.00
+## 
+## Mean item complexity =  1.2
+## Test of the hypothesis that 2 components are sufficient.
+## 
+## The root mean square of the residuals (RMSR) is  0.08 
+##  with the empirical chi square  395.95  with prob &lt;  7.3e-24 
+## 
+## Fit based upon off diagonal values = 0.93</code></pre>
 </div>
 </div>
-<div id="resultats-avec-2-facteurs-pour-analyse-factorielle-échelle-modifié" class="section level2">
-<h2>Resultats avec 2 facteurs pour analyse factorielle (échelle modifié)</h2>
-<div id="aprés-avoir-retiré-les-items-présents-aux-2-facteurs-de-la-même-façon-91725-et-adapté-alpha-mal-et-ada-selon-analyse-factorielle-résultats-valides-que-pour-alpha-mal-et-ada-et-af" class="section level4">
-<h4>aprés avoir retiré les items présents aux 2 facteurs de la même façon (9,17,25) et adapté alpha mal et ada selon analyse factorielle ## Résultats VALIDES QUE POUR ALPHA MAL ET ADA ET AF !</h4>
+<div id="oblique-rotation" class="section level3">
+<h3>oblique rotation</h3>
+<pre><code>## Principal Components Analysis
+## Call: principal(r = QSREIC_alpha, nfactors = 2, rotate = &quot;oblimin&quot;)
+## Standardized loadings (pattern matrix) based upon correlation matrix
+##                        item   TC1   TC2   h2   u2 com
+## Q14___QSREIC_19          14  0.87       0.75 0.25 1.0
+## Q14___QSREIC_5            6  0.84       0.68 0.32 1.0
+## Q14___QSREIC_23          18  0.77       0.62 0.38 1.0
+## Q13___Internalisatio_9    1  0.76       0.57 0.43 1.0
+## Q14___QSREIC_26          20  0.67       0.44 0.56 1.3
+## Q14___QSREIC_4            5  0.66       0.47 0.53 1.0
+## Q14___QSREIC_13          11  0.65       0.54 0.46 1.2
+## Q14___QSREIC_1            2  0.65       0.44 0.56 1.0
+## Q14___QSREIC_22          17  0.64       0.40 0.60 1.0
+## Q14___QSREIC_18          13 -0.53  0.39 0.52 0.48 1.8
+## Q14___QSREIC_10           8 -0.53  0.43 0.56 0.44 1.9
+## Q14___QSREIC_6            7  0.50       0.24 0.76 1.1
+## Q14___QSREIC_20          15  0.48       0.24 0.76 1.0
+## Q14___QSREIC_25          19  0.47  0.34 0.27 0.73 1.8
+## Q14___QSREIC_14          12             0.12 0.88 1.5
+## Q14___QSREIC_3            4        0.71 0.53 0.47 1.0
+## Q14___QSREIC_12          10        0.64 0.40 0.60 1.0
+## Q14___QSREIC_2            3        0.62 0.37 0.63 1.0
+## Q14___QSREIC_21          16        0.47 0.22 0.78 1.0
+## Q14___QSREIC_11           9        0.42 0.23 0.77 1.3
+## 
+##                        TC1  TC2
+## SS loadings           6.20 2.41
+## Proportion Var        0.31 0.12
+## Cumulative Var        0.31 0.43
+## Proportion Explained  0.72 0.28
+## Cumulative Proportion 0.72 1.00
+## 
+##  With component correlations of 
+##       TC1   TC2
+## TC1  1.00 -0.22
+## TC2 -0.22  1.00
+## 
+## Mean item complexity =  1.2
+## Test of the hypothesis that 2 components are sufficient.
+## 
+## The root mean square of the residuals (RMSR) is  0.08 
+##  with the empirical chi square  395.95  with prob &lt;  7.3e-24 
+## 
+## Fit based upon off diagonal values = 0.93</code></pre>
+<pre><code>##                                TC1         TC2
+## Q13___Internalisatio_9  0.75313272 -0.14638931
+## Q14___QSREIC_1          0.65901919 -0.18373188
+## Q14___QSREIC_2         -0.04645864  0.60450816
+## Q14___QSREIC_3         -0.21974311  0.72821944
+## Q14___QSREIC_4          0.67858757 -0.22082399
+## Q14___QSREIC_5          0.81989027 -0.10663689
+## Q14___QSREIC_6          0.47954135 -0.01775208
+## Q14___QSREIC_10        -0.62054363  0.54401492
+## Q14___QSREIC_11        -0.24912418  0.45407314
+## Q14___QSREIC_12        -0.07599318  0.62830929
+## Q14___QSREIC_13         0.70286871 -0.36991168
+## Q14___QSREIC_14         0.31221404 -0.21239280
+## Q14___QSREIC_18        -0.61291171  0.50792489
+## Q14___QSREIC_19         0.86386492 -0.17416313
+## Q14___QSREIC_20         0.48987317 -0.13810700
+## Q14___QSREIC_21        -0.10096878  0.47235074
+## Q14___QSREIC_22         0.62713102 -0.06457331
+## Q14___QSREIC_23         0.78404888 -0.23697732
+## Q14___QSREIC_25         0.39814596  0.23716325
+## Q14___QSREIC_26         0.60533321  0.13249085</code></pre>
+<pre><code>##                          TC1   TC2
+## Q14___QSREIC_19         0.86      
+## Q14___QSREIC_5          0.82      
+## Q14___QSREIC_23         0.78      
+## Q13___Internalisatio_9  0.75      
+## Q14___QSREIC_13          0.7 -0.37
+## Q14___QSREIC_4          0.68      
+## Q14___QSREIC_1          0.66      
+## Q14___QSREIC_22         0.63      
+## Q14___QSREIC_10        -0.62  0.54
+## Q14___QSREIC_18        -0.61  0.51
+## Q14___QSREIC_26         0.61      
+## Q14___QSREIC_20         0.49      
+## Q14___QSREIC_6          0.48      
+## Q14___QSREIC_25          0.4      
+## Q14___QSREIC_14         0.31      
+## Q14___QSREIC_3                0.73
+## Q14___QSREIC_12               0.63
+## Q14___QSREIC_2                 0.6
+## Q14___QSREIC_21               0.47
+## Q14___QSREIC_11               0.45</code></pre>
 </div>
-<div id="dautres-items-se-placent-sur-les-2-facteurs" class="section level4">
-<h4>d’autres items se placent sur les 2 facteurs</h4>
-<p>[file here:] (<a href="https://alexandrewilliot.github.io/R-home/Analyse_2facteurs_select.html" class="uri">https://alexandrewilliot.github.io/R-home/Analyse_2facteurs_select.html</a>)</p>
-</div>
-</div>
-<div id="resultats-avec-2-facteurs-pour-analyse-factorielle-échelle-modifié-2" class="section level2">
-<h2>Resultats avec 2 facteurs pour analyse factorielle (échelle modifié 2)</h2>
-<div id="aprés-avoir-retiré-les-items-présents-aux-2-facteurs-917251018168-et-adapté-alpha-mal-et-ada-selon-analyse-factorielle-résultats-valides-que-pour-alpha-mal-et-ada-et-af" class="section level4">
-<h4>aprés avoir retiré les items présents aux 2 facteurs (9,17,25,10,18,16,8) et adapté alpha mal et ada selon analyse factorielle ## Résultats VALIDES QUE POUR ALPHA MAL ET ADA ET AF !</h4>
-</div>
-<div id="adaptatif-0.66-maladaptatif-0.87" class="section level4">
-<h4>adaptatif = 0.66 ; maladaptatif = 0.87</h4>
-<p>[file here:] (<a href="https://alexandrewilliot.github.io/R-home/Analyse_2facteurs_select_2.html" class="uri">https://alexandrewilliot.github.io/R-home/Analyse_2facteurs_select_2.html</a>)</p>
-</div>
-</div>
-</div>
-<div id="femmes" class="section level1">
-<h1>femmes</h1>
-<div id="resultats-basés-sur-échelle-originale---27-items-1" class="section level2">
-<h2>Resultats basés sur échelle originale - 27 items</h2>
-<div id="adaptatif-0.67-maladaptatif-0.86" class="section level4">
-<h4>adaptatif = 0.67 ; maladaptatif = 0.86</h4>
-<p>[file here:] (<a href="https://alexandrewilliot.github.io/R-home/Analyse_F.html" class="uri">https://alexandrewilliot.github.io/R-home/Analyse_F.html</a>)</p>
-</div>
-</div>
-<div id="resultats-avec-2-facteurs-pour-analyse-factorielle-échelle-modifié-2-1" class="section level2">
-<h2>Resultats avec 2 facteurs pour analyse factorielle (échelle modifié 2)</h2>
-<div id="adaptatif-0.67-maladaptatif-0.87" class="section level4">
-<h4>adaptatif = 0.67 ; maladaptatif = 0.87</h4>
-<p>[file here:] (<a href="https://alexandrewilliot.github.io/R-home/Analyse_2facteurs_select_2_F.html" class="uri">https://alexandrewilliot.github.io/R-home/Analyse_2facteurs_select_2_F.html</a>)</p>
-</div>
-</div>
-</div>
-<div id="hommes" class="section level1">
-<h1>Hommes</h1>
-<div id="resultats-basés-sur-échelle-originale---27-items-2" class="section level2">
-<h2>Resultats basés sur échelle originale - 27 items</h2>
-<div id="adaptatif-0.80-maladaptatif-0.78" class="section level4">
-<h4>adaptatif = 0.80 ; maladaptatif = 0.78</h4>
-<p>[file here:] (<a href="https://alexandrewilliot.github.io/R-home/Analyse_H.html" class="uri">https://alexandrewilliot.github.io/R-home/Analyse_H.html</a>)</p>
-</div>
-</div>
-<div id="resultats-avec-2-facteurs-pour-analyse-factorielle-échelle-modifié-2-2" class="section level2">
-<h2>Resultats avec 2 facteurs pour analyse factorielle (échelle modifié 2)</h2>
-<div id="adaptatif-0.67-maladaptatif-0.87-1" class="section level4">
-<h4>adaptatif = 0.67 ; maladaptatif = 0.87</h4>
-<p>[file here:] (<a href="https://alexandrewilliot.github.io/R-home/Analyse_2facteurs_select_2_H.html" class="uri">https://alexandrewilliot.github.io/R-home/Analyse_2facteurs_select_2_H.html</a>)</p>
-</div>
+<div id="factor-scores" class="section level3">
+<h3>factor scores</h3>
 </div>
 </div>
 

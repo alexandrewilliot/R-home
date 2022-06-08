@@ -1,0 +1,628 @@
+---
+title: "Analyse_2facteurs_select_2_F"
+author: "alexandre.williot.1@ulaval.ca"
+date: "05/2022"
+output: 
+  html_document:
+    toc: TRUE
+    theme: united
+---
+
+#### LEGENDE : aprés avoir retiré les items présents aux 2 facteurs et adapté alpha mal et ada selon analyse factorielle ## Résultats VALIDES QUE POUR ALPHA MAL ET ADA ET AF !
+
+#### retrait item: 
+
+```{r chargement fichier, include=FALSE}
+
+rm(list=ls())
+T<-TRUE
+F<-FALSE
+# select_incident<-T
+# select_P_inter<- T
+# select_P_intra<- T
+
+library(readxl)
+library(haven)
+library(tidyverse) 
+
+# filename_SPSS_1 <- 
+#   "C:/Users/utilisateur/Dropbox/2020-2022/1 - Postdoc UQTR/données/projet_Alex_Williot.sav"
+# data_SPSS_1 <- read_sav(filename_SPSS_1)
+
+filename_SPSS_1 <- 
+  "https://github.com/alexandrewilliot/R-home/raw/main/projet_Alex_Williot.sav"
+data_SPSS_1 <- read_sav(filename_SPSS_1)
+
+
+# filename_SPSS_2 <- 
+#   "C:/Users/utilisateur/Dropbox/2020-2022/1 - Postdoc UQTR/données/projet_Alex_Williot_suite.sav"
+# data_SPSS_2 <- read_sav(filename_SPSS_2)
+
+filename_SPSS_2 <- 
+  "https://github.com/alexandrewilliot/R-home/raw/main/projet_Alex_Williot_suite.sav"
+data_SPSS_2 <- read_sav(filename_SPSS_2)
+
+
+# which(colnames(data_SPSS_1)=="Q12___Estime_corpore_13") #99
+# which(colnames(data_SPSS_2)=="Q12___Estime_corpore_13") #99
+# which(colnames(data_SPSS_1)=="Q10___Alim__motionne") #85
+# which(colnames(data_SPSS_2)=="Q10___Alim__motionne") #85
+
+data_1 <- rbind(data_SPSS_1, data_SPSS_2)
+
+```
+
+```{r library, include=FALSE}
+#install.packages("lubridate")
+library(lubridate)
+library(tidyverse)
+library(car)
+library(ltm)#alpha
+library(psych)#omega
+
+library(corpcor)
+library(GPArotation)
+
+```
+
+
+```{r filtre_1, include=FALSE}
+# filtrage sur les dates, expérience commence à partir du 8 décembre
+data_2<-data_1
+
+#data_2$StartDate
+#class(data_2$StartDate) # "POSIXct" "POSIXt" 
+data_2$StartDate <- as.Date(data_2$StartDate)
+#class(data_2$StartDate) # "Date"
+#min(data_2$StartDate) # "2021-11-24"
+#max(data_2$StartDate) # "2022-03-06"
+data_2 <- subset(data_2, StartDate>"2021-12-7")
+
+
+# filtre sur colonne données complétes
+#which(colnames(data_2)=="Finished") #7
+#sum(data_2$Finished) # 689
+
+data_3 <- subset (data_2, Finished > 0 ) # n=689
+
+
+# filtre sur temps pour faire exp # n=686 pour 300 sec
+which(colnames(data_SPSS_1)=="Duration__in_seconds_") #6
+data_4 <- subset (data_3, Duration__in_seconds_ > 300 ) #n=686
+#data_5 <- subset (data_4, Duration__in_seconds_ > 500 )
+
+#subset (data_5, Duration__in_seconds_ == 501 )
+#data_5[ , 43:147]
+
+```
+
+```{r , include=FALSE}
+# filtre sur colonne (pour épurer)
+
+data_5 <- data_4[ , 6:145]
+data_5<-data_5[,-c(5:16,18:37)] # conserve colonne femme 
+
+# 107 variables
+data_6 <- na.omit(data_5) # Supprime toutes les lignes avec des NA #n=578 # donc garde les femmes n=406
+
+
+```
+
+
+```{r CERQ, include=FALSE}
+#score aux questionnaires
+#CERQ
+
+data_6$CERQ_ACC <- data_6$Q6___R_gulation_cogn_1 + data_6$Q6___R_gulation_cogn_5
+data_6$CERQ_RUM <- data_6$Q6___R_gulation_cogn_2 + data_6$Q6___R_gulation_cogn_6
+data_6$CERQ_REA <- data_6$Q6___R_gulation_cogn_3 + data_6$Q6___R_gulation_cogn_8
+data_6$CERQ_CUL <- data_6$Q6___R_gulation_cogn_4 + data_6$Q6___R_gulation_cogn_14
+data_6$CERQ_REC <- data_6$Q6___R_gulation_cogn_7 + data_6$Q6___R_gulation_cogn_11
+data_6$CERQ_DRA <- data_6$Q6___R_gulation_cogn_9 + data_6$Q6___R_gulation_cogn_17
+data_6$CERQ_BLA <- data_6$Q6___R_gulation_cogn_10 + data_6$Q6___R_gulation_cogn_18
+data_6$CERQ_PLA <- data_6$Q6___R_gulation_cogn_12 + data_6$Q6___R_gulation_cogn_15
+data_6$CERQ_PERS <- data_6$Q6___R_gulation_cogn_13 + data_6$Q6___R_gulation_cogn_16
+
+data_6$CERQ_MAL <- data_6$CERQ_CUL + data_6$CERQ_BLA + data_6$CERQ_RUM + data_6$CERQ_DRA 
+
+data_6$CERQ_ADA <- data_6$CERQ_ACC + data_6$CERQ_REA + data_6$CERQ_REC + data_6$CERQ_PLA + data_6$CERQ_PERS
+
+```
+
+
+```{r AI, include=FALSE}
+# Alimentation intuitive ; carbonneau 2016
+# 7 items inversé : 1,2,4,5,9,10,11
+
+data_6$Q7___Alim_intuitive_1 <- recode(data_6$Q7___Alim_intuitive_1, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q7___Alim_intuitive_2 <- recode(data_6$Q7___Alim_intuitive_2, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q7___Alim_intuitive_4 <- recode(data_6$Q7___Alim_intuitive_4, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q7___Alim_intuitive_5 <- recode(data_6$Q7___Alim_intuitive_5, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q7___Alim_intuitive_9 <- recode(data_6$Q7___Alim_intuitive_9, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q7___Alim_intuitive_10 <- recode(data_6$Q7___Alim_intuitive_10, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q7___Alim_intuitive_11 <- recode(data_6$Q7___Alim_intuitive_11, "1=5; 2=4; 3=3;4=2; 5=1")
+
+# faire moyenne de l'échelle et sous-échelles pour obtenir score
+
+#str(data_6)
+# unconditional permission to eat
+data_6$AI_UPE <- data_6$Q7___Alim_intuitive_1 + data_6$Q7___Alim_intuitive_3 + data_6$Q7___Alim_intuitive_4 + data_6$Q7___Alim_intuitive_9 + data_6$Q7___Alim_intuitive_16 + data_6$Q7___Alim_intuitive_17
+
+#eating for physical reason than emotional
+data_6$AI_EPPR <- data_6$Q7___Alim_intuitive_2 + data_6$Q7___Alim_intuitive_5 + data_6$Q7___Alim_intuitive_10 + data_6$Q7___Alim_intuitive_11 + data_6$Q7___Alim_intuitive_12 + data_6$Q7___Alim_intuitive_13 + data_6$Q7___Alim_intuitive_14 + data_6$Q7___Alim_intuitive_15
+
+#Reliance on hunger and satiety cues
+data_6$AI_RHSC <- data_6$Q7___Alim_intuitive_6 + data_6$Q7___Alim_intuitive_7 + data_6$Q7___Alim_intuitive_8 + data_6$Q7___Alim_intuitive_21 + data_6$Q7___Alim_intuitive_22 + data_6$Q7___Alim_intuitive_23
+
+#body food choice
+data_6$AI_BFC <- data_6$Q7___Alim_intuitive_18 + data_6$Q7___Alim_intuitive_19 + data_6$Q7___Alim_intuitive_20 
+
+```
+
+```{r BE, include=FALSE}
+# body esteem - valls 2011
+
+#inversion des scores des items 4, 7, 9, 11, 13, 17, 18, 19 et 21 
+
+data_6$Q12___Estime_corpore_4 <- recode(data_6$Q12___Estime_corpore_4, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q12___Estime_corpore_7 <- recode(data_6$Q12___Estime_corpore_7, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q12___Estime_corpore_9 <- recode(data_6$Q12___Estime_corpore_9, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q12___Estime_corpore_11 <- recode(data_6$Q12___Estime_corpore_11, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q12___Estime_corpore_13 <- recode(data_6$Q12___Estime_corpore_13, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q12___Estime_corpore_17 <- recode(data_6$Q12___Estime_corpore_17, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q12___Estime_corpore_18 <- recode(data_6$Q12___Estime_corpore_18, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q12___Estime_corpore_19 <- recode(data_6$Q12___Estime_corpore_19, "1=5; 2=4; 3=3;4=2; 5=1")
+data_6$Q12___Estime_corpore_21 <- recode(data_6$Q12___Estime_corpore_21, "1=5; 2=4; 3=3;4=2; 5=1")
+
+
+# « Apparence » fait référence aux sentiments généraux envers l’apparence corporelle et comprend dix items (1-6-7-9-11- 13-15-17-21-23)
+data_6$BE_APP <- data_6$Q12___Estime_corpore_1 + data_6$Q12___Estime_corpore_6 + data_6$Q12___Estime_corpore_7 + data_6$Q12___Estime_corpore_9 + data_6$Q12___Estime_corpore_11 + data_6$Q12___Estime_corpore_13 + data_6$Q12___Estime_corpore_15 + data_6$Q12___Estime_corpore_17 + data_6$Q12___Estime_corpore_21 + data_6$Q12___Estime_corpore_23
+
+# « L’Attribution », composée de cinq items (2-5-12-14-20), correspond aux croyances concernant la fac¸on dont leur apparence corporelle est perc¸ue par les autres.
+data_6$BE_ATT <- data_6$Q12___Estime_corpore_2 + data_6$Q12___Estime_corpore_5 + data_6$Q12___Estime_corpore_12 + data_6$Q12___Estime_corpore_14 + data_6$Q12___Estime_corpore_20
+
+#« Poids » évalue la satisfaction ou l’insatisfaction envers le poids et comprend huit items (3- 4-8-10-16-18-19-22).
+data_6$BE_Poids <- data_6$Q12___Estime_corpore_3 + data_6$Q12___Estime_corpore_4 + data_6$Q12___Estime_corpore_8 + data_6$Q12___Estime_corpore_10 + data_6$Q12___Estime_corpore_16 + data_6$Q12___Estime_corpore_18 + data_6$Q12___Estime_corpore_19 + data_6$Q12___Estime_corpore_22
+
+```
+
+```{r EE, include=FALSE}
+#emotional eating
+
+which(colnames(data_6)=="Q9___Alim__motionnel")
+
+names(data_6)[names(data_6) == "Q9___Alim__motionnel"] <- "Q9_Alim_emotionnel"
+names(data_6)[names(data_6) == "Q10___Alim__motionne"] <- "Q10_Alim_emotionnel"
+names(data_6)[names(data_6) == "Q11___Alim__motionne"] <- "Q11_Alim_emotionnel"
+
+data_6$EE <- data_6$Q9_Alim_emotionnel + data_6$Q10_Alim_emotionnel + data_6$Q11_Alim_emotionnel
+
+```
+
+```{r interna, include=FALSE}
+#Internalisation des normes sociales d’apparence 
+#Rousseau et al (2010) ; Validation of the French version of the Sociocultural Attitudes Towards Appearance Scale-3 (SATAQ-3) ; items : 3, 4, 7, 8, 11, 12, 15, 16, 27 de l'échelle originale
+
+# internalisation générale
+
+data_6$Interna <- data_6$Q13___Internalisatio_1 + data_6$Q13___Internalisatio_2 + data_6$Q13___Internalisatio_3 + data_6$Q13___Internalisatio_4 + data_6$Q13___Internalisatio_5 + data_6$Q13___Internalisatio_6 + data_6$Q13___Internalisatio_7 + data_6$Q13___Internalisatio_8 + data_6$Q13___Internalisatio_9
+```
+
+
+
+
+```{r QSREIC, include=FALSE}
+# calcul sous-dim du QSREIC
+#inversion basée sur AF 'précédente'
+#data_6$Q14___QSREIC_16 <- recode(data_6$Q14___QSREIC_16, "1=5; 2=4; 3=3;4=2; 5=1")
+#data_6$Q14___QSREIC_10 <- recode(data_6$Q14___QSREIC_10, "1=5; 2=4; 3=3;4=2; 5=1")
+#data_6$Q14___QSREIC_18 <- recode(data_6$Q14___QSREIC_18, "1=5; 2=4; 3=3;4=2; 5=1")
+
+#dramatisation : 4 items
+data_6$QSREIC_dramatisation <- data_6$Q14___QSREIC_1 + data_6$Q14___QSREIC_9 + data_6$Q14___QSREIC_14 + data_6$Q14___QSREIC_17
+
+#planification : 4 items
+data_6$QSREIC_planif <- data_6$Q14___QSREIC_2 + data_6$Q14___QSREIC_11 + data_6$Q14___QSREIC_12 + data_6$Q14___QSREIC_25
+
+#recentrage : 3 items
+data_6$QSREIC_recentrage <- data_6$Q14___QSREIC_3 + data_6$Q14___QSREIC_7 + data_6$Q14___QSREIC_18 
+
+#social : 4 items
+#reverse items 8
+
+#data_6$Q14___QSREIC_5 <- recode(data_6$Q14___QSREIC_5, "1=5; 2=4; 3=3;4=2; 5=1")
+#data_6$Q14___QSREIC_19 <- recode(data_6$Q14___QSREIC_19, "1=5; 2=4; 3=3;4=2; 5=1")
+#data_6$Q14___QSREIC_26 <- recode(data_6$Q14___QSREIC_26, "1=5; 2=4; 3=3;4=2; 5=1")
+
+data_6$QSREIC_social <- data_6$Q14___QSREIC_5 + data_6$Q14___QSREIC_8 + data_6$Q14___QSREIC_19 + data_6$Q14___QSREIC_26
+
+#culpa : 2 items
+data_6$QSREIC_culpa <- data_6$Q14___QSREIC_6 + data_6$Q14___QSREIC_13
+
+#refus : 4 items
+data_6$QSREIC_refus <- data_6$Q14___QSREIC_10 + data_6$Q14___QSREIC_16 + data_6$Q14___QSREIC_21 + data_6$Q14___QSREIC_24
+
+#rumination: 
+data_6$QSREIC_rumination <- data_6$Q14___QSREIC_22 
+
+#physique: 2 items
+data_6$QSREIC_physique<- data_6$Q14___QSREIC_23 + data_6$Q14___QSREIC_4
+
+#évitement: 3 items
+data_6$QSREIC_évitement <- data_6$Q14___QSREIC_27 + data_6$Q14___QSREIC_20 +  data_6$Q14___QSREIC_15
+
+
+data_6$CERQ_ADA <- data_6$QSREIC_planif + data_6$QSREIC_recentrage + data_6$QSREIC_social + data_6$QSREIC_refus 
+
+data_6$CERQ_MAL <- data_6$QSREIC_dramatisation + data_6$QSREIC_physique + data_6$QSREIC_culpa + data_6$QSREIC_rumination + data_6$QSREIC_évitement
+
+```
+
+## Alpha
+
+### alpha QSREIC
+#### si r.drop inf à 0.3 alors voir retrait
+
+```{r, echo=FALSE}
+QSREIC_alpha <- subset(data_6, select = c(81:107))
+#supp items qui corrélent aux 2 dim 9,17,25
+QSREIC_alpha<- QSREIC_alpha[,-c(9,17,25,10,18,16,8)]
+
+#calculate Cronbach's Alpha
+cronbach.alpha(QSREIC_alpha , CI=TRUE, standardized=TRUE)
+#omega(QSREIC_alpha, 2)
+
+alpha(QSREIC_alpha)
+
+
+#continuer calcul alpha pour sous-/chelles : https://mattchoward.com/calculating-cronbachs-alpha-in-r/
+# puis pour autre échelles 
+```
+
+
+
+```{r , echo=FALSE}
+#alpha des sous-échelles de QSREIC
+
+QSREIC_dram <-subset(data_6, select = c( Q14___QSREIC_1 ,   Q14___QSREIC_14))
+alpha(QSREIC_dram)
+
+QSREIC_planif <-subset(data_6, select = c( Q14___QSREIC_2 ,  Q14___QSREIC_11 ,  Q14___QSREIC_12 ))
+alpha(QSREIC_planif)
+
+QSREIC_recentrage <-subset(data_6, select = c( Q14___QSREIC_3 ,  Q14___QSREIC_7 ,  Q14___QSREIC_18))
+alpha(QSREIC_recentrage)
+
+QSREIC_social  <-subset(data_6, select = c( Q14___QSREIC_5 ,  Q14___QSREIC_8 ,  Q14___QSREIC_19, Q14___QSREIC_26))
+alpha(QSREIC_social)
+
+QSREIC_culpa <-subset(data_6, select = c( Q14___QSREIC_6 ,  Q14___QSREIC_13 ))
+alpha(QSREIC_culpa)
+
+QSREIC_refus  <-subset(data_6, select = c( Q14___QSREIC_10 ,  Q14___QSREIC_16 ,  Q14___QSREIC_21, Q14___QSREIC_24))
+alpha(QSREIC_refus)
+
+#QSREIC_rumination  <-subset(data_6, select = c( Q14___QSREIC_22))
+#alpha(QSREIC_rumination)
+
+QSREIC_physique  <-subset(data_6, select = c( Q14___QSREIC_23 ,  Q14___QSREIC_4))
+alpha(QSREIC_physique)
+
+QSREIC_évitement  <-subset(data_6, select = c( Q14___QSREIC_27 ,  Q14___QSREIC_20, Q14___QSREIC_15))
+alpha(QSREIC_évitement)
+
+
+# supp 9,17,25,10,18,16,8
+
+QSREIC_ADA <-subset(data_6, select = c( Q14___QSREIC_2 ,  Q14___QSREIC_11 ,  Q14___QSREIC_12 , Q14___QSREIC_3 ,  Q14___QSREIC_7 ,   Q14___QSREIC_21, Q14___QSREIC_24))
+alpha(QSREIC_ADA)
+
+#déplacement de ADA vers MAL selon AF: 5, 19, 26, 16 (sup)
+QSREIC_MAL <-subset(data_6, select = c( Q14___QSREIC_5 , Q14___QSREIC_19, Q14___QSREIC_26, Q14___QSREIC_1 ,  Q14___QSREIC_14 ,  Q14___QSREIC_23 ,  Q14___QSREIC_4, Q14___QSREIC_6 ,  Q14___QSREIC_13, Q14___QSREIC_22, Q14___QSREIC_27 ,  Q14___QSREIC_20, Q14___QSREIC_15))
+alpha(QSREIC_MAL)
+
+```
+### alpha CERQ
+
+```{r , echo=FALSE}
+# alpha CERQ
+
+CERQ_ACC <- subset (data_6, select = c( Q6___R_gulation_cogn_1 , Q6___R_gulation_cogn_5))
+CERQ_RUM <- subset(data_6, select = c(Q6___R_gulation_cogn_2 , Q6___R_gulation_cogn_6))
+CERQ_REA <- subset(data_6, select = c(Q6___R_gulation_cogn_3 , Q6___R_gulation_cogn_8))
+CERQ_CUL <- subset(data_6, select = c(Q6___R_gulation_cogn_4 , Q6___R_gulation_cogn_14))
+CERQ_REC <- subset(data_6, select = c(Q6___R_gulation_cogn_7 , Q6___R_gulation_cogn_11))
+CERQ_DRA <- subset(data_6, select = c(Q6___R_gulation_cogn_9 , Q6___R_gulation_cogn_17))
+CERQ_BLA <- subset(data_6, select = c(Q6___R_gulation_cogn_10 , Q6___R_gulation_cogn_18))
+CERQ_PLA <- subset(data_6, select = c(Q6___R_gulation_cogn_12 , Q6___R_gulation_cogn_15))
+CERQ_PERS <- subset(data_6, select = c(Q6___R_gulation_cogn_13 , Q6___R_gulation_cogn_16))
+
+
+CERQ_MAL <- subset (data_6, select = c( Q6___R_gulation_cogn_4 , Q6___R_gulation_cogn_14, Q6___R_gulation_cogn_10 , Q6___R_gulation_cogn_18, Q6___R_gulation_cogn_2 , Q6___R_gulation_cogn_6, Q6___R_gulation_cogn_9 , Q6___R_gulation_cogn_17 ))
+
+CERQ_ADA <- subset (data_6, select = c( Q6___R_gulation_cogn_1 , Q6___R_gulation_cogn_5,Q6___R_gulation_cogn_3 , Q6___R_gulation_cogn_8, Q6___R_gulation_cogn_7 , Q6___R_gulation_cogn_11, Q6___R_gulation_cogn_12 , Q6___R_gulation_cogn_15, Q6___R_gulation_cogn_13 , Q6___R_gulation_cogn_16 ))
+
+
+alpha(CERQ_ACC)
+alpha(CERQ_RUM)
+alpha(CERQ_REA)
+alpha(CERQ_CUL)
+alpha(CERQ_REC)
+alpha(CERQ_DRA)
+alpha(CERQ_BLA)
+alpha(CERQ_PLA)
+alpha(CERQ_PERS)
+
+alpha(CERQ_MAL)
+alpha(CERQ_ADA)
+
+```
+
+### alpha AI
+
+```{r, echo=FALSE}
+# alpha AI
+
+# unconditional permission to eat
+AI_UPE <- subset (data_6, select = c( Q7___Alim_intuitive_1 , Q7___Alim_intuitive_3 , Q7___Alim_intuitive_4 , Q7___Alim_intuitive_9 , Q7___Alim_intuitive_16 , Q7___Alim_intuitive_17))
+alpha(AI_UPE)
+
+#eating for physical reason than emotional
+AI_EPPR <- subset (data_6, select = c( Q7___Alim_intuitive_2 , Q7___Alim_intuitive_5 , Q7___Alim_intuitive_10 , Q7___Alim_intuitive_11 , Q7___Alim_intuitive_12 , Q7___Alim_intuitive_13 , Q7___Alim_intuitive_14 , Q7___Alim_intuitive_15 ))
+alpha(AI_EPPR)
+
+#Reliance on hunger and satiety cues
+AI_RHSC <- subset (data_6, select = c( Q7___Alim_intuitive_6 , Q7___Alim_intuitive_7 , Q7___Alim_intuitive_8 , Q7___Alim_intuitive_21 , Q7___Alim_intuitive_22 , Q7___Alim_intuitive_23))
+alpha(AI_RHSC)
+
+#body food choice
+AI_BFC <- subset (data_6, select = c( Q7___Alim_intuitive_18 , Q7___Alim_intuitive_19 , Q7___Alim_intuitive_20 ))
+alpha(AI_BFC)
+
+```
+
+### alpha BE
+
+```{r , echo=FALSE}
+
+# « Apparence » fait référence aux sentiments généraux envers l’apparence corporelle et comprend dix items (1-6-7-9-11- 13-15-17-21-23)
+BE_APP <- subset (data_6, select = c( Q12___Estime_corpore_1 , Q12___Estime_corpore_6 , Q12___Estime_corpore_7 , Q12___Estime_corpore_9, Q12___Estime_corpore_11 , Q12___Estime_corpore_13 , Q12___Estime_corpore_15 , Q12___Estime_corpore_17 , Q12___Estime_corpore_21 , Q12___Estime_corpore_23))
+alpha(BE_APP)
+
+# « L’Attribution », composée de cinq items (2-5-12-14-20), correspond aux croyances concernant la fac¸on dont leur apparence corporelle est perc¸ue par les autres.
+BE_ATT <- subset (data_6, select = c( Q12___Estime_corpore_2 , Q12___Estime_corpore_5 , Q12___Estime_corpore_12 , Q12___Estime_corpore_14, Q12___Estime_corpore_20 ))
+alpha(BE_ATT)
+
+#« Poids » évalue la satisfaction ou l’insatisfaction envers le poids et comprend huit items (3- 4-8-10-16-18-19-22).
+BE_Poids  <- subset (data_6, select = c( Q12___Estime_corpore_3 , Q12___Estime_corpore_4 , Q12___Estime_corpore_8 , Q12___Estime_corpore_10, Q12___Estime_corpore_16 , Q12___Estime_corpore_18 , Q12___Estime_corpore_19 , Q12___Estime_corpore_22 ))
+alpha(BE_Poids )
+
+```
+
+### alpha EE
+
+```{r , echo=FALSE}
+EE<- subset (data_6, select = c( Q9_Alim_emotionnel , Q10_Alim_emotionnel , Q11_Alim_emotionnel))
+alpha(EE )
+
+```
+
+
+### alpha internalisation
+
+```{r , echo=FALSE}
+#Internalisation des normes sociales d’apparence 
+#Rousseau et al (2010) ; Validation of the French version of the Sociocultural Attitudes Towards Appearance Scale-3 (SATAQ-3) ; items : 3, 4, 7, 8, 11, 12, 15, 16, 27 de l'échelle originale
+
+# internalisation générale
+Interna <- subset (data_6, select = c( Q13___Internalisatio_1 , Q13___Internalisatio_2 , Q13___Internalisatio_3 , Q13___Internalisatio_4 , Q13___Internalisatio_5 , Q13___Internalisatio_6 , Q13___Internalisatio_7 , Q13___Internalisatio_8 , Q13___Internalisatio_9 ))
+alpha(Interna)
+
+```
+
+
+## Analyse factorielle - extraction
+
+#### matrice de corrélation ; besoin de bonnes corrélations
+#### Bartlett sur data ou corrélation (même résultat) # on veut test signif donc AF ok
+```{r, echo=FALSE}
+#matrice de corrélation ; besoin de bonnes corrélations ; variable qui corréle pas devrait être retiré
+#range entre .3 et .9
+matrice<-cor(QSREIC_alpha)
+round(matrice, 2)
+
+#break down the matrix to make it easier to put in the book
+# round(matrice[,1:5], 2)
+# round(matrice[,6:10], 2)
+# round(matrice[,11:15], 2)
+# round(matrice[,16:20], 2)
+# round(matrice[,21:27], 2)
+
+# Bartlett sur data ou corrélation (même résultat) # on veut test signif donc AF ok
+cortest.bartlett(QSREIC_alpha)
+cortest.bartlett(matrice, n=578)
+```
+
+#### KMO test
+```{r kmo, include=FALSE}
+#KMO test
+
+# KMO Kaiser-Meyer-Olkin Measure of Sampling Adequacy
+# Function by G. Jay Kerns, Ph.D., Youngstown State University (http://tolstoy.newcastle.edu.au/R/e2/help/07/08/22816.html)
+
+kmo = function( data ){
+  library(MASS) 
+  X <- cor(as.matrix(data)) 
+  iX <- ginv(X) 
+  S2 <- diag(diag((iX^-1)))
+  AIS <- S2%*%iX%*%S2                      # anti-image covariance matrix
+  IS <- X+AIS-2*S2                         # image covariance matrix
+  Dai <- sqrt(diag(diag(AIS)))
+  IR <- ginv(Dai)%*%IS%*%ginv(Dai)         # image correlation matrix
+  AIR <- ginv(Dai)%*%AIS%*%ginv(Dai)       # anti-image correlation matrix
+  a <- apply((AIR - diag(diag(AIR)))^2, 2, sum)
+  AA <- sum(a) 
+  b <- apply((X - diag(nrow(X)))^2, 2, sum)
+  BB <- sum(b)
+  MSA <- b/(b+a)                        # indiv. measures of sampling adequacy
+  AIR <- AIR-diag(nrow(AIR))+diag(MSA)  # Examine the anti-image of the correlation matrix. That is the  negative of the partial correlations, partialling out all other variables.
+  kmo <- BB/(AA+BB)                     # overall KMO statistic
+  # Reporting the conclusion 
+   if (kmo >= 0.00 && kmo < 0.50){test <- 'The KMO test yields a degree of common variance unacceptable for FA.'} 
+      else if (kmo >= 0.50 && kmo < 0.60){test <- 'The KMO test yields a degree of common variance miserable.'} 
+      else if (kmo >= 0.60 && kmo < 0.70){test <- 'The KMO test yields a degree of common variance mediocre.'} 
+      else if (kmo >= 0.70 && kmo < 0.80){test <- 'The KMO test yields a degree of common variance middling.' } 
+      else if (kmo >= 0.80 && kmo < 0.90){test <- 'The KMO test yields a degree of common variance meritorious.' }
+       else { test <- 'The KMO test yields a degree of common variance marvelous.' }
+
+       ans <- list( overall = kmo,
+                  report = test,
+                  individual = MSA,
+                  AIS = AIS,
+                  AIR = AIR )
+    return(ans)
+} 
+```
+
+### kmo doit être sup à 0.7 pour AF ok (min de .5)
+
+```{r, echo=FALSE}
+#kmo
+# doit être sup à 0.7 pour AF ok (min de .5)
+# peut être calculé pour plusieurs variables ou indiv
+# indiv # si inf à .5 alors exclusion et retour kmo multiple
+kmo(QSREIC_alpha)
+
+#attention item 9, 17
+
+#det sup à 0,00001
+det(matrice)
+```
+
+### ACP
+#### factors = 27 (graphe point d'inflexion) puis 2
+```{r ACP, echo=FALSE}
+#ACP
+#On raw data # peut indiquer autant de facteur que variable pour ACP mais pas AF (voir point d'inflexion)
+ACP_1 <-  principal(QSREIC_alpha, nfactors = 20, rotate = "none", scores = FALSE)
+ACP_1
+#h2 est communality (porportion de variance commune au sein d'une variable) ; 1 car 1 var = 1 facteur ici
+#u2 est uniqueness (1- communality); représente la variance unique pour chaque variable
+
+# SSloading / nb facteur = Proportion Var ; Proportion Var*100 = % de variance total expliqué par facteur
+
+#ACP_1$values = eigenvalue/SS loading
+
+#graphe de eigenvalue VS nb facteur
+plot(ACP_1$values, type = "b") # pour point d'inflexion # 5 ici
+
+ACP_2 <-  principal(QSREIC_alpha, nfactors = 2, rotate = "none", scores = FALSE)
+ACP_2 # Fit based upon off diagonal values = 0.96 sup à 0.95 dc ok (examen des résidus)
+#si moins de 30 variables et communality sup à 0.7 et échantillon sup à 250 and average communality sup à 0.6 (les additionner et / leur nb)
+
+
+#ACP_3 <-  principal(QSREIC_alpha, nfactors = 4, rotate = "none", scores = FALSE)
+#ACP_3
+```
+#### aprés extraction du nombre de facteur, voir différence entre matrice de corrélation reproduite et matrice des données donc résidu
+```{r echo=FALSE}
+#aprés extraction du nombre de facteur, voir différence entre matrice de corrélation reproduite et matrice des données donc résidu
+
+#factor model a besoin de factor loading matrix
+#reproduced correlation : factor.model(ACP_2$loadings)
+
+#Explore residuals
+#factor.model(ACP_2$loadings)
+reproduced<-round(factor.model(ACP_2$loadings), 3)
+reproduced
+#factor.residuals(matrice, ACP_2$loadings) # la diagonale contient communality aprés extraction
+resids<-round(factor.residuals(matrice, ACP_2$loadings), 3)
+resids
+
+ACP_2$fit.off # même valeur que Fit based upon off diagonal values
+
+
+residuals<-factor.residuals(matrice, ACP_2$loadings)
+residuals<-as.matrix(residuals[upper.tri(residuals)]) #sélection au-dessus de la diagonale
+large.resid<-abs(residuals) > 0.05 # abs pour TRUE or FALSE
+sum(large.resid) # somme des TRUE
+sum(large.resid)/nrow(residuals) # en % ; pas plus de 50%
+sqrt(mean(residuals^2)) # pas plus que 0.08; si sup alors voir ajout de facteur
+hist(residuals)
+
+
+residual.stats<-function(matrix){
+	residuals<-as.matrix(matrix[upper.tri(matrix)])
+	large.resid<-abs(residuals) > 0.05
+	numberLargeResids<-sum(large.resid)
+	propLargeResid<-numberLargeResids/nrow(residuals)
+	rmsr<-sqrt(mean(residuals^2))
+	
+	cat("Root means squared residual = ", rmsr, "\n")
+	cat("Number of absolute residuals > 0.05 = ", numberLargeResids, "\n")
+	cat("Proportion of absolute residuals > 0.05 = ", propLargeResid, "\n")
+	hist(residuals)
+}
+```
+
+### varimax rotation
+#### examen du nb de facteur
+```{r, echo=FALSE}
+#Factor rotation # page 788 de Field # jusqu'ici validation ok
+# composants extraits non corrélés
+#l'interprétabilité des facteurs peut être amélioré par la rotation
+#maximise le fit avec un facteur et l'éloignement des autres
+# si facteur non relié alors varimax (orthogonal)
+# si facteur sont reliés alors promax ou oblimin
+ACP_3 <-  principal(QSREIC_alpha, nfactors = 2, rotate = "varimax", scores = FALSE)
+ACP_3
+
+#réorganiser items selon facteurs
+#suprime loading sous valeur
+print.psych(ACP_3, cut = 0.3, sort = FALSE)
+# loading vont changer mais pas h2 et u2 (la rotation distribue la variance différement mais variance total stable)
+
+```
+
+### oblique rotation
+```{r, echo=FALSE}
+# si corrélation entre les composants
+ACP_4 <- principal(QSREIC_alpha, nfactors = 2, rotate = "oblimin")
+print.psych(ACP_4, cut = 0.3, sort = TRUE)
+
+# indication des corrélations entre les composantes
+
+#obtenir la matrix de structure (factor loading matrix * correlation (phi)) qui tient compte de la relation entre les facteurs # pattern matrix plus simple à inter mais faire attention
+# en ortho, pattern matrix et structure matrix sont similaires
+
+# * des matrix : %*%
+ACP_4$loadings%*%ACP_4$Phi
+
+
+factor.structure <- function(fa, cut = 0.2, decimals = 2){
+	structure.matrix <- fa.sort(fa$loadings %*% fa$Phi)
+	structure.matrix <- data.frame(ifelse(abs(structure.matrix) < cut, "", round(structure.matrix, decimals)))
+	return(structure.matrix)
+	}
+	
+factor.structure(ACP_4, cut = 0.3)
+```
+
+### factor scores
+
+
+```{r, echo=FALSE}
+
+```
+
+
+```{r, include=FALSE}
+
+#voir pour valider échelle - AF pour QSREIC
+#voir Boateng (2018) et akena (2018)
+
+#http://rstudio-pubs-static.s3.amazonaws.com/11011_caa8639a12cb488aba3df58c696626bb.html
+
+```
+
+
