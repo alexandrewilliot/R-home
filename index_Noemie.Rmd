@@ -42,11 +42,11 @@ output:
 
 # femmes
 ## Resultats basés sur échelle originale - 27 items
-#### adaptatif = 0.67 ; maladaptatif = 0.86
+#### adaptatif = 0.82 ; maladaptatif = 0.78
 [file here:] (https://alexandrewilliot.github.io/R-home/Analyse_F.html)
 
 ## Resultats avec 2 facteurs pour analyse factorielle (échelle modifié 2)
-#### adaptatif = 0.67 ; maladaptatif = 0.87
+#### adaptatif = 0.67 ; maladaptatif = 0.86
 [file here:] (https://alexandrewilliot.github.io/R-home/Analyse_2facteurs_select_2_F.html)
 
 # Hommes
