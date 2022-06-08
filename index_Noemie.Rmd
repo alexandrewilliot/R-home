@@ -40,3 +40,8 @@ output:
 #### adaptatif = 0.66 ; maladaptatif = 0.87
 [file here:] (https://alexandrewilliot.github.io/R-home/Analyse_2facteurs_select_2.html)
 
+# femmes
+## Resultats basés sur échelle originale - 27 items
+[file here:] (https://alexandrewilliot.github.io/R-home/Analyse_F.html)
+
+
