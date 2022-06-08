@@ -40,7 +40,7 @@ output:
 #### adaptatif = 0.66 ; maladaptatif = 0.87
 [file here:] (https://alexandrewilliot.github.io/R-home/Analyse_2facteurs_select_2.html)
 
-# femmes
+# femmes (n=406)
 ## Resultats basés sur échelle originale - 27 items
 #### adaptatif = 0.82 ; maladaptatif = 0.78
 [file here:] (https://alexandrewilliot.github.io/R-home/Analyse_F.html)
@@ -49,7 +49,7 @@ output:
 #### adaptatif = 0.67 ; maladaptatif = 0.86
 [file here:] (https://alexandrewilliot.github.io/R-home/Analyse_2facteurs_select_2_F.html)
 
-# Hommes
+# Hommes (n=166)
 ## Resultats basés sur échelle originale - 27 items
 #### adaptatif = 0.80 ; maladaptatif = 0.78
 [file here:] (https://alexandrewilliot.github.io/R-home/Analyse_H.html)
