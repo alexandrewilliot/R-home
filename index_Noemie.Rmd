@@ -42,6 +42,11 @@ output:
 
 # femmes
 ## Resultats basés sur échelle originale - 27 items
+#### adaptatif = 0.82 ; maladaptatif = 0.78
 [file here:] (https://alexandrewilliot.github.io/R-home/Analyse_F.html)
 
 
+# Hommes
+## Resultats basés sur échelle originale - 27 items
+#### adaptatif = 0.82 ; maladaptatif = 0.78
+[file here:] (https://alexandrewilliot.github.io/R-home/Analyse_H.html)
