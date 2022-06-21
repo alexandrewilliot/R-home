@@ -54,13 +54,16 @@ data_1 <- rbind(data_SPSS_1, data_SPSS_2)
 #install.packages("lubridate")
 library(lubridate)
 library(tidyverse)
-library(car)
+
 library(ltm)#alpha
 library(psych)#omega
 
 library(corpcor)
 library(GPArotation)
 
+library(boot) # bootstrapping
+library(car) # regression diag
+library(QuantPsyc) # coeff standard
 ```
 
 
@@ -153,6 +156,10 @@ data_6$AI_RHSC <- data_6$Q7___Alim_intuitive_6 + data_6$Q7___Alim_intuitive_7 + 
 #body food choice
 data_6$AI_BFC <- data_6$Q7___Alim_intuitive_18 + data_6$Q7___Alim_intuitive_19 + data_6$Q7___Alim_intuitive_20 
 
+
+# TOTAL
+data_6$AI_total <- data_6$AI_UPE + data_6$AI_EPPR + data_6$AI_RHSC + data_6$AI_BFC
+
 ```
 
 ```{r BE, include=FALSE}
@@ -179,6 +186,9 @@ data_6$BE_ATT <- data_6$Q12___Estime_corpore_2 + data_6$Q12___Estime_corpore_5 +
 
 #« Poids » évalue la satisfaction ou l’insatisfaction envers le poids et comprend huit items (3- 4-8-10-16-18-19-22).
 data_6$BE_Poids <- data_6$Q12___Estime_corpore_3 + data_6$Q12___Estime_corpore_4 + data_6$Q12___Estime_corpore_8 + data_6$Q12___Estime_corpore_10 + data_6$Q12___Estime_corpore_16 + data_6$Q12___Estime_corpore_18 + data_6$Q12___Estime_corpore_19 + data_6$Q12___Estime_corpore_22
+
+
+data_6$BE_total <- data_6$BE_APP + data_6$BE_ATT + data_6$BE_Poids
 
 ```
 
@@ -244,9 +254,10 @@ data_6$QSREIC_physique<- data_6$Q14___QSREIC_23 + data_6$Q14___QSREIC_4
 data_6$QSREIC_évitement <- data_6$Q14___QSREIC_27 + data_6$Q14___QSREIC_20 +  data_6$Q14___QSREIC_15
 
 
-data_6$CERQ_ADA <- data_6$QSREIC_planif + data_6$QSREIC_recentrage + data_6$QSREIC_social + data_6$QSREIC_refus 
+data_6$QSREIC_ADA <- data_6$QSREIC_planif + data_6$QSREIC_recentrage + data_6$QSREIC_social + data_6$QSREIC_refus 
 
-data_6$CERQ_MAL <- data_6$QSREIC_dramatisation + data_6$QSREIC_physique + data_6$QSREIC_culpa + data_6$QSREIC_rumination + data_6$QSREIC_évitement
+data_6$QSREIC_MAL <- data_6$QSREIC_dramatisation + data_6$QSREIC_physique + data_6$QSREIC_culpa + data_6$QSREIC_rumination + data_6$QSREIC_évitement
+
 
 ```
 
@@ -601,8 +612,216 @@ factor.structure(ACP_4, cut = 0.3)
 
 
 ```{r, echo=FALSE}
+ACP_5 <- principal(QSREIC_alpha, nfactors = 5, rotate = "oblimin", scores = TRUE)
+#ACP_5$scores # trop d'information
+head(ACP_5$scores, 10)
+
+#intégrer score pour autres analyses
+ACP_5 <- cbind(ACP_5, ACP_5$scores)
 
 ```
+
+## Régression 1
+
+```{r, echo=FALSE}
+regression_1<- lm(QSREIC_ADA ~ CERQ_MAL + CERQ_ADA, data = data_6) 
+
+#anova(regression) # donne F mais pas nécessaire pour regression standard
+
+summary(regression_1)
+#summary.lm(regression)
+
+```
+
+## Régression 2
+
+```{r, echo=FALSE}
+regression_2<- lm(QSREIC_MAL ~ CERQ_MAL + CERQ_ADA, data = data_6) 
+
+#anova(regression) # donne F mais pas nécessaire pour regression standard
+
+summary(regression_2)
+#summary.lm(regression)
+
+```
+
+## Régression 3
+
+```{r, echo=FALSE}
+regression_3 <- lm(EE ~ QSREIC_MAL + QSREIC_ADA, data = data_6) 
+
+#anova(regression) # donne F mais pas nécessaire pour regression standard
+
+summary(regression_3)
+#summary.lm(regression)
+
+```
+
+
+## Régression 4
+
+###BE_total
+
+```{r, echo=FALSE}
+regression_4 <- lm(BE_total ~ QSREIC_MAL + QSREIC_ADA, data = data_6) 
+
+#anova(regression) # donne F mais pas nécessaire pour regression standard
+
+summary(regression_4)
+#summary.lm(regression)
+```
+
+
+### BE_APP
+
+```{r, echo=FALSE}
+regression_4a <- lm(BE_APP ~ QSREIC_MAL + QSREIC_ADA, data = data_6) 
+
+#anova(regression) # donne F mais pas nécessaire pour regression standard
+
+summary(regression_4a)
+#summary.lm(regression)
+```
+
+### BE_ATT
+
+```{r, echo=FALSE}
+regression_4b <- lm(BE_ATT ~ QSREIC_MAL + QSREIC_ADA, data = data_6) 
+
+#anova(regression) # donne F mais pas nécessaire pour regression standard
+
+summary(regression_4b)
+#summary.lm(regression)
+```
+
+### BE_Poids
+
+```{r, echo=FALSE}
+regression_4c <- lm(BE_Poids ~ QSREIC_MAL + QSREIC_ADA, data = data_6) 
+
+#anova(regression) # donne F mais pas nécessaire pour regression standard
+
+summary(regression_4c)
+#summary.lm(regression)
+```
+
+
+## Régression 5
+
+### AI_total
+
+```{r, echo=FALSE}
+regression_5 <- lm(AI_total ~ QSREIC_MAL + QSREIC_ADA, data = data_6) 
+
+#anova(regression) # donne F mais pas nécessaire pour regression standard
+
+summary(regression_5)
+#summary.lm(regression)
+
+```
+
+
+### AI_UPE
+
+```{r, echo=FALSE}
+regression_5a <- lm(AI_UPE ~ QSREIC_MAL + QSREIC_ADA, data = data_6) 
+
+#anova(regression) # donne F mais pas nécessaire pour regression standard
+
+summary(regression_5a)
+#summary.lm(regression)
+
+```
+
+### AI_EPPR
+
+```{r, echo=FALSE}
+regression_5b <- lm(AI_EPPR ~ QSREIC_MAL + QSREIC_ADA, data = data_6) 
+
+#anova(regression) # donne F mais pas nécessaire pour regression standard
+
+summary(regression_5b)
+#summary.lm(regression)
+
+```
+
+
+### AI_RHSC
+
+```{r, echo=FALSE}
+regression_5c <- lm(AI_RHSC ~ QSREIC_MAL + QSREIC_ADA, data = data_6) 
+
+#anova(regression) # donne F mais pas nécessaire pour regression standard
+
+summary(regression_5c)
+#summary.lm(regression)
+```
+
+### AI_BFC
+
+```{r, echo=FALSE}
+regression_5d <- lm(AI_BFC ~ QSREIC_MAL + QSREIC_ADA, data = data_6) 
+
+#anova(regression) # donne F mais pas nécessaire pour regression standard
+
+summary(regression_5d)
+#summary.lm(regression)
+```
+
+## Regression 6
+
+### Bloc1: CERQ; Bloc2: QSREIC
+
+```{r, echo=FALSE}
+regression_6a <- lm(EE ~ CERQ_MAL + CERQ_ADA, data = data_6) 
+
+summary(regression_6a)
+
+regression_6b <- lm(EE ~ CERQ_MAL + CERQ_ADA + QSREIC_MAL + QSREIC_ADA, data = data_6) 
+
+summary(regression_6b)
+
+anova(regression_6a, regression_6b)
+```
+
+
+## Regression 7
+
+### Bloc1: CERQ; Bloc2: QSREIC
+
+```{r, echo=FALSE}
+regression_7a <- lm(BE_total ~ CERQ_MAL + CERQ_ADA, data = data_6) 
+
+summary(regression_7a)
+
+regression_7b <- lm(BE_total ~ CERQ_MAL + CERQ_ADA + QSREIC_MAL + QSREIC_ADA, data = data_6) 
+
+summary(regression_7b)
+
+anova(regression_7a, regression_7b)
+```
+
+
+## Regression 8
+
+### Bloc1: CERQ; Bloc2: QSREIC
+
+```{r, echo=FALSE}
+regression_8a <- lm(AI_total ~ CERQ_MAL + CERQ_ADA, data = data_6) 
+
+summary(regression_8a)
+
+regression_8b <- lm(AI_total ~ CERQ_MAL + CERQ_ADA + QSREIC_MAL + QSREIC_ADA, data = data_6) 
+
+summary(regression_8b)
+
+anova(regression_8a, regression_8b)
+```
+
+
+
+
+
 
 
 ```{r, include=FALSE}
@@ -612,6 +831,7 @@ factor.structure(ACP_4, cut = 0.3)
 
 #http://rstudio-pubs-static.s3.amazonaws.com/11011_caa8639a12cb488aba3df58c696626bb.html
 
+# voir pour passer en EQS
 ```
 
 

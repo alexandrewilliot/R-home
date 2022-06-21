@@ -401,6 +401,30 @@ summary {
 <li><a href="#oblique-rotation">oblique rotation</a></li>
 <li><a href="#factor-scores">factor scores</a></li>
 </ul></li>
+<li><a href="#régression-1">Régression 1</a></li>
+<li><a href="#régression-2">Régression 2</a></li>
+<li><a href="#régression-3">Régression 3</a></li>
+<li><a href="#régression-4">Régression 4</a><ul>
+<li><a href="#be_app">BE_APP</a></li>
+<li><a href="#be_att">BE_ATT</a></li>
+<li><a href="#be_poids">BE_Poids</a></li>
+</ul></li>
+<li><a href="#régression-5">Régression 5</a><ul>
+<li><a href="#ai_total">AI_total</a></li>
+<li><a href="#ai_upe">AI_UPE</a></li>
+<li><a href="#ai_eppr">AI_EPPR</a></li>
+<li><a href="#ai_rhsc">AI_RHSC</a></li>
+<li><a href="#ai_bfc">AI_BFC</a></li>
+</ul></li>
+<li><a href="#regression-6">Regression 6</a><ul>
+<li><a href="#bloc1-cerq-bloc2-qsreic">Bloc1: CERQ; Bloc2: QSREIC</a></li>
+</ul></li>
+<li><a href="#regression-7">Regression 7</a><ul>
+<li><a href="#bloc1-cerq-bloc2-qsreic-1">Bloc1: CERQ; Bloc2: QSREIC</a></li>
+</ul></li>
+<li><a href="#regression-8">Regression 8</a><ul>
+<li><a href="#bloc1-cerq-bloc2-qsreic-2">Bloc1: CERQ; Bloc2: QSREIC</a></li>
+</ul></li>
 </ul>
 </div>
 
@@ -422,7 +446,7 @@ summary {
 ## 
 ## Bootstrap 95% CI based on 1000 samples
 ##  2.5% 97.5% 
-## 0.334 0.480</code></pre>
+## 0.343 0.475</code></pre>
 <pre><code>## Warning in alpha(QSREIC_alpha): Some items were negatively correlated with the total scale and probably 
 ## should be reversed.  
 ## To do this, run the function again with the &#39;check.keys=TRUE&#39; option</code></pre>
@@ -2252,8 +2276,8 @@ summary {
 </div>
 <div id="acp" class="section level3">
 <h3>ACP</h3>
-<div id="factors-27-graphe-point-dinflexion-puis-5" class="section level4">
-<h4>factors = 27 (graphe point d’inflexion) puis 5</h4>
+<div id="factors-27-graphe-point-dinflexion-puis-2" class="section level4">
+<h4>factors = 27 (graphe point d’inflexion) puis 2</h4>
 <pre><code>## Principal Components Analysis
 ## Call: principal(r = QSREIC_alpha, nfactors = 27, rotate = &quot;none&quot;, scores = FALSE)
 ## Standardized loadings (pattern matrix) based upon correlation matrix
@@ -3029,6 +3053,455 @@ summary {
 </div>
 <div id="factor-scores" class="section level3">
 <h3>factor scores</h3>
+<pre><code>##              TC1         TC3        TC2         TC5        TC4
+##  [1,]  0.1856113  0.11624434 -0.5456679 -1.64304376 -0.9437790
+##  [2,]  0.7533501 -0.56287339  0.9837265  0.08442843 -0.5532014
+##  [3,]  1.2387018  0.02281492  2.1476725 -0.87354695  0.1311509
+##  [4,]  0.5398146  0.63373639 -1.0240102  0.43714350 -0.1414461
+##  [5,] -0.8757089 -0.82242556  1.3246745  0.96786153  0.2637599
+##  [6,]  0.8016824 -1.81471531 -1.9323630  0.61306816  2.9234196
+##  [7,]  0.8147992 -0.43687035  0.9980555  0.08492585  1.9781098
+##  [8,]  1.2633908 -1.25006391 -1.3312276  1.96721588  2.6619071
+##  [9,] -0.2713041  0.31755834 -0.3800065 -0.44889206 -1.1678406
+## [10,]  0.5800292  0.70986613  0.6061338  0.26120148 -0.4471018</code></pre>
+<pre><code>## Warning in cbind(ACP_5, ACP_5$scores): number of rows of result is not a
+## multiple of vector length (arg 1)</code></pre>
+</div>
+</div>
+<div id="régression-1" class="section level2">
+<h2>Régression 1</h2>
+<pre><code>## 
+## Call:
+## lm(formula = QSREIC_ADA ~ CERQ_MAL + CERQ_ADA, data = data_6)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -27.4477  -5.2951  -0.1134   5.4953  23.1318 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 38.77176    2.26182  17.142  &lt; 2e-16 ***
+## CERQ_MAL    -0.53747    0.06749  -7.964 8.99e-15 ***
+## CERQ_ADA     0.54461    0.05067  10.748  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 8.205 on 575 degrees of freedom
+## Multiple R-squared:  0.2806, Adjusted R-squared:  0.2781 
+## F-statistic: 112.1 on 2 and 575 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div id="régression-2" class="section level2">
+<h2>Régression 2</h2>
+<pre><code>## 
+## Call:
+## lm(formula = QSREIC_MAL ~ CERQ_MAL + CERQ_ADA, data = data_6)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -17.0973  -5.3327  -0.7246   4.3856  25.9006 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 18.30064    1.96622   9.308   &lt;2e-16 ***
+## CERQ_MAL     0.66297    0.05867  11.300   &lt;2e-16 ***
+## CERQ_ADA    -0.06897    0.04405  -1.566    0.118    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 7.132 on 575 degrees of freedom
+## Multiple R-squared:    0.2,  Adjusted R-squared:  0.1972 
+## F-statistic: 71.86 on 2 and 575 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div id="régression-3" class="section level2">
+<h2>Régression 3</h2>
+<pre><code>## 
+## Call:
+## lm(formula = EE ~ QSREIC_MAL + QSREIC_ADA, data = data_6)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -6.4050 -1.6744 -0.1569  1.8242  6.0655 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  6.99378    0.91483   7.645 8.82e-14 ***
+## QSREIC_MAL  -0.09527    0.01534  -6.210 1.01e-09 ***
+## QSREIC_ADA   0.07114    0.01265   5.625 2.89e-08 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.353 on 575 degrees of freedom
+## Multiple R-squared:  0.2323, Adjusted R-squared:  0.2297 
+## F-statistic: 87.01 on 2 and 575 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div id="régression-4" class="section level2">
+<h2>Régression 4</h2>
+<p>###BE_total</p>
+<pre><code>## 
+## Call:
+## lm(formula = BE_total ~ QSREIC_MAL + QSREIC_ADA, data = data_6)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -29.066  -6.458  -0.422   7.364  41.050 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  54.7820     4.1088   13.33   &lt;2e-16 ***
+## QSREIC_MAL   -0.9715     0.0689  -14.10   &lt;2e-16 ***
+## QSREIC_ADA    0.8571     0.0568   15.09   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 10.57 on 575 degrees of freedom
+## Multiple R-squared:  0.6479, Adjusted R-squared:  0.6467 
+## F-statistic: 529.1 on 2 and 575 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div id="be_app" class="section level3">
+<h3>BE_APP</h3>
+<pre><code>## 
+## Call:
+## lm(formula = BE_APP ~ QSREIC_MAL + QSREIC_ADA, data = data_6)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -15.8435  -3.0831   0.0446   3.3599  17.9344 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 24.27911    1.95035   12.45   &lt;2e-16 ***
+## QSREIC_MAL  -0.49296    0.03271  -15.07   &lt;2e-16 ***
+## QSREIC_ADA   0.42852    0.02696   15.89   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 5.016 on 575 degrees of freedom
+## Multiple R-squared:  0.6744, Adjusted R-squared:  0.6732 
+## F-statistic: 595.4 on 2 and 575 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div id="be_att" class="section level3">
+<h3>BE_ATT</h3>
+<pre><code>## 
+## Call:
+## lm(formula = BE_ATT ~ QSREIC_MAL + QSREIC_ADA, data = data_6)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -8.3197 -1.9986 -0.1677  1.8157 11.9942 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 12.09112    1.13420  10.660  &lt; 2e-16 ***
+## QSREIC_MAL  -0.05065    0.01902  -2.663  0.00796 ** 
+## QSREIC_ADA   0.08143    0.01568   5.194 2.86e-07 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.917 on 575 degrees of freedom
+## Multiple R-squared:  0.1203, Adjusted R-squared:  0.1173 
+## F-statistic: 39.32 on 2 and 575 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div id="be_poids" class="section level3">
+<h3>BE_Poids</h3>
+<pre><code>## 
+## Call:
+## lm(formula = BE_Poids ~ QSREIC_MAL + QSREIC_ADA, data = data_6)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -15.9908  -3.8048  -0.3793   3.6684  17.6576 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 18.41173    2.15417   8.547   &lt;2e-16 ***
+## QSREIC_MAL  -0.42791    0.03612 -11.846   &lt;2e-16 ***
+## QSREIC_ADA   0.34720    0.02978  11.660   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 5.54 on 575 degrees of freedom
+## Multiple R-squared:  0.544,  Adjusted R-squared:  0.5424 
+## F-statistic:   343 on 2 and 575 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<div id="régression-5" class="section level2">
+<h2>Régression 5</h2>
+<div id="ai_total" class="section level3">
+<h3>AI_total</h3>
+<pre><code>## 
+## Call:
+## lm(formula = AI_total ~ QSREIC_MAL + QSREIC_ADA, data = data_6)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -38.328  -9.256  -0.738   9.182  40.495 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 60.65857    4.94444  12.268  &lt; 2e-16 ***
+## QSREIC_MAL  -0.55172    0.08291  -6.654 6.65e-11 ***
+## QSREIC_ADA   0.67749    0.06835   9.912  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 12.72 on 575 degrees of freedom
+## Multiple R-squared:  0.3744, Adjusted R-squared:  0.3722 
+## F-statistic:   172 on 2 and 575 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div id="ai_upe" class="section level3">
+<h3>AI_UPE</h3>
+<pre><code>## 
+## Call:
+## lm(formula = AI_UPE ~ QSREIC_MAL + QSREIC_ADA, data = data_6)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -13.8406  -2.9671   0.3726   3.3985  10.6692 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 18.71041    1.81850  10.289  &lt; 2e-16 ***
+## QSREIC_MAL  -0.09481    0.03049  -3.109  0.00197 ** 
+## QSREIC_ADA   0.10495    0.02514   4.175 3.44e-05 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.677 on 575 degrees of freedom
+## Multiple R-squared:  0.1033, Adjusted R-squared:  0.1002 
+## F-statistic: 33.11 on 2 and 575 DF,  p-value: 2.452e-14</code></pre>
+</div>
+<div id="ai_eppr" class="section level3">
+<h3>AI_EPPR</h3>
+<pre><code>## 
+## Call:
+## lm(formula = AI_EPPR ~ QSREIC_MAL + QSREIC_ADA, data = data_6)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -17.1964  -5.6923  -0.4613   5.5342  17.1427 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 20.42917    2.80877   7.273 1.15e-12 ***
+## QSREIC_MAL  -0.28691    0.04710  -6.092 2.05e-09 ***
+## QSREIC_ADA   0.28697    0.03883   7.391 5.16e-13 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 7.223 on 575 degrees of freedom
+## Multiple R-squared:  0.2823, Adjusted R-squared:  0.2798 
+## F-statistic: 113.1 on 2 and 575 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div id="ai_rhsc" class="section level3">
+<h3>AI_RHSC</h3>
+<pre><code>## 
+## Call:
+## lm(formula = AI_RHSC ~ QSREIC_MAL + QSREIC_ADA, data = data_6)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -14.3315  -3.7650   0.2253   3.5214  15.1830 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 12.55800    2.02268   6.209 1.02e-09 ***
+## QSREIC_MAL  -0.12755    0.03392  -3.760 0.000187 ***
+## QSREIC_ADA   0.21443    0.02796   7.669 7.43e-14 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 5.202 on 575 degrees of freedom
+## Multiple R-squared:  0.225,  Adjusted R-squared:  0.2223 
+## F-statistic: 83.48 on 2 and 575 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div id="ai_bfc" class="section level3">
+<h3>AI_BFC</h3>
+<pre><code>## 
+## Call:
+## lm(formula = AI_BFC ~ QSREIC_MAL + QSREIC_ADA, data = data_6)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -8.566 -1.504  0.387  1.633  6.241 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  8.96099    0.95871   9.347  &lt; 2e-16 ***
+## QSREIC_MAL  -0.04246    0.01608  -2.641  0.00849 ** 
+## QSREIC_ADA   0.07114    0.01325   5.368 1.16e-07 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.466 on 575 degrees of freedom
+## Multiple R-squared:  0.1248, Adjusted R-squared:  0.1217 
+## F-statistic: 40.98 on 2 and 575 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<div id="regression-6" class="section level2">
+<h2>Regression 6</h2>
+<div id="bloc1-cerq-bloc2-qsreic" class="section level3">
+<h3>Bloc1: CERQ; Bloc2: QSREIC</h3>
+<pre><code>## 
+## Call:
+## lm(formula = EE ~ CERQ_MAL + CERQ_ADA, data = data_6)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -6.1684 -1.7869 -0.1445  1.8009  6.5237 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  7.53377    0.70071  10.752  &lt; 2e-16 ***
+## CERQ_MAL    -0.11866    0.02091  -5.675 2.20e-08 ***
+## CERQ_ADA     0.07165    0.01570   4.564 6.13e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.542 on 575 degrees of freedom
+## Multiple R-squared:  0.104,  Adjusted R-squared:  0.1008 
+## F-statistic: 33.36 on 2 and 575 DF,  p-value: 1.967e-14</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = EE ~ CERQ_MAL + CERQ_ADA + QSREIC_MAL + QSREIC_ADA, 
+##     data = data_6)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -6.3417 -1.6594 -0.1848  1.8033  6.0007 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  7.14690    0.99297   7.197 1.93e-12 ***
+## CERQ_MAL    -0.02623    0.02138  -1.227 0.220205    
+## CERQ_ADA     0.03525    0.01615   2.183 0.029447 *  
+## QSREIC_MAL  -0.09498    0.01630  -5.825 9.50e-09 ***
+## QSREIC_ADA   0.05481    0.01417   3.867 0.000123 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.343 on 573 degrees of freedom
+## Multiple R-squared:  0.2415, Adjusted R-squared:  0.2362 
+## F-statistic: 45.61 on 4 and 573 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: EE ~ CERQ_MAL + CERQ_ADA
+## Model 2: EE ~ CERQ_MAL + CERQ_ADA + QSREIC_MAL + QSREIC_ADA
+##   Res.Df    RSS Df Sum of Sq      F    Pr(&gt;F)    
+## 1    575 3714.9                                  
+## 2    573 3144.7  2    570.19 51.948 &lt; 2.2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+</div>
+</div>
+<div id="regression-7" class="section level2">
+<h2>Regression 7</h2>
+<div id="bloc1-cerq-bloc2-qsreic-1" class="section level3">
+<h3>Bloc1: CERQ; Bloc2: QSREIC</h3>
+<pre><code>## 
+## Call:
+## lm(formula = BE_total ~ CERQ_MAL + CERQ_ADA, data = data_6)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -44.325 -11.723  -0.615  11.629  48.428 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 67.49871    4.46151  15.129  &lt; 2e-16 ***
+## CERQ_MAL    -1.04930    0.13313  -7.882 1.62e-14 ***
+## CERQ_ADA     0.58776    0.09995   5.881 6.94e-09 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 16.18 on 575 degrees of freedom
+## Multiple R-squared:  0.1741, Adjusted R-squared:  0.1713 
+## F-statistic: 60.62 on 2 and 575 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = BE_total ~ CERQ_MAL + CERQ_ADA + QSREIC_MAL + QSREIC_ADA, 
+##     data = data_6)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -29.923  -6.462  -0.436   7.290  40.054 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 53.25200    4.48261  11.880   &lt;2e-16 ***
+## CERQ_MAL     0.06047    0.09650   0.627    0.531    
+## CERQ_ADA     0.06317    0.07290   0.867    0.387    
+## QSREIC_MAL  -0.99523    0.07360 -13.521   &lt;2e-16 ***
+## QSREIC_ADA   0.83721    0.06398  13.084   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 10.58 on 573 degrees of freedom
+## Multiple R-squared:  0.6486, Adjusted R-squared:  0.6461 
+## F-statistic: 264.4 on 4 and 573 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: BE_total ~ CERQ_MAL + CERQ_ADA
+## Model 2: BE_total ~ CERQ_MAL + CERQ_ADA + QSREIC_MAL + QSREIC_ADA
+##   Res.Df    RSS Df Sum of Sq      F    Pr(&gt;F)    
+## 1    575 150603                                  
+## 2    573  64086  2     86517 386.78 &lt; 2.2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+</div>
+</div>
+<div id="regression-8" class="section level2">
+<h2>Regression 8</h2>
+<div id="bloc1-cerq-bloc2-qsreic-2" class="section level3">
+<h3>Bloc1: CERQ; Bloc2: QSREIC</h3>
+<pre><code>## 
+## Call:
+## lm(formula = AI_total ~ CERQ_MAL + CERQ_ADA, data = data_6)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -43.403 -10.906  -0.217  10.415  36.605 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 74.11600    4.05885  18.260  &lt; 2e-16 ***
+## CERQ_MAL    -0.84456    0.12111  -6.973 8.53e-12 ***
+## CERQ_ADA     0.56763    0.09093   6.243 8.36e-10 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 14.72 on 575 degrees of freedom
+## Multiple R-squared:  0.1612, Adjusted R-squared:  0.1583 
+## F-statistic: 55.25 on 2 and 575 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = AI_total ~ CERQ_MAL + CERQ_ADA + QSREIC_MAL + QSREIC_ADA, 
+##     data = data_6)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -36.429  -9.618  -0.320   8.830  39.719 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 61.78218    5.35601  11.535  &lt; 2e-16 ***
+## CERQ_MAL    -0.17175    0.11530  -1.490   0.1369    
+## CERQ_ADA     0.21590    0.08710   2.479   0.0135 *  
+## QSREIC_MAL  -0.54746    0.08795  -6.225 9.31e-10 ***
+## QSREIC_ADA   0.57652    0.07645   7.541 1.84e-13 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 12.64 on 573 degrees of freedom
+## Multiple R-squared:  0.3843, Adjusted R-squared:   0.38 
+## F-statistic: 89.41 on 4 and 573 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: AI_total ~ CERQ_MAL + CERQ_ADA
+## Model 2: AI_total ~ CERQ_MAL + CERQ_ADA + QSREIC_MAL + QSREIC_ADA
+##   Res.Df    RSS Df Sum of Sq      F    Pr(&gt;F)    
+## 1    575 124645                                  
+## 2    573  91492  2     33153 103.82 &lt; 2.2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
 </div>
 
