@@ -660,7 +660,7 @@ summary(regression_3)
 
 ## Régression 4
 
-###BE_total
+### BE_total
 
 ```{r, echo=FALSE}
 regression_4 <- lm(BE_total ~ QSREIC_MAL + QSREIC_ADA, data = data_6) 
