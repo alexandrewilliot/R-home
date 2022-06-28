@@ -818,13 +818,48 @@ summary(regression_8b)
 anova(regression_8a, regression_8b)
 ```
 
+## Regression 9
+
+### Bloc1: CERQ; Bloc2: QSREIC
+
+```{r , echo=FALSE}
+#data_6$Interna
+
+regression_9a <- lm(Interna ~ CERQ_MAL + CERQ_ADA, data = data_6) 
+
+summary(regression_9a)
+
+regression_9b <- lm(Interna ~ CERQ_MAL + CERQ_ADA + QSREIC_MAL + QSREIC_ADA, data = data_6) 
+
+summary(regression_9b)
+
+anova(regression_9a, regression_9b)
+
+
+```
+
+
+# Corrélation
+
+```{r , echo=FALSE}
+
+which(colnames(data_6)=="QSREIC_MAL") #140
+which(colnames(data_6)=="CERQ_ACC") #108
+which(colnames(data_6)=="QSREIC_rumination") #136
+
+data_cor <- subset(data_6, select = c(108:140))
+data_cor <- data_cor[,-c(29)]
+
+
+round(cor(data_cor, method = "pearson"),2 )
+
+```
 
 
 
 
 
-
-```{r, include=FALSE}
+```{r, echo=FALSE}
 
 #voir pour valider échelle - AF pour QSREIC
 #voir Boateng (2018) et akena (2018)
@@ -832,6 +867,7 @@ anova(regression_8a, regression_8b)
 #http://rstudio-pubs-static.s3.amazonaws.com/11011_caa8639a12cb488aba3df58c696626bb.html
 
 # voir pour passer en EQS
+
 ```
 
 

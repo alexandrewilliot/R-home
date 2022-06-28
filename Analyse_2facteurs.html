@@ -426,6 +426,10 @@ summary {
 <li><a href="#regression-8">Regression 8</a><ul>
 <li><a href="#bloc1-cerq-bloc2-qsreic-2">Bloc1: CERQ; Bloc2: QSREIC</a></li>
 </ul></li>
+<li><a href="#regression-9">Regression 9</a><ul>
+<li><a href="#bloc1-cerq-bloc2-qsreic-3">Bloc1: CERQ; Bloc2: QSREIC</a></li>
+</ul></li>
+<li><a href="#corrélation">Corrélation</a></li>
 </ul>
 </div>
 
@@ -447,7 +451,7 @@ summary {
 ## 
 ## Bootstrap 95% CI based on 1000 samples
 ##  2.5% 97.5% 
-## 0.338 0.477</code></pre>
+## 0.336 0.478</code></pre>
 <pre><code>## Warning in alpha(QSREIC_alpha): Some items were negatively correlated with the total scale and probably 
 ## should be reversed.  
 ## To do this, run the function again with the &#39;check.keys=TRUE&#39; option</code></pre>
@@ -3506,6 +3510,266 @@ summary {
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
+</div>
+<div id="regression-9" class="section level2">
+<h2>Regression 9</h2>
+<div id="bloc1-cerq-bloc2-qsreic-3" class="section level3">
+<h3>Bloc1: CERQ; Bloc2: QSREIC</h3>
+<pre><code>## 
+## Call:
+## lm(formula = Interna ~ CERQ_MAL + CERQ_ADA, data = data_6)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -19.0004  -7.7665  -0.7472   7.1960  25.3411 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 13.27613    2.60959   5.087 4.92e-07 ***
+## CERQ_MAL     0.60709    0.07787   7.796 3.01e-14 ***
+## CERQ_ADA    -0.08423    0.05846  -1.441     0.15    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 9.466 on 575 degrees of freedom
+## Multiple R-squared:  0.1093, Adjusted R-squared:  0.1062 
+## F-statistic:  35.3 on 2 and 575 DF,  p-value: 3.48e-15</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = Interna ~ CERQ_MAL + CERQ_ADA + QSREIC_MAL + QSREIC_ADA, 
+##     data = data_6)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -24.038  -5.721  -0.451   5.743  27.555 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 26.24128    3.49022   7.519 2.15e-13 ***
+## CERQ_MAL     0.22000    0.07513   2.928  0.00354 ** 
+## CERQ_ADA     0.17164    0.05676   3.024  0.00261 ** 
+## QSREIC_MAL   0.22621    0.05731   3.947 8.89e-05 ***
+## QSREIC_ADA  -0.44117    0.04982  -8.855  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 8.234 on 573 degrees of freedom
+## Multiple R-squared:  0.3284, Adjusted R-squared:  0.3237 
+## F-statistic: 70.05 on 4 and 573 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: Interna ~ CERQ_MAL + CERQ_ADA
+## Model 2: Interna ~ CERQ_MAL + CERQ_ADA + QSREIC_MAL + QSREIC_ADA
+##   Res.Df   RSS Df Sum of Sq      F    Pr(&gt;F)    
+## 1    575 51525                                  
+## 2    573 38851  2     12673 93.456 &lt; 2.2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+</div>
+</div>
+<div id="corrélation" class="section level1">
+<h1>Corrélation</h1>
+<pre><code>## [1] 140</code></pre>
+<pre><code>## [1] 108</code></pre>
+<pre><code>## [1] 136</code></pre>
+<pre><code>##                      CERQ_ACC CERQ_RUM CERQ_REA CERQ_CUL CERQ_REC CERQ_DRA
+## CERQ_ACC                 1.00     0.05     0.52    -0.02     0.21    -0.23
+## CERQ_RUM                 0.05     1.00     0.03     0.37    -0.14     0.46
+## CERQ_REA                 0.52     0.03     1.00    -0.13     0.33    -0.31
+## CERQ_CUL                -0.02     0.37    -0.13     1.00    -0.19     0.43
+## CERQ_REC                 0.21    -0.14     0.33    -0.19     1.00    -0.21
+## CERQ_DRA                -0.23     0.46    -0.31     0.43    -0.21     1.00
+## CERQ_BLA                -0.11     0.19    -0.10     0.01    -0.06     0.33
+## CERQ_PLA                 0.32     0.12     0.50     0.05     0.19    -0.14
+## CERQ_PERS                0.42    -0.11     0.52    -0.11     0.40    -0.32
+## CERQ_MAL                -0.10     0.76    -0.18     0.71    -0.22     0.81
+## CERQ_ADA                 0.70    -0.01     0.82    -0.11     0.58    -0.34
+## AI_UPE                   0.08    -0.18     0.03    -0.18     0.02    -0.19
+## AI_EPPR                  0.19    -0.15     0.23    -0.28     0.22    -0.32
+## AI_RHSC                  0.12    -0.08     0.21    -0.25     0.20    -0.16
+## AI_BFC                   0.15    -0.08     0.26    -0.18     0.18    -0.17
+## AI_total                 0.20    -0.18     0.25    -0.33     0.22    -0.31
+## BE_APP                   0.14    -0.22     0.24    -0.35     0.18    -0.32
+## BE_ATT                   0.11     0.01     0.27    -0.15     0.13    -0.10
+## BE_Poids                 0.12    -0.21     0.23    -0.32     0.17    -0.25
+## BE_total                 0.14    -0.20     0.27    -0.35     0.19    -0.29
+## EE                       0.17    -0.15     0.18    -0.25     0.19    -0.29
+## Interna                 -0.04     0.23    -0.09     0.26    -0.14     0.27
+## QSREIC_dramatisation     0.02     0.16    -0.03     0.21     0.02     0.21
+## QSREIC_planif            0.23     0.14     0.33    -0.08     0.24    -0.08
+## QSREIC_recentrage        0.28    -0.17     0.42    -0.25     0.38    -0.33
+## QSREIC_social            0.11    -0.30     0.18    -0.37     0.15    -0.37
+## QSREIC_culpa             0.00     0.18    -0.11     0.37    -0.11     0.26
+## QSREIC_refus             0.19    -0.15     0.32    -0.30     0.23    -0.31
+## QSREIC_physique         -0.03     0.21    -0.10     0.33    -0.12     0.32
+## QSREIC_évitement        -0.08     0.16    -0.24     0.36    -0.12     0.29
+## QSREIC_ADA               0.25    -0.18     0.40    -0.34     0.31    -0.37
+## QSREIC_MAL              -0.03     0.27    -0.16     0.42    -0.10     0.36
+##                      CERQ_BLA CERQ_PLA CERQ_PERS CERQ_MAL CERQ_ADA AI_UPE
+## CERQ_ACC                -0.11     0.32      0.42    -0.10     0.70   0.08
+## CERQ_RUM                 0.19     0.12     -0.11     0.76    -0.01  -0.18
+## CERQ_REA                -0.10     0.50      0.52    -0.18     0.82   0.03
+## CERQ_CUL                 0.01     0.05     -0.11     0.71    -0.11  -0.18
+## CERQ_REC                -0.06     0.19      0.40    -0.22     0.58   0.02
+## CERQ_DRA                 0.33    -0.14     -0.32     0.81    -0.34  -0.19
+## CERQ_BLA                 1.00    -0.03     -0.15     0.46    -0.13  -0.02
+## CERQ_PLA                -0.03     1.00      0.34     0.01     0.67  -0.01
+## CERQ_PERS               -0.15     0.34      1.00    -0.25     0.76   0.05
+## CERQ_MAL                 0.46     0.01     -0.25     1.00    -0.21  -0.22
+## CERQ_ADA                -0.13     0.67      0.76    -0.21     1.00   0.05
+## AI_UPE                  -0.02    -0.01      0.05    -0.22     0.05   1.00
+## AI_EPPR                 -0.03     0.14      0.24    -0.30     0.29   0.21
+## AI_RHSC                  0.01     0.14      0.14    -0.19     0.23   0.32
+## AI_BFC                   0.02     0.24      0.23    -0.16     0.30  -0.07
+## AI_total                -0.02     0.16      0.23    -0.32     0.30   0.52
+## BE_APP                  -0.12     0.12      0.27    -0.37     0.27   0.29
+## BE_ATT                  -0.03     0.20      0.18    -0.10     0.25   0.03
+## BE_Poids                -0.08     0.14      0.21    -0.33     0.25   0.34
+## BE_total                -0.10     0.16      0.26    -0.35     0.29   0.31
+## EE                      -0.01     0.10      0.19    -0.27     0.23   0.20
+## Interna                  0.12    -0.03     -0.14     0.33    -0.12  -0.29
+## QSREIC_dramatisation     0.13    -0.01      0.03     0.26     0.01  -0.11
+## QSREIC_planif           -0.06     0.29      0.27    -0.02     0.38   0.03
+## QSREIC_recentrage       -0.08     0.26      0.40    -0.31     0.49   0.23
+## QSREIC_social           -0.14     0.09      0.23    -0.44     0.21   0.36
+## QSREIC_culpa             0.07    -0.01     -0.13     0.34    -0.10  -0.25
+## QSREIC_refus            -0.02     0.16      0.29    -0.30     0.34   0.25
+## QSREIC_physique          0.11    -0.04     -0.20     0.36    -0.14  -0.31
+## QSREIC_évitement         0.06    -0.16     -0.19     0.33    -0.23  -0.17
+## QSREIC_ADA              -0.10     0.25      0.38    -0.37     0.45   0.30
+## QSREIC_MAL               0.13    -0.07     -0.16     0.44    -0.15  -0.28
+##                      AI_EPPR AI_RHSC AI_BFC AI_total BE_APP BE_ATT BE_Poids
+## CERQ_ACC                0.19    0.12   0.15     0.20   0.14   0.11     0.12
+## CERQ_RUM               -0.15   -0.08  -0.08    -0.18  -0.22   0.01    -0.21
+## CERQ_REA                0.23    0.21   0.26     0.25   0.24   0.27     0.23
+## CERQ_CUL               -0.28   -0.25  -0.18    -0.33  -0.35  -0.15    -0.32
+## CERQ_REC                0.22    0.20   0.18     0.22   0.18   0.13     0.17
+## CERQ_DRA               -0.32   -0.16  -0.17    -0.31  -0.32  -0.10    -0.25
+## CERQ_BLA               -0.03    0.01   0.02    -0.02  -0.12  -0.03    -0.08
+## CERQ_PLA                0.14    0.14   0.24     0.16   0.12   0.20     0.14
+## CERQ_PERS               0.24    0.14   0.23     0.23   0.27   0.18     0.21
+## CERQ_MAL               -0.30   -0.19  -0.16    -0.32  -0.37  -0.10    -0.33
+## CERQ_ADA                0.29    0.23   0.30     0.30   0.27   0.25     0.25
+## AI_UPE                  0.21    0.32  -0.07     0.52   0.29   0.03     0.34
+## AI_EPPR                 1.00    0.58   0.37     0.87   0.49   0.27     0.56
+## AI_RHSC                 0.58    1.00   0.33     0.83   0.44   0.25     0.56
+## AI_BFC                  0.37    0.33   1.00     0.46   0.35   0.25     0.37
+## AI_total                0.87    0.83   0.46     1.00   0.57   0.29     0.67
+## BE_APP                  0.49    0.44   0.35     0.57   1.00   0.45     0.81
+## BE_ATT                  0.27    0.25   0.25     0.29   0.45   1.00     0.43
+## BE_Poids                0.56    0.56   0.37     0.67   0.81   0.43     1.00
+## BE_total                0.55    0.52   0.39     0.64   0.94   0.59     0.93
+## EE                      0.87    0.54   0.33     0.78   0.47   0.21     0.53
+## Interna                -0.32   -0.28  -0.21    -0.40  -0.53   0.04    -0.41
+## QSREIC_dramatisation   -0.18   -0.08  -0.08    -0.17  -0.29  -0.08    -0.24
+## QSREIC_planif           0.19    0.23   0.18     0.22   0.29   0.35     0.30
+## QSREIC_recentrage       0.38    0.37   0.31     0.46   0.56   0.27     0.50
+## QSREIC_social           0.45    0.38   0.27     0.53   0.70   0.14     0.57
+## QSREIC_culpa           -0.41   -0.40  -0.25    -0.48  -0.63  -0.24    -0.63
+## QSREIC_refus            0.42    0.40   0.28     0.49   0.64   0.28     0.60
+## QSREIC_physique        -0.43   -0.40  -0.28    -0.52  -0.72  -0.18    -0.68
+## QSREIC_évitement       -0.41   -0.34  -0.28    -0.44  -0.62  -0.37    -0.53
+## QSREIC_ADA              0.49    0.45   0.34     0.57   0.74   0.33     0.66
+## QSREIC_MAL             -0.46   -0.38  -0.28    -0.52  -0.73  -0.28    -0.66
+##                      BE_total    EE Interna QSREIC_dramatisation QSREIC_planif
+## CERQ_ACC                 0.14  0.17   -0.04                 0.02          0.23
+## CERQ_RUM                -0.20 -0.15    0.23                 0.16          0.14
+## CERQ_REA                 0.27  0.18   -0.09                -0.03          0.33
+## CERQ_CUL                -0.35 -0.25    0.26                 0.21         -0.08
+## CERQ_REC                 0.19  0.19   -0.14                 0.02          0.24
+## CERQ_DRA                -0.29 -0.29    0.27                 0.21         -0.08
+## CERQ_BLA                -0.10 -0.01    0.12                 0.13         -0.06
+## CERQ_PLA                 0.16  0.10   -0.03                -0.01          0.29
+## CERQ_PERS                0.26  0.19   -0.14                 0.03          0.27
+## CERQ_MAL                -0.35 -0.27    0.33                 0.26         -0.02
+## CERQ_ADA                 0.29  0.23   -0.12                 0.01          0.38
+## AI_UPE                   0.31  0.20   -0.29                -0.11          0.03
+## AI_EPPR                  0.55  0.87   -0.32                -0.18          0.19
+## AI_RHSC                  0.52  0.54   -0.28                -0.08          0.23
+## AI_BFC                   0.39  0.33   -0.21                -0.08          0.18
+## AI_total                 0.64  0.78   -0.40                -0.17          0.22
+## BE_APP                   0.94  0.47   -0.53                -0.29          0.29
+## BE_ATT                   0.59  0.21    0.04                -0.08          0.35
+## BE_Poids                 0.93  0.53   -0.41                -0.24          0.30
+## BE_total                 1.00  0.51   -0.45                -0.27          0.34
+## EE                       0.51  1.00   -0.32                -0.16          0.16
+## Interna                 -0.45 -0.32    1.00                 0.19         -0.03
+## QSREIC_dramatisation    -0.27 -0.16    0.19                 1.00          0.00
+## QSREIC_planif            0.34  0.16   -0.03                 0.00          1.00
+## QSREIC_recentrage        0.55  0.33   -0.37                -0.12          0.42
+## QSREIC_social            0.63  0.41   -0.66                -0.34          0.16
+## QSREIC_culpa            -0.64 -0.39    0.42                 0.35         -0.20
+## QSREIC_refus             0.64  0.36   -0.43                -0.11          0.39
+## QSREIC_physique         -0.70 -0.42    0.53                 0.30         -0.20
+## QSREIC_évitement        -0.61 -0.39    0.30                 0.35         -0.24
+## QSREIC_ADA               0.73  0.43   -0.52                -0.20          0.60
+## QSREIC_MAL              -0.71 -0.44    0.47                 0.69         -0.17
+##                      QSREIC_recentrage QSREIC_social QSREIC_culpa QSREIC_refus
+## CERQ_ACC                          0.28          0.11         0.00         0.19
+## CERQ_RUM                         -0.17         -0.30         0.18        -0.15
+## CERQ_REA                          0.42          0.18        -0.11         0.32
+## CERQ_CUL                         -0.25         -0.37         0.37        -0.30
+## CERQ_REC                          0.38          0.15        -0.11         0.23
+## CERQ_DRA                         -0.33         -0.37         0.26        -0.31
+## CERQ_BLA                         -0.08         -0.14         0.07        -0.02
+## CERQ_PLA                          0.26          0.09        -0.01         0.16
+## CERQ_PERS                         0.40          0.23        -0.13         0.29
+## CERQ_MAL                         -0.31         -0.44         0.34        -0.30
+## CERQ_ADA                          0.49          0.21        -0.10         0.34
+## AI_UPE                            0.23          0.36        -0.25         0.25
+## AI_EPPR                           0.38          0.45        -0.41         0.42
+## AI_RHSC                           0.37          0.38        -0.40         0.40
+## AI_BFC                            0.31          0.27        -0.25         0.28
+## AI_total                          0.46          0.53        -0.48         0.49
+## BE_APP                            0.56          0.70        -0.63         0.64
+## BE_ATT                            0.27          0.14        -0.24         0.28
+## BE_Poids                          0.50          0.57        -0.63         0.60
+## BE_total                          0.55          0.63        -0.64         0.64
+## EE                                0.33          0.41        -0.39         0.36
+## Interna                          -0.37         -0.66         0.42        -0.43
+## QSREIC_dramatisation             -0.12         -0.34         0.35        -0.11
+## QSREIC_planif                     0.42          0.16        -0.20         0.39
+## QSREIC_recentrage                 1.00          0.52        -0.36         0.61
+## QSREIC_social                     0.52          1.00        -0.56         0.54
+## QSREIC_culpa                     -0.36         -0.56         1.00        -0.46
+## QSREIC_refus                      0.61          0.54        -0.46         1.00
+## QSREIC_physique                  -0.47         -0.68         0.66        -0.55
+## QSREIC_évitement                 -0.36         -0.50         0.52        -0.38
+## QSREIC_ADA                        0.82          0.76        -0.54         0.86
+## QSREIC_MAL                       -0.43         -0.68         0.78        -0.47
+##                      QSREIC_physique QSREIC_évitement QSREIC_ADA QSREIC_MAL
+## CERQ_ACC                       -0.03            -0.08       0.25      -0.03
+## CERQ_RUM                        0.21             0.16      -0.18       0.27
+## CERQ_REA                       -0.10            -0.24       0.40      -0.16
+## CERQ_CUL                        0.33             0.36      -0.34       0.42
+## CERQ_REC                       -0.12            -0.12       0.31      -0.10
+## CERQ_DRA                        0.32             0.29      -0.37       0.36
+## CERQ_BLA                        0.11             0.06      -0.10       0.13
+## CERQ_PLA                       -0.04            -0.16       0.25      -0.07
+## CERQ_PERS                      -0.20            -0.19       0.38      -0.16
+## CERQ_MAL                        0.36             0.33      -0.37       0.44
+## CERQ_ADA                       -0.14            -0.23       0.45      -0.15
+## AI_UPE                         -0.31            -0.17       0.30      -0.28
+## AI_EPPR                        -0.43            -0.41       0.49      -0.46
+## AI_RHSC                        -0.40            -0.34       0.45      -0.38
+## AI_BFC                         -0.28            -0.28       0.34      -0.28
+## AI_total                       -0.52            -0.44       0.57      -0.52
+## BE_APP                         -0.72            -0.62       0.74      -0.73
+## BE_ATT                         -0.18            -0.37       0.33      -0.28
+## BE_Poids                       -0.68            -0.53       0.66      -0.66
+## BE_total                       -0.70            -0.61       0.73      -0.71
+## EE                             -0.42            -0.39       0.43      -0.44
+## Interna                         0.53             0.30      -0.52       0.47
+## QSREIC_dramatisation            0.30             0.35      -0.20       0.69
+## QSREIC_planif                  -0.20            -0.24       0.60      -0.17
+## QSREIC_recentrage              -0.47            -0.36       0.82      -0.43
+## QSREIC_social                  -0.68            -0.50       0.76      -0.68
+## QSREIC_culpa                    0.66             0.52      -0.54       0.78
+## QSREIC_refus                   -0.55            -0.38       0.86      -0.47
+## QSREIC_physique                 1.00             0.48      -0.65       0.77
+## QSREIC_évitement                0.48             1.00      -0.49       0.78
+## QSREIC_ADA                     -0.65            -0.49       1.00      -0.60
+## QSREIC_MAL                      0.77             0.78      -0.60       1.00</code></pre>
 </div>
 
 
