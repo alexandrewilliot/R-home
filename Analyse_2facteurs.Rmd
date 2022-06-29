@@ -868,6 +868,8 @@ round(cor(data_cor, method = "pearson"),2 )
 
 # voir pour passer en EQS
 
+#voir path 2017
+
 ```
 
 
