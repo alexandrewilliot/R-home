@@ -97,6 +97,12 @@ data_4 <- subset (data_3, Duration__in_seconds_ > 300 ) #n=686
 
 ```
 
+```{r excel, include=FALSE}
+
+write.csv2(data_4, "data_4.csv")
+
+```
+
 ```{r , include=FALSE}
 # filtre sur colonne (pour épurer)
 
@@ -106,6 +112,7 @@ data_5<-data_5[,-c(5:37)] # supression d'une colonne
 data_6 <- na.omit(data_5) # Supprime toutes les lignes avec des NA #n=578
 
 ```
+
 
 
 ```{r CERQ, include=FALSE}
