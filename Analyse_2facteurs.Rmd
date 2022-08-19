@@ -856,6 +856,11 @@ round(cor(data_cor, method = "pearson"),2 )
 ```
 
 
+```{r excel, include=FALSE}
+
+write.csv2(data_6, "data_6.csv")
+
+```
 
 
 
