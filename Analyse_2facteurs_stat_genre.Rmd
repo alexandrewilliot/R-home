@@ -343,14 +343,14 @@ a
 
 b <- data_9 %>% 
   group_by(genre) %>% 
-  summarise(CERQ_MAL = dev(CERQ_MAL),
-            CERQ_ADA  = mean(CERQ_ADA),
-            AI_total  = mean(AI_total),
-            BE_total  = mean(BE_total),
-            EE  = mean(EE),
-            Interna  = mean(Interna),
-            QSREIC_ADA  = mean(QSREIC_ADA),
-            QSREIC_MAL  = mean(QSREIC_MAL))
+  summarise(CERQ_MAL = sd(CERQ_MAL),
+            CERQ_ADA  = sd(CERQ_ADA),
+            AI_total  = sd(AI_total),
+            BE_total  = sd(BE_total),
+            EE  = sd(EE),
+            Interna  = sd(Interna),
+            QSREIC_ADA  = sd(QSREIC_ADA),
+            QSREIC_MAL  = sd(QSREIC_MAL))
 b
 
 ```
