@@ -97,7 +97,7 @@ data_4 <- subset (data_3, Duration__in_seconds_ > 300 ) #n=686
 
 ```
 
-```{r excel data4, include=FALSE}
+```{r excel data_4, include=FALSE}
 
 write.csv2(data_4, "data_4.csv")
 
@@ -115,6 +115,8 @@ data_6 <- na.omit(data_5) # Supprime toutes les lignes avec des NA #n=578
 
 
 ```{r stat descriptive, include=FALSE}
+## data 7
+
 
 #faire traitement des colonnes à part pour ensuite les fusionner avec une colonne mére
 
@@ -126,29 +128,39 @@ data_merge <- merge(data_a, data_6, by=c("ResponseId"))
 #data_merge <- na.omit(data_merge)
 
 
-data_9 <- data_merge[ , -c(2:19)]
-data_9 <- data_9[ , 1:24]
+data_7 <- data_merge[ , -c(2:19)]
+data_7 <- data_7[ , 1:24]
 
-summary(data_9,  na.rm = TRUE)
+summary(data_7,  na.rm = TRUE)
 
-names(data_9)[names(data_9) == "Q15"] <- "age"
-names(data_9)[names(data_9) == "Q17_1"] <- "homme"
-names(data_9)[names(data_9) == "Q17_4"] <- "femme"
-names(data_9)[names(data_9) == "Q17_2"] <- "fluctuant"
-names(data_9)[names(data_9) == "Q17_3"] <- "nonconf"
-names(data_9)[names(data_9) == "Q17_5"] <- "nonbin"
-names(data_9)[names(data_9) == "Q19"] <- "niv scol"
+names(data_7)[names(data_7) == "Q15"] <- "age"
+names(data_7)[names(data_7) == "Q17_1"] <- "homme"
+names(data_7)[names(data_7) == "Q17_4"] <- "femme"
+names(data_7)[names(data_7) == "Q17_2"] <- "fluctuant"
+names(data_7)[names(data_7) == "Q17_3"] <- "nonconf"
+names(data_7)[names(data_7) == "Q17_5"] <- "nonbin"
+names(data_7)[names(data_7) == "Q19"] <- "niv scol"
 
-write.csv2(data_9, "data_9.csv")
+
+# à voir ici pour IMC ; poids, taille
+# Q29___Taille_1_TEXT # métre
+# Q29___Taille_2_TEXT # pied
+
+# Q30___Poids_1_TEXT # kg
+# Q30___Poids_2_TEXT # livres
+
+
+
+write.csv2(data_7, "data_7.csv")
 
 # pour aller chercher genre avec ID
 csv <- read.csv2("https://github.com/alexandrewilliot/R-home/raw/main/data_stat genre.csv")
 csv_2 <- csv[ , 2:4]
 # 1 = homme; 2 = femme
 
-data_7 <- merge(csv_2, data_6, by=c("ResponseId"))
+data_8 <- merge(csv_2, data_6, by=c("ResponseId"))
 
-data_6 <- data_7
+data_6 <- data_8
 
 
 ```
@@ -311,10 +323,10 @@ data_6$QSREIC_MAL <- data_6$QSREIC_dramatisation + data_6$QSREIC_physique + data
 ## statistiques descriptives des questionnaires
 
 ```{r , echo=FALSE}
-data_8 <- data_6[ , -c(4:109)]
+data_9 <- data_6[ , -c(4:109)]
 
 # moy des variables par genre
-a <- data_8 %>% 
+a <- data_9 %>% 
   group_by(genre) %>% 
   summarise(CERQ_MAL = mean(CERQ_MAL),
             CERQ_ADA  = mean(CERQ_ADA),
@@ -324,8 +336,9 @@ a <- data_8 %>%
             Interna  = mean(Interna),
             QSREIC_ADA  = mean(QSREIC_ADA),
             QSREIC_MAL  = mean(QSREIC_MAL))
+#write.csv2(data_9, "data_9_quest.csv")
 #vérif ok
-#write.csv2(data_8, "data_8_quest.csv")
+
 
 a
 
@@ -934,7 +947,7 @@ round(cor(data_cor, method = "pearson"),2 )
 ```
 
 
-```{r excel, include=FALSE}
+```{r excel data_6, include=FALSE}
 
 write.csv2(data_6, "data_6.csv")
 
