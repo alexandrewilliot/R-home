@@ -339,8 +339,19 @@ a <- data_9 %>%
 #write.csv2(data_9, "data_9_quest.csv")
 #vérif ok
 
-
 a
+
+b <- data_9 %>% 
+  group_by(genre) %>% 
+  summarise(CERQ_MAL = dev(CERQ_MAL),
+            CERQ_ADA  = mean(CERQ_ADA),
+            AI_total  = mean(AI_total),
+            BE_total  = mean(BE_total),
+            EE  = mean(EE),
+            Interna  = mean(Interna),
+            QSREIC_ADA  = mean(QSREIC_ADA),
+            QSREIC_MAL  = mean(QSREIC_MAL))
+b
 
 ```
 
