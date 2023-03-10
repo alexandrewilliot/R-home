@@ -182,7 +182,7 @@ data_8b <- merge(csv_4, data_8, by=c("ResponseId"))
 data_6 <- data_8b
 ```
 
-```{r IMC, include=FALSE}
+```{r IMC, echo=FALSE}
 
 # Fichier 6 prêt
 # voir calcul IMC
@@ -198,6 +198,10 @@ data_b <- subset (data_6, poids.en.kg.1 < 50 ) # 1 ligne ; pas si pire
 data_c <- subset (data_6, age < 12 ) # 54 lignes ; 
 
 data_d <- subset (data_6, Taille.en.cm < 110 ) # 1 ligne ; pas si pire
+
+
+
+summary(data_6,  na.rm = TRUE)
 
 ```
 
