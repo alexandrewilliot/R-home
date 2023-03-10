@@ -186,8 +186,18 @@ data_6 <- data_8b
 
 # Fichier 6 prêt
 # voir calcul IMC
+data_6$IMC <- data_6$poids.en.kg.1 / (data_6$Taille.en.cm*data_6$Taille.en.cm)
+data_6$IMC <- data_6$IMC*10000
+
+data_6 <- data_6[ , c(1:3 , 112, 4:111 )]
 
 
+# vérifier validité des données
+data_b <- subset (data_6, poids.en.kg.1 < 50 ) # 1 ligne ; pas si pire
+
+data_c <- subset (data_6, age < 12 ) # 54 lignes ; 
+
+data_d <- subset (data_6, Taille.en.cm < 110 ) # 1 ligne ; pas si pire
 
 ```
 
@@ -350,7 +360,7 @@ data_6$QSREIC_MAL <- data_6$QSREIC_dramatisation + data_6$QSREIC_physique + data
 ## statistiques descriptives des questionnaires
 
 ```{r , echo=FALSE}
-data_9 <- data_6[ , -c(6:111)]
+data_9 <- data_6[ , -c(7:112)]
 
 # moy des variables par genre
 a <- data_9 %>% 
