@@ -64,6 +64,9 @@ library(GPArotation)
 library(boot) # bootstrapping
 library(car) # regression diag
 library(QuantPsyc) # coeff standard
+
+library(sjmisc) # statistiques descr()
+library(Rcmdr)
 ```
 
 
@@ -200,7 +203,6 @@ data_c <- subset (data_6, age < 12 ) # 54 lignes ;
 data_d <- subset (data_6, Taille.en.cm < 110 ) # 1 ligne ; pas si pire
 
 
-
 summary(data_6,  na.rm = TRUE)
 
 ```
@@ -210,16 +212,37 @@ summary(data_6,  na.rm = TRUE)
 ```{r stat, echo=FALSE}
 summary(data_6$age)
 sd(data_6$age)
+numSummary(data_6[,"age", drop=FALSE], statistics=c("mean", "sd"), type="2")
 
 ```
 
 ### stat imc
 
 ```{r stat, echo=FALSE}
-summary(data_6$IMC)
-sd(data_6$IMC,  na.rm = TRUE))
+numSummary(data_6[,"IMC", drop=FALSE], statistics=c("mean", "sd"), type="2")
 
-# cheker narm ; na
+max(data_6$IMC, na.rm = TRUE)
+sort(data_6$IMC)
+
+# plus de 40 obésite morbide
+data_6$IMC_2 <- as.factor(ifelse(data_6$IMC < 18.5, '1',
+                                 ifelse(data_6$IMC < 25, '2', 
+                                        ifelse(data_6$IMC < 30, '3', 
+                                               ifelse(data_6$IMC < 35, '4',
+                                                      ifelse(data_6$IMC < 40, '5',
+                                                             ifelse(data_6$IMC > 40, '6',
+                                                             7)))))))
+data_6 <- data_6[ , c(1:3 , 113, 4:112 )]
+#max(data_6$IMC)
+
+numSummary(data_6[,"IMC", drop=FALSE], data_6$IMC_2, statistics=c("mean", "sd", "IQR", "quantiles", "skewness", "kurtosis"), quantiles=c(0,.25,.5,.75,1), type="2")
+
+
+
+#data_6a<-data_6[!is.na(data_6$IMC), ] # supprime lignes avec des NA dans une colonne
+#max(data_6a$IMC)
+
+
 
 ```
 
