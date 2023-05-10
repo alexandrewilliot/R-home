@@ -1,14 +1,14 @@
 ---
-title: "Analyse_stat_descriptives"
-author: "alexandre.williot.1@ulaval.ca"
-date: "08/2022"
+title: "Analyse_stat_Article"
+author: "alexandre.williot@uqtr.ca"
+date: "05/2023"
 output: 
   html_document:
     toc: TRUE
     theme: united
 ---
 
-#### LEGENDE : attention juste ok pour stat descriptives !!!
+#### LEGENDE : 
 
 ```{r chargement fichier, include=FALSE}
 
@@ -110,7 +110,7 @@ write.csv2(data_4, "data_4.csv")
 # filtre sur colonne (pour épurer)
 
 data_5 <- data_4[ , 6:145]
-data_5<-data_5[,-c(5:37)] # supression d'une colonne
+data_5<-data_5[,-c(5:37)] # supression de colonnes
 
 data_6 <- na.omit(data_5) # Supprime toutes les lignes avec des NA #n=578
 
@@ -209,12 +209,20 @@ summary(data_6,  na.rm = TRUE)
 
 ### stat age
 
-```{r stat, echo=FALSE}
+```{r recode âge, include=FALSE}
+
+data_6$age <- recode(data_6$age, "1=18; 2=19; 3=20;4=21; 5=22; 6=23; 7=24 ; 8=25; 9=26 ; 10=27 ; 11=28; 12=29; 13=30; 14=31; 15=32; 16=33; 17=34; 18=35 ; 19=36 ; 20=37; 21=38; 22=39 ; 23=40; 24=41 ; 25=42; 26=43; 27=44; 28=45 ; 29=46; 30=47; 31=48; 32=49; 33=50 ; 34=51; 35=52; 36=53; 37=54; 38=55; 39=56; 40=57; 41=58; 42=59; 43=60; 44=61; 45=62; 46=63; 47=64; 48=65; 49=66; 50=67; 51=68; 52=69; 53=70; 54=71; 55=72; 56=73; 57=74; 58=75; 59=76; 60=77; 61=78; 62=79; 63=80; 64=81;65=82; 66=83; 67=84; 68=85; 69=86; 70=87; 71=88; 72=89; 73=90; 74=91; 75=92; 76=93; 77=94; 78=95; 79=96; 80=97; 81=98; 82=99; 83=100")
+
+```
+
+```{r age, echo=FALSE}
 summary(data_6$age)
 sd(data_6$age)
 numSummary(data_6[,"age", drop=FALSE], statistics=c("mean", "sd"), type="2")
 
 ```
+
+
 
 ### stat imc
 
@@ -238,14 +246,20 @@ data_6 <- data_6[ , c(1:3 , 113, 4:112 )]
 numSummary(data_6[,"IMC", drop=FALSE], data_6$IMC_2, statistics=c("mean", "sd", "IQR", "quantiles", "skewness", "kurtosis"), quantiles=c(0,.25,.5,.75,1), type="2")
 
 
-
 #data_6a<-data_6[!is.na(data_6$IMC), ] # supprime lignes avec des NA dans une colonne
 #max(data_6a$IMC)
 
 
+```
+
+```{r subset imc, include=FALSE}
+
+subset_imc <- subset(data_6, IMC > 40) # au dessus de la catégorie 5 donc que des 6
 
 ```
 
+
+### Questionnaires
 
 
 
