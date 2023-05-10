@@ -209,7 +209,7 @@ summary(data_6,  na.rm = TRUE)
 
 ### stat age
 
-```{r stat, echo=FALSE}
+```{r stat age, echo=FALSE}
 summary(data_6$age)
 sd(data_6$age)
 numSummary(data_6[,"age", drop=FALSE], statistics=c("mean", "sd"), type="2")
