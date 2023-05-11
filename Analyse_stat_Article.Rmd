@@ -66,7 +66,9 @@ library(car) # regression diag
 library(QuantPsyc) # coeff standard
 
 library(sjmisc) # statistiques descr()
+
 library(Rcmdr)
+
 ```
 
 
@@ -100,7 +102,7 @@ data_4 <- subset (data_3, Duration__in_seconds_ > 300 ) #n=686
 
 ```
 
-```{r excel data_4, include=FALSE}
+```{r excel data_4, eval=FALSE, include=FALSE}
 
 write.csv2(data_4, "data_4.csv")
 
@@ -533,6 +535,7 @@ b
 
 write.csv2(data_6, "data_6.csv")
 
+write_sav(data_6, "data_6.sav")
 ```
 
 
