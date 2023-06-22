@@ -522,6 +522,31 @@ b <- data_9 %>%
             QSREIC_MAL  = sd(QSREIC_MAL))
 b
 
+c <- data_9 %>% 
+  group_by(genre) %>% 
+  summarise(CERQ_MAL = min(CERQ_MAL),
+            CERQ_ADA  = min(CERQ_ADA),
+            AI_total  = min(AI_total),
+            BE_total  = min(BE_total),
+            EE  = min(EE),
+            Interna  = min(Interna),
+            QSREIC_ADA  = min(QSREIC_ADA),
+            QSREIC_MAL  = min(QSREIC_MAL))
+c
+
+
+d <- data_9 %>% 
+  group_by(genre) %>% 
+  summarise(CERQ_MAL = max(CERQ_MAL),
+            CERQ_ADA  = max(CERQ_ADA),
+            AI_total  = max(AI_total),
+            BE_total  = max(BE_total),
+            EE  = max(EE),
+            Interna  = max(Interna),
+            QSREIC_ADA  = max(QSREIC_ADA),
+            QSREIC_MAL  = max(QSREIC_MAL))
+d
+
 ```
 
 
