@@ -156,7 +156,7 @@ names(data_7)[names(data_7) == "Q19"] <- "niv scol"
 
 
 
-write.csv2(data_7, "data_7.csv")
+# write.csv2(data_7, "data_7.csv")
 
 # pour aller chercher genre avec ID
 csv <- read.csv2("https://github.com/alexandrewilliot/R-home/raw/main/data_stat genre.csv")
@@ -394,6 +394,12 @@ which(colnames(data_6)=="Q9___Alim__motionnel")
 names(data_6)[names(data_6) == "Q9___Alim__motionnel"] <- "Q9_Alim_emotionnel"
 names(data_6)[names(data_6) == "Q10___Alim__motionne"] <- "Q10_Alim_emotionnel"
 names(data_6)[names(data_6) == "Q11___Alim__motionne"] <- "Q11_Alim_emotionnel"
+
+# recode
+data_6$Q9_Alim_emotionnel <- recode(data_6$Q9_Alim_emotionnel, "1=4; 2=3; 3=2; 4=1")
+data_6$Q10_Alim_emotionnel <- recode(data_6$Q10_Alim_emotionnel, "1=4; 2=3; 3=2; 4=1")
+data_6$Q11_Alim_emotionnel <- recode(data_6$Q11_Alim_emotionnel, "1=4; 2=3; 3=2; 4=1")
+
 
 data_6$EE <- (data_6$Q9_Alim_emotionnel + data_6$Q10_Alim_emotionnel + data_6$Q11_Alim_emotionnel)/3
 
